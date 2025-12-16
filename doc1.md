@@ -83,65 +83,62 @@ Ninguém sabe dizer o porquê, mas você parece ter a habilidade de precisar de 
 Você é sempre o primeiro a se levantar e o último a se deitar, mesmo que tenha ficado acordado até o amanhecer. Enquanto seus companheiros ainda estão grogues, você está desperto e alerta.
 (Vampiro, a Máscara; Guia do Sabá 3ª ed, pág 95)
 
-Nervos Amortecidos (4 pontos)
-Seja por algum problema em vida ou resultado inesperado do Abraço, faltam algumas conexões no seu sistema nervoso. Você tem pouquíssimo senso tátil, seja de prazer ou dor. O prejuízo é obvio: um de seus sentidos está seriamente prejudicado, o que pode impedi-lo de receber avisos importantes (uma lamina em suas costas, por exemplo – ou dentro delas.) Você tem Dif. +3 em todos os testes de Percepção relacionados ao tato, e o Narrador pode pedir um teste até mesmo para você perceber o óbvio; você pode não perceber que foi atingido por uma bala a menos que ela o derrube de uma vez.
-Porem, seus nervos mortos também o protegem da dor, permitindo que você ignore seus ferimentos ate que sua carne seja literalmente separada de seus ossos. Todas as penalidades por ferimentos são divididas pela metade, arredondando para baixo; em outras palavras, você não sofre penalidade até atingir o nível Ferido Gravemente, no qual você reduz só 1 dado de sua parada de dados e, mesmo no nível aleijado, você ainda é capaz de agir, submetendo-se a uma penalidade de apenas 2 dados.
-Se o Narrador desejar, pode ser interessante que só ele tenha o controle do nível de vitalidade do seu personagem e não deixar o jogador saber exatamente o quão ferido o personagem está. Mesmo que o Malkaviano pare para uma rápida avaliação de seu estado, o Narrador descreve sua situação nos termos mais gerais (por exemplo, “Existem alguns buracos de bala no seu peito, mas você não tem ideia se as balas estão lá dentro ou não”, “Seu braço esquerdo se recusa a se mover, apesar de você não entender o porque,” e assim por diante. Isso dá uma quantidade extra de trabalho para o Narrador (sobretudo para se manter sigilo o Narrador fizer os testes do Malkaviano em segredo), mas pode aumentar a tensão e veracidade do jogo.
+Nervos Amortecidos (4 pontos) [Clã: Malkaviano]
+Sistema nervoso danificado com pouquíssimo senso tátil. +3 dificuldade em testes de Percepção relacionados ao tato.
+Vantagem: penalidades por ferimentos são divididas pela metade (não sofre penalidades até Ferido Gravemente).
+Narrador pode controlar secretamente o nível de vitalidade do personagem. “”, “,”  
 (Vampiro, a Máscara; Clanbook Malkaviano 3ªed, pág. 65)
 
-Membros de Lagarto (1 ponto)
+Membros de Lagarto (1 ponto) [Clã: Nosferatu]
 Com um pouco de esforço, você pode “soltar” partes do seu corpo. Quando um de seus membros estiver preso ou seguro, gaste 1 Ponto de Sangue e faça um teste de Força de Vontade (Dif. 8.). Se for bem-sucedido, você pode soltar aquela parte de seu corpo e fugir, os vampiros podem eventualmente fazer seus membros crescerem de volta gastando sangue suficiente; entretanto, se você estiver sem um braço ou perna, deve ter uma penalidade de -3 em sua parada de dados para representar seu ferimento. E lembre-se de ter cuidado, se você soltar ambas as pernas, terá um bocado de trabalho para escapar.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 70)
 
-Dedos Longos (1 ponto)
+Dedos Longos (1 ponto) [Clã: Nosferatu]
 Seus dedos são anormalmente longos e aracnídeos. Você ganha um dado extra em qualquer teste envolvendo coordenação digital ou para segurar alguma coisa.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 70)
 
-Presas Exageradas (1 ponto)
+Presas Exageradas (1 ponto) [Clã: Nosferatu]
 Você possui dentes enormes, presas salientes que lembram as dos elefantes ou morsas. Elas não podem ser retraídas, mas causam um dado adicional de dano e somam em dado à sua parada de dados de Intimidação.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 70)
 
-Písceo (1 ponto)
+Písceo (1 ponto) [Clã: Nosferatu]
 Você se sente anormalmente confortável debaixo d’água e prefere nadar a caminhar. Você tem um redutor de -1 na dificuldade em qualquer parada de dados física relacionada a movimento submarino.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 70)
 
-Gosmento (1 ponto)
+Gosmento (1 ponto) [Clã: Nosferatu]
 Como um verme ou molusco, sua pele secreta um muco gosmento. Sua dificuldade para absorver dano de fogo é reduzida em um, e os oponentes que tentarem agarrá-lo precisam conseguir dois sucessos além do normal.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 71)
 
-Boca Exagerada (2 pontos)
+Boca Exagerada (2 pontos) [Clã: Nosferatu]
 Você tem um talho detestável onde sua boca deveria estar. Você pode sorrir, mostrar desaprovação e, o mais importante, pode arreganhar os dentes cinco a dez centímetros além do que qualquer boca humana consiga. Um vampiro comum pode sugar até 3 Pontos de Sangue por turno, os Nosferatus com essa qualidade podem sugar até 4 Pontos de Sangue por turno, desde que consiga fechar seu orifício cheio de dentes sobre a quantidade suficiente de pele.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 71)
 
-Vomito Ejetável (2 pontos)
-Esta talento é semelhante a Qualidade Ingerir Comida, só que sendo mais versátil. A comida entra, a comida sai, só que muito, muito rápido... um vampiro com essa Qualidade pode ingerir, e possivelmente até sentir o gosto de comida e bebida. Ele não recebe nenhum beneficio nutritivo por esse material ordinariamente digestível, mas pode armazená-lo para uso posterior. Quando a necessidade surge, o Nosferatu consegue não apenas vomitar seu suprimento, mas também mirá-lo com grande precisão.
-Para registro, vômito ejetável no sistema de Jogos de Narrativa requer um teste de Vigor + Esportes; a Dificuldade é 8, e a vitima pode tentar se esquivar deste bolo de mantimentos mastigados. Apesar deste ataque não causar danos (a não ser no orgulho do Alvo), o tipo de comida ejetada pode obscurecer temporariamente a visão de uma vítima, fazê-la escorregar ou meramente força-la a chorar de vergonha no grande baile de um Toreador da Camarilla. Coitado do pobre Toreador banhado de vômito...
+Vomito Ejetável (2 pontos) [Clã: Nosferatu]
+Você pode ingerir comida e armazená-la para depois vomitá-la com precisão como projétil. Teste: Vigor + Esportes (Dif. 8). Não causa dano, mas pode cegar temporariamente ou causar escorregões.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 71)
 
-Couro Duro (2 pontos)
+Couro Duro (2 pontos) [Clã: Nosferatu]
 Uma pele grossa e enrugada envolve você. Some um dado extra à absorção de dao (exceto para fogo e luz do sol).
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 71)
 
-Sangue Repugnante (2 pontos)
+Sangue Repugnante (2 pontos) [Clã: Nosferatu]
 O Vitae correndo nas suas veias tem um gosto realmente horrível. Qualquer um que morda ou se alimente de você precisa ser bem sucedido num teste de Força de Vontade (Dificuldade 6) ou perder o próximo turno engasgado, com náuseas e vomitando. Qualquer idiota que tentar cometer Diablerie em você será obrigado a ter sucesso em 3 testes de Força de Vontade (Dificuldade 9) para conseguir.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 71)
 
-Patágios (4 pontos)
+Patágios (4 pontos) [Clã: Nosferatu]
 Asa de couro se dobram para dentro de seu pequeno corpo horrendo. Imagine as asas deslizantes de um pterodáctilo ou esquilo voador. Agora visualize-se pendendo do distorcido esqueleto de asas de morcego. Com a ajuda de uma corrente ascendente ou de um vento forte, você pode planar por curtas distancias – Algo muito útil para um Nosferatu que queira esgueirar-se pelos telhados, não é?
 Nota aos Narradores: Notem que um vampiro com essa Qualidade pode PLANAR na mesma velocidade de uma caminhada normal.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 72)
 
-Cara de Mau (5 pontos)
+Cara de Mau (5 pontos) [Clã: Nosferatu]
 Seu rosto é horrendo, mas pode passar por um humano Realmente Feio. Se você escondesse todas as outras partes de seu corpo, poderia andar em meio à sociedade humana parecendo apenas um pouco suspeito. Ainda que possa ter uma corcunda, escamas de réptil ou um fedor horrível que nunca se dissipa, você pode andar de fato entre os mortais – com extensas precauções – sem quebrar a Máscara automaticamente. Outros Vampiros o torturam constantemente por não se parecer com um Nosferatu “de verdade”. Falando nisso, isso é o mais “atraente” que um Nosferatu pode ser.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 72)
 
 Gosto Apurado (2 pontos, exclusivo para Tremeres)
-Por alguma razão, seu personagem acha a magia do sangue instintiva - mais do que para a maioria dos Tremere. Quando seu Tremere experimenta sangue, ele sente naturalmente as atuais correspondências sutis e ocultas na vitae. Para ele, isso nem mesmo é magia; é apenas um estado aguçado do paladar vindo do Abraço e da longa experiência dos Tremere com sangue.
-Quando seu personagem experimenta sangue, ele pode vislumbrar automaticamente um fator sobre a fonte, como pelo poder de Nível 1 da Trilha do Sangue (Vampiro: A Máscara, pg 178). Nenhum Ponto de Sangue ou teste é necessário; o vampiro simplesmente recebe a informação como se tivesse um sucesso. Você ainda pode escolher usar a própria Disciplina para ganhar mais informações específicas, nesse caso o sistema normal se aplica e os resultados do uso da Disciplina substituem esta afinidade.
-Esta afinidade nem sempre é benéfica - seu personagem pode experimentar acidentalmente overdose de medo, poder extraordinário ou veneno na vitae, e tal gosto pode causar náusea ou incapacitação à escolha do Narrador. Esta sensitividade não pode ser desligada.
+Você possui afinidade instintiva com magia do sangue. Ao experimentar sangue, recebe automaticamente informações sobre a fonte (como Trilha do Sangue nível 1, sem teste). Pode causar náusea se o sangue contiver elementos perigosos.
 (Vampiro, a Máscara; Clanbook Tremere 3ªed, pág. 66)
 
-Tolerância à Dor (2 pontos)
+Tolerância à Dor (2 pontos) [Clã: Tzimisce]
 Talvez você tenha amortecido seus nervos através da Vicissitude. Talvez pode seja um maldito bastardo. Talvez ela a tenha o transformado. A despeito disso, você ignora um dado de penalidade por ferimentos. Isso é, quando Machucado ou Ferido, você não sofre penalidades. Você ainda sofre penalidades em Ferido Gravemente e abaixo. Você deve ter 3 ou mais pontos de Convicção ou Coragem para escolher essa Qualidade. Se possuir o poder avançado de Vicissitude, Agonia Extática, você não recebe nenhum dado adicional até que esteja ao menos Ferido Gravemente: sua indiferença à dor o priva deste poder.
 (Vampiro, a Máscara; Clanbook Tzimisce 3ªed, pág. 69)
 
@@ -204,23 +201,23 @@ Introspecção (1 ponto)
 Você tem um conhecimento profundo dos motivos inconfessos de todas as suas ações. Através desse exercício, noite após noite, você adquiriu um conhecimento incrível dos motivos subconscientes das ações dos outros. Adicione dois dados a sua Parada de Dados de Percepção sempre que precisar realizar alguma ação contra alguém com a mesma Natureza ou o mesmo Comportamento que você.
 (Vampiro, a Máscara; Guia do Sabá 3ª ed, pág 95)
 
-Misericordioso (4 pontos)
+Misericordioso (4 pontos) [Clã: Brujah]
 Você tem o caráter moral dos Brujah de antigamente, os poetas guerreiros orgulhosos que faziam as coisas porque seus corações conduziam. Se falhar em um teste de Consciência (e não de Convicção), você pode gastar um ponto em Força de Vontade e tentar fazer o teste novamente, com uma dificuldade 1 ponto maior. Se você for bem-sucedido nesse segundo teste, ele contara como se o mesmo tivesse acontecido primeiro. Você pode usar isso apenas uma vez para cada teste de Consciência; você tem de aceitar os resultados do novo teste. No caso de conseguir uma Falha Crítica no segundo teste, você perde um ponto permanente de Força de Vontade, além de sofrer as consequências da falha no teste de Consciência
 (Vampiro, a Máscara; Clanbook Brujah 3ªed, pág. 68)
 
-Senso Climático (1 ponto)
+Senso Climático (1 ponto) [Clã: Lasombra]
 Esta perspicácia é muito apreciada entre os Lasombras navegadores. Alguns Senhores conseguem transferir essa capacidade complexa para sua prole. O personagem sente inconscientemente a aproximação do mau tempo. O Narrador faz um teste de Percepção + Sobrevivência (Dif. 7) em seu favor, e transmite uma informação de tempestades e outros problemas climáticos com varias horas de antecedência.
 (Vampiro, a Máscara; Clanbook Lasombra 3ªed, pág. 63)
 
-Harmonia Pelágica (3 pontos)
+Harmonia Pelágica (3 pontos) [Clã: Lasombra]
 Estar próximo ao mar acalma o personagem e fortalece seu Autocontrole. Todos os testes de Força de Vontade feitos enquanto o personagem estiver no mar ou com ele dentro de seu alcance visual, têm sua dificuldade diminuída em um ponto (Dif. -1)
 (Vampiro, a Máscara; Clanbook Lasombra 3ªed, pág. 64)
 
-Temperamento de Dracon (3 pontos)
+Temperamento de Dracon (3 pontos) [Clã: Tzimisce]
 Levando a noção de Azhi Dahaka a novos níveis, você emulou a natureza permutável da mudança e evolução a sua psique. Como o metamorfo Dracon, você é um redemoinho de temperamentos. Diferente de múltiplas personalidades, que lhe da mais doq eu uma identidade, você é a mesma pessoas mas com diferentes e variáveis Naturezas. Essencialmente, você ou não tem um sentido ancorado de si, ou você é tão mutável que pode ser qualquer um. No inicio de cada história, até sua conclusão, você pode escolher um Arquétipo de Personalidade para funcionar como sua Natureza. Isso não muda sua identidade; ela simplesmente altera a forma pela qual você percebe situações e como você lida com os outros, você também recupera Força de Vontade de acordo com a sua nova Natureza e pode ser afetado por outros efeitos ou Disciplinas como em sua nova Natureza também.
 (Vampiro, a Máscara; Clanbook Tzimisce 3ªed, pág. 69)
 
-Afinidade com o Refúgio (3 pontos)
+Afinidade com o Refúgio (3 pontos) [Clã: Tzimisce]
 A maldição de Caim ressoa fortemente em seus ossos, mas elas possui uma vantagem provada. Você está conectado ao solo de seu refugio principal, o que lhe garante um dado extra em todas as paradas de dados quando operar lá. Ele também funciona como um farol místico para você, permitindo que volte para seu local com um teste de Percepção + Sobrevivência (Dif. 6), +1 na dificuldade quando um Estado ou País o separa dele; +2 se você está a meio caminho no globo terrestre. Isso se aplica apenas ao seu refugio principal e a nenhum de seus abrigos auxiliares.
 (Vampiro, a Máscara; Clanbook Tzimisce 3ªed, pág. 69)
 
@@ -352,20 +349,19 @@ Santidade (2 pontos)
 Essa Qualidade é, de vez em quando, chamada de efeito auréola: todos o consideram puro e inocente, mas não necessariamente ingênuo. Você tem uma qualidade quase santificada difícil de ser definida, mas que não pode ser negada. Você inspira confiança, mesmo que não seja confiável. A critério do Narrador, você tem uma tendência a receber punições menores por seus erros e é bem visto pela maioria dos companheiros.
 (Vampiro, a Máscara; Guia do Sabá 3ª ed, pág 95)
 
-Personalidade Dinâmica (5 pontos)
+Personalidade Dinâmica (5 pontos) [Clã: Brujah]
 As pessoas são atraídas por seu personagem devido a alguma característica que transpira dele. Você pode comprar Antecedentes adicionais usando seus pontos de experiência no final de cada história – Dois pontos garantem 1 ponto nos seguintes Antecedentes: Aliados, Contatos, Rebanho e Lacaio.
 (Vampiro, a Máscara; Clanbook Brujah 3ªed, pág. 68)
 
-Companheiro Réptil (3 pontos)
+Companheiro Réptil (3 pontos) [Clã: Nosferatu]
 Sim, aquelas lendas sobre jacarés albinos nos esgotos são verdadeiras. Você vem criando alguns deles com seu sangue lago da desova local há anos. Seu extremo cuidado e treinamento vigilante produziu um escravo reptiliano de inteligência excepcional. Ele tem a mente atenta de uma criança de 5 anos e dentes tão afiados quanto facas de açougueiro. A fera entende seu idioma nativo perfeitamente e pode até seguir instruções complexas. Mais rápido e mortal do que qualquer Carniçal humano, ele é uma maquina de matar bastante eficiente, plenamente capaz de patrulhar seu domínio com uma eficácia cruel. Companheiros répteis também adoram brincar de “pega-pega” com braços e pernas humanas (estejam elas presas ou cortadas)
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 71)
 
-Abraçado sem a Taça (3 pontos)
-Quando seu personagem foi Abraçado, seu senhor dispensou as tradições Tremere, ou talvez não teve os meios necessários para terminar o serviço, ou apenas morreu antes que pudesse ser feito direito. Seu Tremere foi drenado do sangue e então trazido de volta, mas nunca passou pela Transubstanciação dos Sete (pg 61 do Tremere Revisado). Como resultado, mesmo se seu personagem fizer o juramento, ele não terá dado nenhum passo para um Laço de Sangue com o Conselho dos Sete. Por causa de seu personagem não ter nenhuma obrigação para os Sete, sua lealdade ao clã Tremere vem somente de sua própria consciência. Efetivamente, você pode fazer o que bem entender sem qualquer sentimento entrando no caminho.
-Claro, se qualquer Tremere leal descobrir sobre esse descuido, seu personagem provavelmente terminará arrastado para a Transubstanciação dos Sete, bem como algum interrogatório detalhado sobre "porque" ele não veio para tratar este descuido de sua própria vontade. Isso pode resultar num laço ao conselho, ou um tribunal de algum tipo, e ignorância pode não ser uma desculpa válida.
+Abraçado sem a Taça (3 pontos) [Clã: Tremere]
+Você não passou pela Transubstanciação dos Sete, não possuindo Laço de Sangue com o Conselho. Sua lealdade ao clã é por escolha própria. Se descoberto, pode enfrentar interrogatório ou tribunal.
 (Vampiro, a Máscara; Clanbook Tremere 3ªed, pág. 67)
 
-Luminar (6 pontos)
+Luminar (6 pontos) [Clã: Ventrue]
 O Abraço despertou em você um aspécto de personalidade que os outros acham particularmente constrangedor. Você pode escolher um Antecedentes da segunte lista: Aliados, Membro da Mão Negra, Prestígio de Clã, Contatos, Fama, Rebanho, Influência, Mentor, Recursos, Lacaios, Status do Sabá e Status.
 Sua pontuação normal em um desses Antecedentes pode exceder em 1 ponto no limite normal estabelecido pela sua Geração. Por exemplo, um Membro de 10ª Geração pode ter Contatos 6. Você só pode usar esta Qualidade para UM Antecedente, que pode cair de nível e depois subir de novo (à escolha do Narrador). O jogador deve escolher usar esta Qualidade para um Antecedentes que faça sentido para a sua Personagem - um Arconte da Camarilla não deve ter o Antecedente Membro da Mão Negra 7, por exemplo.
 (Vampiro, a Máscara; Clanbook Ventrue 3ªed, pág. 77)
@@ -439,52 +435,51 @@ Reconhecimento Vampírico (3 pontos)
 Você pode reconhecer um vampiro à 10 passos. Você aprendeu a reconhecer algum aspecto da natureza morto-viva - Algo que para outros passa desapercebido. Talvez seja um odor característico, ou a tendência de olhar para o pescoço das pessoas para ver se suas carótidas pulsam. Seja qual for o caso, você pode notar a diferença de um vampiro pra um mortal sem dificuldade. Certos casos específicos mais complicados (como vampiros com a Qualidade Rubor de Saúde) podem requerer um teste de Percepção + Prontidão (dificuldade 6) para que você tenha certeza.
 (Vampiro, a Máscara; Guia do Jogador 3ª ed, pág. 27)
 
-Resistência Consanguínea (1 ponto)
+Resistência Consanguínea (1 ponto) [Clã: Giovanni]
 Seu personagem não pode sofrer Laço de Sangue com ninguém que seja parte de sua linhagem mortal. Isso é, se você nasce na família Giovanni, não pode ser preso por ninguém que tenha nascido entre os Giovanni, embora você ainda possa ser preso pelos Pisanob do clã Giovanni, ou por Membros de qualquer outro clã.
 Um personagem que se descubra ter esta característica provavelmente merece a
 hostilidade de seu senhor no mais alto nível.
 (Vampiro, a Máscara; Clanbook Giovanni 3ªed, pág. 77)
 
-Beijo de Procuração (4 pontos)
+Beijo de Procuração (4 pontos) [Clã: Giovanni]
 Antes do Abraço você recebeu o tradicional Beijo de Procuração Giovanni. Isso significa que você tem um ponto extra de Potência, e os outros membros de seu clã tendem a se mostrar mais confiantes de que você seja alguém Abraçado na “devida maneira Giovanni”. O lado negativo é que você é parcialmente preso ao Laço de Sangue a alguém – provavelmente alguém que não seu senhor. Dada a forma que os anziani gostam de balancear as coisas, você pode ter sido Abraçado por alguém que não gosta ou discorda de seu senhor.
 Você pode escolher essa Qualidade uma segunda vez (num total de 8 pontos) para ganhar um ponto extra em Fortitude, indicando um longo serviço como Carniçal. Se fizer isso, significa que você está: (A) Parcialmente preso por Laço de Sangue a três Membros, (B) preso 30% a um e 70% a outro, ou (C) completamente preso por Laço de Sangue ao Membro que o Abraçou, que provavelmente estará em profunda desvantagem com os anciões – se não é ele próprio um ancião.
 (Vampiro, a Máscara; Clanbook Giovanni 3ªed, pág. 77)
 
-Incongruência Sanguínea (5 pontos)
+Incongruência Sanguínea (5 pontos) [Clã: Giovanni]
 Os Giovanni com este atavismo são poucos e afastados – menos do que uma dúzia de ocorrências reportadas ocorreram desde que o clã se ergueu das cinzas do clã que os precedeu. Os Membros que o possuem não suportam a Maldição de Lamia: seu Beijo não causa mais dano do que a perda de sangue causaria. Estes vampiros adquirem uma palidez peculiar depois de seu Abraço, contudo – eles parecem cadáveres, e nenhuma quantidade de sangue ingerido pode corar esta característica (como outros vampiros são capazes de fazer). Os Giovanni com esta Qualidade são tratados com muito cuidado, uma vez que os Giovanni tendem a ser muito supersticiosos sobre isso.
 (Vampiro, a Máscara; Clanbook Giovanni 3ªed, pág. 78)
 
-Visão Tenebrosa Controlável (2 pontos)
+Visão Tenebrosa Controlável (2 pontos) [Clã: Lasombra]
 O personagem é capaz de inverter suas próprias percepções de luz e sombras. Para ativar ou desativar a Visão Tenebrosa, o vampiro deve gastar um turno se concentrando, mais um turno adicional para cada Nível de Vitalidade perdido durante a rodada de ativação. Enquanto essa qualidade estiver ativada, um lugar escuro como breu parecerá absolutamente claro e iluminado; no entanto, qualquer fonte de luz superior a uma lâmpada de 100W criará uma área de escuridão total. As penalidades relativas à escuridão parcial são aplicadas em condições de iluminação precária, e vice-versa.
 Essa qualidade não permite sobrepujar as trevas geradas por Tenebrosidade, que brilharão como luz branca e pura, ofuscando quaisquer detalhes.
 (Vampiro, a Máscara; Clanbook Lasombra 3ªed, pág. 63)
 
-Aura Imaculada (1 ponto)
+Aura Imaculada (1 ponto) [Clã: Malkaviano]
 Seja devido ao seu controle ferrenho ou algum golpe de sorte, sua aura não deixa transparecer sua insanidade. A aura nunca muda, mesmo quando você está confuso, em frenesi ou em um ataque psicótico.
 (Vampiro, a Máscara; Clanbook Malkaviano 3ªed, pág. 64)
 
-Sangue Benevolente (1 ponto)
+Sangue Benevolente (1 ponto) [Clã: Malkaviano]
 Seu sangue ainda carrega a Maldição de Malkav, mas seus efeitos são um pouco mais brandos. Os carniçais que você criar não sofrem nenhuma das penalidades normais por beber o sangue Malkaviano – eles podem beber seu sangue à vontade, sem que aumentem as chances de ganharem uma perturbação. (Eles ainda podem ficar loucos por viver com você, dependendo do seu comportamento.) É claro que qualquer descendente seu ainda ganha a perturbação depois do Abraço como de hábito, apesar de sua Vitae ser facilmente diluída com sangue mortal, o material puro ainda carrega a Maldição normalmente.
 (Vampiro, a Máscara; Clanbook Malkaviano 3ªed, pág. 64)
 
-Mentor Incorpóreo (5 pontos)
-As vozes em sua cabeça falam com você mas, por Deus, elas falam coisas importantes. Você tem um guia e conselheiro individual (comprado pelos meios habituais através do Antecedente: Mentor) que existe m grande parte dentro de sua própria cabeça. Ele pode ter sido um Malkaviano que se incorporou a Rede, ou talvez seja só um Ser Imaginário que tem acesso às memorias compartilhadas do clã. De qualquer forma, é tremendamente dificl para seus inimigos separá-lo de você e muito mais fácil pedir seus conselhos quando necessário.
-Infelizmente, às vezes essa Qualidade também tem suas desvantagens; seu Mentor tem é capaz de encontra-lo onde você estiver e isso pode ser muito inconveniente caso esteja querendo fazer algo que ele julga ser irrelevante. Você também não esta livre de suas obrigações como pupilo; você devera fazer trabalhos para seu mentor tanto quanto qualquer outro, e talvez um pouco mais.
+Mentor Incorpóreo (5 pontos) [Clã: Malkaviano]
+Seu mentor existe em sua própria cabeça - uma voz conectada à Rede Malkaviana que oferece conselhos. Difícil de separar, mas pode aparecer em momentos inconvenientes e ainda exige obrigações como qualquer mentor.
 (Vampiro, a Máscara; Clanbook Malkaviano 3ªed, pág. 65)
 
 Ligação Reciproca (5 pontos)
 Por alguma razão você causa, inconscientemente, uma reação sobrenatural de reciprocidade do Laço de Sangue. Apesar de não ser imune ao Laço de Sangue (e não poder ter a qualidade Imunidade ao Laço de Sangue), se você fica ligado a alguém, este alguém também ficara ligado a você do mesmo modo. Mesmo que ele já esteja ligado a outro vampiro, ele ficara na desconfortável posição de estar ligado a dois vampiros ao mesmo tempo. Isso pode levar a relacionamentos de interdependência muito estranhos e não planejados.
 (Vampiro, a Máscara; Clanbook Malkaviano 3ªed, pág. 66)
 
-Dormir Invisível (2 pontos)
+Dormir Invisível (2 pontos) [Clã: Nosferatu]
 Você pode utilizar a Disciplina Ofuscação para se esconder enquanto dorme durante o dia. Esse uso prolongado da habilidade requer um ponto de sangue extra para manter o corpo oculto por um dia inteiro. Obviamente, você precisa você precisa pelo menos estar escondido da luz do sol, e vampiros usando a Disciplina Auspícios ainda podem detecta-lo, mas os mortais ignoram sua presença. Esta é uma Qualidade útil para emissários e viajantes Nosferatu, muitos precisam dela.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 71)
 
-Reflexo Falso (3 pontos)
+Reflexo Falso (3 pontos) [Clã: Nosferatu]
 Quando utiliza a Máscara das Mil Faces, um Nosferu com essa Qualidade pode criar uma falsa impressão de seu disfarce em mídias de gravação. Ele pode ser fotografado, filmado e até mesmo gravar uma imitação da voz da pessoa. Os Nosferatu que não possuem esta Qualidade não podem se disfarçar para máquinas utilizando a Disciplina Ofuscação.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 71)
 
-Disciplinas Revenantes (3 pontos)
+Disciplinas Revenantes (3 pontos) [Clã: Tzimisce]
 Os laços à sua família revenante ficaram com você passado o Abraço. Como tal, as Disciplinas que eram inatas a você como carniçal permaneceram como Cainita. Na criação de personagem, selecione a família Carniçal da qual você veio. Ao invés do complemento padrão de Tzimisce de Animalismo, Auspícios e Vicissitude, você apresenta suas três Disciplinas de família para distribuição inicial (embora você possa comprar outras Disciplinas com pontos de bônus normalmente). Também, você aprender as Disciplinas de sua família ao custo de uma disciplina de clã. Isso, contudo, significa que você não pode comprar os poderes Tzimisce e os da família ao custo de Disciplinas do clã a menos que elas compartilhem uma habilidade particular como Vicissitude.
 (Vampiro, a Máscara; Clanbook Tzimisce 3ªed, pág. 69)
 
@@ -628,44 +623,41 @@ condição de saúde congênita (para mortais) ou uma deformidade física incapa
 Congenituras de cinco pontos são grotescamente incapacitantes ou emocionalmente deficientes – tudo desde pernas inutilmente atrofiadas a uma Perturbação permanente, decidida mutuamente entre o jogador e o Narrador. Condições congênitas podem ser ou não imediatamente discerníveis, embora seu custo em pontos deva ser relativo à sua magnitude.
 (Vampiro, a Máscara; Clanbook Giovanni 3ªed, pág. 78)
 
-Dentes Rombudos (1 ponto)
+Dentes Rombudos (-1 ponto) [Clã: Nosferatu]
 Seus dentes são grandes e quadrados, em vez de afiados como nos demais Vampiros. Para causar dano com ataque de mordida, você precisa obter um sucesso extra (assim, esse sucesso extra é subtraído do dano total que você causa). Depois que tiver alojado seus dentes em sua caça, você causa um nível de dano para cada Ponto de Sangue que sugar. Depois que suas presas estiverem presas na carne da vitima, você precisa mastigar, mastigar e mastigar...
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 72)
 
-Fedor (1 ponto)
+Fedor (-1 ponto) [Clã: Nosferatu]
 Até mesmo os outros Nosferatus se afastam diante de seu odor horripilante. Subtraia dois dados de qualquer teste de Furtividade quando estiver tentando enganar uma criatura que possua olfato (A menos que você esteja contra o vento).
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 72)
 
-Anosmia (1 ponto)
+Anosmia (-1 ponto) [Clã: Nosferatu]
 Você não possui olfato ou paladar. Os piores cheiros e sabores imagináveis não o afetam, na verdade, você nem reconhece sua presença. Você não pode tentar fazer um teste de percepção que envolva um desses sentidos. Contudo, qualquer ataque sobrenatural envolvendo odores e gostos horripilantes não o afetam. É bem verdade que os Nosferatus que cercam o lixo por tempo suficiente se tornam imunes a praticamente qualquer odor ruim, mas você simplesmente não reconhece gosto algum.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 72)
 
-Infestação Parasitária (2 pontos)
-Outras criaturas vivem sobre ou dentro de você. Seres exóticos que se alimentam de sangue – larvas, mosquitos, pulgas, piolhos, sanguessugas e inomináveis esporos de fungos – consideram as rugas, dobras e camadas escabrosas de sua pele deliciosas. Sua carne se movimenta e se contorce continuamente, e coisas vivas se enterram dentro de você, possivelmente até fazendo ninhos nas ‘cavidades’ de seu corpo. Apesar de todos os seus engenhosos métodos para desencorajá-los, essa horda repulsiva não se dispersa. Você não pode comandar esses vermes de forma alguma; Na verdade, os piores deles o desafiam pois estão fortificados e corrompidos graças a seu sangue imundo.
+Infestação Parasitária (-2 pontos) [Clã: Nosferatu]
+Parasitas vivem em seu corpo (larvas, pulgas, sanguessugas, etc.). Toda noite ao despertar, jogue 1 dado, divida por 3 (arredondando para cima) = pontos de sangue perdidos. +1 dificuldade em Autocontrole. Sua carne se movimenta e se contorce continuamente, e coisas vivas se enterram dentro de você, possivelmente até fazendo ninhos nas ‘cavidades’ de seu corpo. Apesar de todos os seus engenhosos métodos para desencorajá-los, essa horda repulsiva não se dispersa. Você não pode comandar esses vermes de forma alguma; Na verdade, os piores deles o desafiam pois estão fortificados e corrompidos graças a seu sangue imundo.
 Toda noite, quando você despertar, jogue um dado. Divida o resultado por três, arredondando para cima. O resultado é o numero de Pontos de Sangue que você perdeu para os parasitas intoxicados pelo sangue que moram dentro de você. Além disso, a coceira constante o deixa nervoso; Aumente a dificuldade de todos os teste de Autocontrole por 1.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 73)
 
-Perna Atrofiada (3 pontos)
+Perna Atrofiada (-3 pontos) [Clã: Nosferatu]
 Por algum motivo, uma de suas pernas não funciona tão bem quanto a outra. Você subtrai 3 dados quando tentar realizar qualquer ação que envolva movimento, e se move à metade da velocidade normal.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 73)
 
-Putrescência (4 pontos)
+Putrescência (-4 pontos) [Clã: Nosferatu]
 Depois de receber o Abraço, seu corpo continuou a apodrecer. Os processos místicos que inibem a decomposição natural da forma vampírica são menos eficazes em você. Como resultado, você nunca para de apodrecer. Subtraia 1 dado quando seu personagem absorver dano. Se você for abalado ou golpeado com violência, faça um teste de Vigor (Dif. 6). Se falhar, parte de seu rosto ou um de seus membros cairá. Se for uma falha critica, um dos níveis de dano será Agravado. Quando este ferimento for curado, as partes do corpo que você perdeu crescerão novamente.
 (Vampiro, a Máscara; Clanbook Nosferatu 3ªed, pág. 74)
 
-Escarificado (2 ou 4 pontos)
-Você é um monte de cicatrizes ambulante. Embora cure os danos com a eficiência Cainita, os modos nos quais você o faz são todos bastante humanos. Por algum motivo, a regeneração da carne retorna como uma cicatriz. A Vicissitude não ajuda; de fato, ela agrava sua condição com marcas extensas e cicatrizes em qualquer lugar que sua pele se rompe. Embora isso não o prejudique fisicamente, ela afeta sua interação com outras pessoas. Por 2 pontos, todas as dificuldades de jogadas Sociais aumentam em 1 ponto.
-Se você comprar Escarificado como um defeito de 3 pontos, seu rosto e corpo são tão horrivelmente manchados que seus pontuação de Aparência nunca pode exceder 2. Isso em adição às limitações mencionadas acima. Como um Defeito de 4 pontos, a fileira de cicatrizes é grossa o bastante para prejudicar suas ações através da resistência da pele. Todas as dificuldades de jogadas de Destreza também aumentam em 1, em adição às outras penalidades que este Defeito impões aos níveis menores. Você pode ignorar esta penalidade para uma ação especifica ao tomar um nível de vitalidade de dano por Contusão (não resistido); essencialmente, você está rasgando as cicatrizes para uma maior gama de movimento. Uma vez que tenha curado esse dano, contudo, a penalidade retorna ao normal.
+Escarificado (-2 ou -4 pontos) [Clã: Tzimisce]
+Todo dano curado vira cicatriz permanente. -2 pontos: +1 dificuldade em testes Sociais. -4 pontos: Aparência máx. 2, +1 dificuldade em testes de Destreza (pode ignorar gastando 1 nível de vitalidade).
 (Vampiro, a Máscara; Clanbook Tzimisce 3ªed, pág. 70)
 
-Consumo (5 pontos)
+Consumo (-5 pontos) [Clã: Tzimisce]
 Porções do Antideluviano não apenas estão dentro de você, elas são ativas e agem como um câncer que o devora por dentro. Muito de seu sangue está misturado com uma bactéria comedora de carne corrosiva. No inicio de cada noite, você sofre um nível de vitalidade de dano por contusão que não pode ser absorvido nem curado com sangue. A única forma para combater o efeito é a ingestão de um décimo de seu próprio peso em carne para acrescentar sua carcaça esgotada. Seja matando e devorando a pele de humanos ou roubando os recipientes biológicos de clínicas de lipoaspiração para pegar a gordura retirada, você precisa de sua ração de carne humana para sobreviver. Se você experimentar a ingerir essa carna macabra antes que o dano se tenha ido, você simplesmente irá vomita-la como qualquer outra comida – isso não concede os benefícios da Qualidade "Ingerir Comida".
 (Vampiro, a Máscara; Clanbook Tzimisce 3ªed, pág. 70)
 
-15ª Geração (4 pontos)
-Sua vitae é tão fraca que apenas 6 dos seus 10 pontos de sangue podem ser usados para Disciplinas, regeneração ou aumento de atributos. Para essas funções, você deve gastar dois pontos de sangue para obter o efeito que um vampiro normal conseguiria com um. (O custo para levantar toda noite mantém como um único ponto de sangue). Além disso, você não pode criar ou manter carniçais, criar um laço de sangue ou Abraçar uma nova Cria. Você pode usar estes quatro pontos de sangue restantes para sobreviver durante o dia e acordar a cada noite, mais nada.
-Você não pode aumentar nenhuma Disciplina acima do nível três.
-Apesar disso, o fraquejamento da Maldição de Cain tem suas compensações (o que distingue este Defeito do Defeito "Sangue Fraco"). A luz do Sol causa dano letal em você, ao invés de agravado. Você pode manter comida e bebida mortal no estômago por aproximadamente uma hora, enquanto outros vampiros vomitam imediatamente se tentarem (a não ser que tenham a Qualidade "Ingerir Alimentos"). E, o mais estranho de tudo, você pode acabar tendo uma criança do jeito convencional, humano... Apesar de não ser um bebê humano comum!
+15ª Geração (-4 pontos)
+Apenas 6 de 10 pontos de sangue funcionam para Disciplinas/regeneração (custo dobrado). Não pode criar carniçais, laços ou crias. Disciplinas limitadas ao nível 3. Compensações: luz solar causa dano letal, pode ingerir comida por 1 hora, pode ter filhos.
 (Vampiro, a Máscara; Tempo de Sangue Fraco, 3ª ed, pág 77)
 
 Sem Presas (2 pontos)
@@ -1098,30 +1090,30 @@ Os Malkavianos com esse Defeito costumam ser aqueles sobre os quais você ouve f
 (Defeito Exclusivo para Malkavianos ou Personagem que possuam Perturbações)
 (Vampiro, a Máscara; Clanbook Malkaviano 3ªed, pág. 66)
 
-Taumaturgicamente Inapto (4 pontos, exclusivo para Tremeres)
+Taumaturgicamente Inapto (-4 pontos) [Clã: Tremere - Exclusivo]
 Os Tremere e o conselho levaram décadas para desenvolver os princípios da Taumaturgia, assim ela não é uma Disciplina "natural". Pelos séculos ela se espalhou através do clã Tremere como uma prática habitual, mas alguns desafortunados Tremere pareciam nunca conseguir dominá-la.
 Seu personagem é um destes desafortunados: Ele adiciona efetivamente 4 ao invés do 3 normal para suas dificuldades para usar Trilhas ou rituais (até o máximo de 10). Ele ainda pode aprender Taumaturgia (Tremere superiores estarão felizes em dividir seus segredos tão logo ele receba os favores por eles), mas isso leva esforço real. A Taumaturgia ainda conta como uma Disciplina de Clã para ele, embora ele possa iniciar a história com não mais do que um ponto.
 (Vampiro, a Máscara; Clanbook Tremere 3ªed, pág. 67)
 
-Dependência do Solo Ancestral (4 pontos)
+Dependência do Solo Ancestral (-4 pontos) [Clã: Tzimisce]
 A dependência de seu solo nativo impediu a migração dos Tzimisce da Europa Oriental. Até umas poucas crianças Abraçadas em outro lugar precisaram do solo de uma terra natal que elas nunca tinham visitado, deixando-as particularmente vulneráveis aos inimigos que sabiam desta fraqueza. Nas noites modernas, o transporte rápido deixa tal ameaça muito menos severa, mas até mesmo as crianças Abraçadas gerações depois de seus ancestrais se mudarem ocasionalmente manifestam este Defeito.
 A vontade dos espíritos da terra natal ancestral dos Tzimisce pesa muito em seu sangue – o solo de um lugar importante para você enquanto mortal não faz. Você atualmente precisa de dois punhados do solo maculado da terra natal Tzimisce da Europa Ocidental. A Dependência Ancestral do Solo mais comumente se manifesta nas crias de Koldun e no ramo ramo do clã que acredita descender de Yorak. Os personagens Abraçados na Europa Oriental não podem escolher este Defeito (eles já são Dependentes do solo local, lol).
 (Vampiro, a Máscara; Clanbook Tzimisce 3ªed, pág. 70)
 
-Fraqueza Revenante (3 pontos)
+Fraqueza Revenante (-3 pontos) [Clã: Tzimisce]
 Você foi parte de uma família revenante. Seguindo o Abraço, você passou a sofrer da fraqueza de seu clã e da limitação de sua família revenante; seja a propensão dos Bratovitch cair em fúria, o Laço de Sangue dos Grimaldi ao Sabá, a instabilidade dos Obertus ou a vontade fraca dos Zantosa. O Narrador também pode permitir que você manifeste uma fraqueza de uma linhagem revenante perdida ou destruída. Isso poderia adicionar mistério ao seu preludio e permitir um pouco de investigação genealógica.
 (Vampiro, a Máscara; Clanbook Tzimisce 3ªed, pág. 70)
 
-Anos Assoladores (2 pontos)
+Anos Assoladores (-2 pontos)
 A Maldição de Cain não lhe garantiu imortalidade. Você ainda envelhece, mas muito devagar - Talvez um ano mortal pra cada vinte anos do calendário. Geralmente nem você, nem qualquer outro perceberá, mas eventualmente você vai envelhecer e morrer.
 As vezes seu envelhecimento acelera: Como um carniçal, sua idade verdadeira pode retornar de uma vez. Sempre que você cura ferimentos agravados, envelhece um ano no decorrer de um dia de sono. Isso pode não parecer muito, mas no decorrer de um século pode fazer muita diferença. Esse é um grande incentivo para evitar luz do sol, fogo e presas dos coleguinhas vampiros.
 (Vampiro, a Máscara; Tempo de Sangue Fraco, 3ª ed, pág 78)
 
-Fraqueza de Clã (2 pontos)
+Fraqueza de Clã (-2 pontos) [Caitiff]
 Essa é para os Caitiff. Mesmo que você não tenha se transformado num membro completo do clã de seu Senhor e não tenha o desconto de experiência para comprar Disciplinas de Clã, você ainda sofre da fraqueza sobrenatural do Clã. Além disso, alguns Caitiff simplesmente replicam espontaneamente uma fraqueza de clã sem ter necessariamente qualquer conexão com ele. Enquanto isso pode ajudá-lo a fingir que é um membro do clã em questão, isto também pode ser mortal para quem não sabe que a tem - Ou pelo que os outros vampiros podem pensar. (no território da Camarilla, por exemplo, um Caitiff que não possui reflexo - A notória fraqueza do clã Lasombra - pode ter que responder algumas questões complicadas)
 (Vampiro, a Máscara; Tempo de Sangue Fraco, 3ª ed, pág 78)
 
-Decrepitude (3 pontos)
+Decrepitude (-3 pontos)
 Nenhum vampiro de Sangue Fraco sentiu ainda a verdadeira força desse Defeito. Nenhum deles existiu por tempo o suficiente. Quando chegar o tempo, eles vão entender seu verdadeiro horror.
 A Maldição de Caim mantém a maioria dos vampiros num estado de não-envelhecimento, reparando qualquer dano que eles possam sofrer. No seu caso, a Maldição nem sempre tem sucesso em reparar completamente o dano. Quando curar dano agravado, o jogador deve fazer uma rolagem de Vigor. A dificuldade é 5 mais o número de níveis de dano agravado que ele tem (por exemplo, se você tomou 2 níveis de vitalidade de dano agravado, a dificuldade seria 7. Depois de curar o primeiro nível, a dificuldade cairia para 6). Falha significa que, apesar de recuperar aquele nível de vitalidade, o seu corpo ainda mostra sinais de dano. Talvez cabelo queimado não renasça ou o ferimento curado deixe uma bela cicatriz. Falha crítica no teste significa perder um ponto em algum atributo Físico ou Aparência, a escolha do Narrador.
 Você pode reparar o dano se você conhece um cirurgião plástico - ou agente funerário - habilidoso, que seja ciente da Máscara, mas isso não será fácil. Afinal de contas, o cirurgião terá que fazer seus próprios cortes também. Por um lado, você vai ter apenas dificuldade 6 para curar os ferimentos causados por um cirurgião. Por outro, você pode ter outra falha crítica e terminar pior do que antes.
