@@ -1,0 +1,1043 @@
+{
+  "regras": {
+    "definicao": "Qualidades (Méritos) e Defeitos (Falhas) são detalhes de acabamento do personagem.",
+    "formato_de_custo": "Qualidades custam pontos; Defeitos dão pontos."
+  },
+  "itens": [
+    {
+      "id": "qualidade_mental_bom_senso",
+      "nome": "Bom Senso",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Narrador pode alertar sobre decisões absurdas/perigosas."
+    },
+    {
+      "id": "qualidade_mental_concentracao",
+      "nome": "Concentração",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Ignora distrações menores ao se concentrar."
+    },
+    {
+      "id": "qualidade_mental_memoria_fotografica",
+      "nome": "Memória Fotográfica",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Lembra de detalhes visuais com perfeição."
+    },
+    {
+      "id": "qualidade_mental_calculadora_humana",
+      "nome": "Calculadora Humana",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Faz cálculos matemáticos instantaneamente."
+    },
+    {
+      "id": "qualidade_mental_tempo_interno",
+      "nome": "Tempo Interno",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Sempre sabe que horas são com precisão."
+    },
+    {
+      "id": "qualidade_fisica_ambidestro",
+      "nome": "Ambidestro",
+      "tipo": "qualidade", 
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Sem penalidade por usar mão inábil."
+    },
+    {
+      "id": "qualidade_fisica_resistencia_doenca",
+      "nome": "Resistência a Doenças",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Resistência extra contra doenças mortais."
+    },
+    {
+      "id": "qualidade_fisica_reflexos_rapidos",
+      "nome": "Reflexos Rápidos",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "+2 de bônus em testes de Destreza para reagir."
+    },
+    {
+      "id": "qualidade_fisica_equilibrio_perfeito",
+      "nome": "Equilíbrio Perfeito",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Raramente cai ou perde o equilíbrio."
+    },
+    {
+      "id": "qualidade_fisica_sono_leve",
+      "nome": "Sono Leve",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Acorda facilmente com qualquer barulho."
+    },
+    {
+      "id": "qualidade_social_aparencia_distintiva",
+      "nome": "Aparência Distintiva",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "As pessoas lembram de você facilmente."
+    },
+    {
+      "id": "qualidade_social_berco_de_ouro",
+      "nome": "Berço de Ouro",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Nasceu em família rica e influente."
+    },
+    {
+      "id": "qualidade_social_voz_encantadora",
+      "nome": "Voz Encantadora",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "+2 em testes sociais envolvendo a voz."
+    },
+    {
+      "id": "qualidade_social_senso_de_direcao",
+      "nome": "Senso de Direção",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Nunca se perde, sempre sabe onde está."
+    },
+    {
+      "id": "qualidade_social_codigo_de_honra",
+      "nome": "Código de Honra",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Segue um código moral rígido que inspira respeito."
+    },
+    {
+      "id": "qualidade_sobrenatural_medium",
+      "nome": "Médium",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Pode ver e comunicar-se com fantasmas."
+    },
+    {
+      "id": "qualidade_sobrenatural_sortudo",
+      "nome": "Sortudo",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Pode repetir uma jogada por história."
+    },
+    {
+      "id": "qualidade_sobrenatural_imunidade_lacos",
+      "nome": "Imunidade aos Laços",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Imune aos efeitos do Laço de Sangue."
+    },
+    {
+      "id": "qualidade_sobrenatural_tempo_extra",
+      "nome": "Tempo Extra",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Acorda 1 hora antes do pôr do sol."
+    },
+    {
+      "id": "qualidade_sobrenatural_resistencia_magica",
+      "nome": "Resistência Mágica",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": 1,
+        "maximo": 5,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Resistência contra poderes sobrenaturais."
+    },
+    {
+      "id": "defeito_mental_sono_pesado",
+      "nome": "Sono Pesado",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Acordar durante o dia tem dificuldade +2."
+    },
+    {
+      "id": "defeito_mental_fobia",
+      "nome": "Fobia",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3]
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Medo irracional de algo específico."
+    },
+    {
+      "id": "defeito_mental_pesadelos",
+      "nome": "Pesadelos",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Pesadelos perturbam seu descanso."
+    },
+    {
+      "id": "defeito_mental_amnesia",
+      "nome": "Amnésia",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -4]
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Perdeu parte ou toda a memória."
+    },
+    {
+      "id": "defeito_mental_confusao",
+      "nome": "Confusão",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Dificuldade para processar informações."
+    },
+    {
+      "id": "defeito_mental_vicio",
+      "nome": "Vício",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -3]
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Dependência de alguma substância."
+    },
+    {
+      "id": "defeito_fisica_estatura_baixa",
+      "nome": "Estatura Baixa",
+      "tipo": "defeito",
+      "categoria": "fisico", 
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Alcance limitado e corrida reduzida."
+    },
+    {
+      "id": "defeito_fisica_cego",
+      "nome": "Cego",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -6,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Completamente cego, mas outros sentidos compensam."
+    },
+    {
+      "id": "defeito_fisica_surdo",
+      "nome": "Surdo",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Completamente surdo."
+    },
+    {
+      "id": "defeito_fisica_mudo",
+      "nome": "Mudo",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Não pode falar."
+    },
+    {
+      "id": "defeito_fisica_manco",
+      "nome": "Manco",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Velocidade de movimento reduzida."
+    },
+    {
+      "id": "defeito_fisica_braço_ferido",
+      "nome": "Braço Ferido",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Um braço é praticamente inútil."
+    },
+    {
+      "id": "defeito_fisica_aparencia_monstruosa",
+      "nome": "Aparência Monstruosa",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Aparência horripilante assusta as pessoas."
+    },
+    {
+      "id": "defeito_social_segredo_sombrio",
+      "nome": "Segredo Sombrio",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Guarda um segredo que pode destruir você."
+    },
+    {
+      "id": "defeito_social_má_reputacao",
+      "nome": "Má Reputação",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -3]
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Tem uma reputação ruim em certas comunidades."
+    },
+    {
+      "id": "defeito_social_inimigo",
+      "nome": "Inimigo",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": 1,
+        "maximo": 5,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Tem um inimigo poderoso proporcional ao custo."
+    },
+    {
+      "id": "defeito_social_discurso_afetado",
+      "nome": "Discurso Afetado",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Gagueira, sotaque forte ou outro impedimento."
+    },
+    {
+      "id": "defeito_social_timidez",
+      "nome": "Timidez",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "-2 em testes sociais com estranhos."
+    },
+    {
+      "id": "defeito_social_analfabeto",
+      "nome": "Analfabeto",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Não sabe ler nem escrever."
+    },
+    {
+      "id": "defeito_sobrenatural_amaldicoado",
+      "nome": "Amaldiçoado",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Sofre uma maldição proporcional ao custo."
+    },
+    {
+      "id": "defeito_sobrenatural_assombrado",
+      "nome": "Assombrado",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3]
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Perseguido por fantasmas."
+    },
+    {
+      "id": "defeito_sobrenatural_marca_sobrenatural",
+      "nome": "Marca Sobrenatural",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Aura estranha detectável por sensitivos."
+    },
+    {
+      "id": "defeito_sobrenatural_repugnancia",
+      "nome": "Repugnância",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Animais fogem de você instintivamente."
+    },
+    {
+      "id": "defeito_sobrenatural_presa_facil",
+      "nome": "Presa Fácil",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Outros vampiros sentem facilidade de dominá-lo."
+    },
+    {
+      "id": "defeito_sobrenatural_fraqueza_emocional",
+      "nome": "Fraqueza Emocional",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "descricao": "Dificuldade extra para resistir a emoções."
+    },
+    {
+      "id": "qualidade_brujah_paixao_ardente",
+      "nome": "Paixão Ardente",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Brujah"],
+      "clan": "Brujah",
+      "descricao": "Sua paixão inspira outros. +1 dados em testes sociais quando defendendo suas convicções."
+    },
+    {
+      "id": "defeito_brujah_temperamento_explosivo",
+      "nome": "Temperamento Explosivo",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Brujah"],
+      "clan": "Brujah",
+      "descricao": "Dificuldade +2 para resistir ao frenesi quando provocado."
+    },
+    {
+      "id": "qualidade_gangrel_instinto_selvagem",
+      "nome": "Instinto Selvagem",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Gangrel"],
+      "clan": "Gangrel",
+      "descricao": "Detecta automaticamente emboscadas e perigos iminentes."
+    },
+    {
+      "id": "defeito_gangrel_caracteristicas_animais",
+      "nome": "Características Animais",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Gangrel"],
+      "clan": "Gangrel",
+      "descricao": "Possui características físicas permanentes de animal. -1 em testes sociais."
+    },
+    {
+      "id": "qualidade_malkavian_clarividencia",
+      "nome": "Clarividência",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Malkavian"],
+      "clan": "Malkavian",
+      "descricao": "Ocasionalmente recebe visões do futuro ou de lugares distantes."
+    },
+    {
+      "id": "defeito_malkavian_perturbacao",
+      "nome": "Perturbação",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": ["Malkavian"],
+      "clan": "Malkavian",
+      "descricao": "Sofre de uma perturbação mental específica que afeta o comportamento."
+    },
+    {
+      "id": "qualidade_nosferatu_rede_de_informacoes",
+      "nome": "Rede de Informações",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "descricao": "Acesso privilegiado à rede de informações Nosferatu. +2 em investigações."
+    },
+    {
+      "id": "defeito_nosferatu_repulsivo",
+      "nome": "Repulsivo",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "descricao": "Aparência ainda mais horrenda que o normal. Aparência não pode passar de 0."
+    },
+    {
+      "id": "qualidade_toreador_senso_estetico",
+      "nome": "Senso Estético",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Toreador"],
+      "clan": "Toreador",
+      "descricao": "Reconhece automaticamente arte verdadeira e beleza. +2 em testes relacionados."
+    },
+    {
+      "id": "defeito_toreador_obsessao_artistica",
+      "nome": "Obsessão Artística",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Toreador"],
+      "clan": "Toreador",
+      "descricao": "Fica paralisado diante de arte extraordinária por várias cenas."
+    },
+    {
+      "id": "qualidade_tremere_ritual_pessoal",
+      "nome": "Ritual Pessoal",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tremere"],
+      "clan": "Tremere",
+      "descricao": "Conhece um ritual de Taumaturgia adicional de nível 1."
+    },
+    {
+      "id": "defeito_tremere_lacos_hierarquia",
+      "nome": "Laços de Hierarquia",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tremere"],
+      "clan": "Tremere",
+      "descricao": "Deve obediência total a superiores na hierarquia Tremere."
+    },
+    {
+      "id": "qualidade_ventrue_comando_natural",
+      "nome": "Comando Natural",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Ventrue"],
+      "clan": "Ventrue",
+      "descricao": "Presença natural de liderança. +2 em testes de comando e liderança."
+    },
+    {
+      "id": "defeito_ventrue_gosto_refinado",
+      "nome": "Gosto Refinado",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Ventrue"],
+      "clan": "Ventrue",
+      "descricao": "Só pode se alimentar de um tipo muito específico de sangue."
+    },
+    {
+      "id": "qualidade_assamita_sede_de_vitae",
+      "nome": "Sede de Vitae",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Assamite"],
+      "clan": "Assamite",
+      "descricao": "Ganha poder adicional ao drenar completamente vampiros."
+    },
+    {
+      "id": "defeito_assamite_adicao_vitae",
+      "nome": "Adição a Vitae",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Assamite"],
+      "clan": "Assamite",
+      "descricao": "Viciado em sangue vampírico. Deve drenar vampiros regularmente."
+    },
+    {
+      "id": "qualidade_giovanni_necromante_nato",
+      "nome": "Necromante Nato",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Giovanni"],
+      "clan": "Giovanni",
+      "descricao": "Facilidade natural com necromancia. -1 na dificuldade de rituais."
+    },
+    {
+      "id": "defeito_giovanni_marca_da_morte",
+      "nome": "Marca da Morte",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Giovanni"],
+      "clan": "Giovanni",
+      "descricao": "Mortos e fantasmas reconhecem você instintivamente como Giovanni."
+    },
+    {
+      "id": "qualidade_lasombra_lider_nato",
+      "nome": "Líder Nato",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Lasombra"],
+      "clan": "Lasombra",
+      "descricao": "Comando natural sobre outros vampiros. +2 em testes de liderança contra Cainitas."
+    },
+    {
+      "id": "defeito_lasombra_refletido_imperfeitamente",
+      "nome": "Refletido Imperfeitamente",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Lasombra"],
+      "clan": "Lasombra",
+      "descricao": "Reflexo borrado e distorcido em espelhos e câmeras."
+    },
+    {
+      "id": "qualidade_tzimisce_hospitalidade",
+      "nome": "Hospitalidade",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "descricao": "Hóspedes sentem-se compelidos a aceitar sua hospitalidade."
+    },
+    {
+      "id": "defeito_tzimisce_haven_dependencia",
+      "nome": "Dependência do Refúgio",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "descricao": "Deve dormir em terra de seu refúgio ancestral."
+    },
+    {
+      "id": "qualidade_ravnos_sortudo_nas_apostas",
+      "nome": "Sortudo nas Apostas",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Ravnos"],
+      "clan": "Ravnos",
+      "descricao": "Sucesso extraordinário em jogos de azar e apostas."
+    },
+    {
+      "id": "defeito_ravnos_vicio_criminal",
+      "nome": "Vício Criminal",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Ravnos"],
+      "clan": "Ravnos",
+      "descricao": "Compulsão para cometer um tipo específico de crime."
+    }
+  ]
+}
