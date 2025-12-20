@@ -1,7 +1,13 @@
 {
   "regras": {
     "definicao": "Qualidades (Méritos) e Defeitos (Falhas) são detalhes de acabamento do personagem.",
-    "formato_de_custo": "Qualidades custam pontos; Defeitos dão pontos."
+    "formato_de_custo": "Qualidades custam pontos; Defeitos dão pontos.",
+    "uso": "A ideia é enriquecer conceito e interpretação, não 'montar combo'.",
+    "quando_comprar": "Normalmente depois da ficha base estar pronta, para dar cor/assinatura ao personagem.",
+    "coerencia_preludios": "O prelúdio deve justificar de onde veio cada Qualidade/Defeito, principalmente os mais fortes.",
+    "bom_senso": "Evitar escolhas que não combinam com a história sem justificativa forte.",
+    "qualidades_gold": "Algumas Qualidades muito desbalanceadas são marcadas como Gold; cada personagem só pode ter 1 Qualidade Gold.",
+    "restricoes_ancillae": "Algumas Qualidades são só para ancillae, em geral cargos oficiais da Camarilla."
   },
   "itens": [
     {
@@ -17,6 +23,7 @@
       },
       "restricoes": [],
       "clan": null,
+      "gold": false,
       "descricao": "Narrador pode alertar sobre decisões absurdas/perigosas."
     },
     {
@@ -32,7 +39,808 @@
       },
       "restricoes": [],
       "clan": null,
-      "descricao": "Ignora distrações menores ao se concentrar."
+      "gold": false,
+      "descricao": "Ignora penalidades por distração."
+    },
+    {
+      "id": "qualidade_mental_nocao_tempo",
+      "nome": "Noção Exata do Tempo",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Estima tempo com precisão."
+    },
+    {
+      "id": "qualidade_mental_frieza_logica",
+      "nome": "Frieza Lógica",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Dificuldade -1 para perceber dissimulação/mentiras."
+    },
+    {
+      "id": "qualidade_mental_conhecimento_proveitoso",
+      "nome": "Conhecimento Proveitoso",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "'Quase Mentor 1', mas não é relação permanente."
+    },
+    {
+      "id": "qualidade_mental_introspeccao",
+      "nome": "Introspecção",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "+2 dados de Percepção contra alguém com mesma Natureza/Comportamento."
+    },
+    {
+      "id": "qualidade_mental_codigo_honra",
+      "nome": "Código de Honra",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Seguindo o código: +2 dados em testes de FV/Virtudes relacionados."
+    },
+    {
+      "id": "qualidade_mental_memoria_eidetica",
+      "nome": "Memória Eidética",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Memória detalhada; sob estresse exige Percepção+Prontidão Dif. 6 para 'absorver'."
+    },
+    {
+      "id": "qualidade_mental_sono_leve",
+      "nome": "Sono Leve",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Acorda rápido; ignora limitações de Humanidade/Trilha para ações durante o dia."
+    },
+    {
+      "id": "qualidade_mental_linguista_nato",
+      "nome": "Linguista Nato",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "+3 dados para línguas faladas/escritas."
+    },
+    {
+      "id": "qualidade_mental_aptidao_computadores",
+      "nome": "Aptidão com Computadores",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Dificuldade -2 em testes com computadores."
+    },
+    {
+      "id": "qualidade_mental_temperamento_calmo",
+      "nome": "Temperamento Calmo",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Não-Brujah"],
+      "clan": null,
+      "gold": false,
+      "descricao": "+2 dados para resistir frenesi (Brujah não pode)."
+    },
+    {
+      "id": "qualidade_mental_vontade_ferro",
+      "nome": "Vontade de Ferro",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Pode gastar 1 FV para cancelar Dominação; +3 dados para resistir ataques mentais mágicos."
+    },
+    {
+      "id": "qualidade_mental_precoce",
+      "nome": "Precoce",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Aprende habilidades em metade do tempo e por metade do custo de XP."
+    },
+    {
+      "id": "qualidade_mental_encarar_chamas",
+      "nome": "Encarar as Chamas",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "+2 dados contra Rötschreck (medo de fogo)."
+    },
+    {
+      "id": "qualidade_mental_misericordioso_brujah",
+      "nome": "Misericordioso",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Brujah"],
+      "clan": "Brujah",
+      "gold": false,
+      "descricao": "Pode 'refazer' 1 teste de Consciência gastando 1 FV (dif. +1); risco alto em falha crítica."
+    },
+    {
+      "id": "qualidade_mental_senso_climatico_lasombra",
+      "nome": "Senso Climático",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Lasombra"],
+      "clan": "Lasombra",
+      "gold": false,
+      "descricao": "Percepção de mau tempo (Percepção+Sobrevivência Dif. 7 feito pelo Narrador)."
+    },
+    {
+      "id": "qualidade_mental_harmonia_pelagica_lasombra",
+      "nome": "Harmonia Pelágica",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Lasombra"],
+      "clan": "Lasombra",
+      "gold": false,
+      "descricao": "No mar/à vista do mar, testes de FV com dificuldade -1."
+    },
+    {
+      "id": "qualidade_mental_temperamento_dracon_tzimisce",
+      "nome": "Temperamento de Dracon",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "gold": false,
+      "descricao": "Escolhe Natureza no início de cada história (muda recuperação de FV)."
+    },
+    {
+      "id": "qualidade_mental_afinidade_refugio_tzimisce",
+      "nome": "Afinidade com o Refúgio",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "gold": false,
+      "descricao": "+1 dado no refúgio principal; 'bússola mística' para retornar (Percepção+Sobrevivência)."
+    },
+    {
+      "id": "qualidade_mental_encarar_chamas",
+      "nome": "Encarar as Chamas",
+      "tipo": "qualidade",
+      "categoria": "mental",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "+2 dados contra Rötschreck (medo de fogo)."
+    },
+    {
+      "id": "qualidade_fisica_sentido_agucado",
+      "nome": "Sentido Aguçado",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Um sentido com dificuldade -2 em tarefas relacionadas."
+    },
+    {
+      "id": "qualidade_fisica_ambidestro",
+      "nome": "Ambidestro",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sem penalidade por usar mão 'inábil' (ainda segue regras de ações múltiplas)."
+    },
+    {
+      "id": "qualidade_fisica_ingerir_comida",
+      "nome": "Ingerir Comida",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Consegue comer para manter a Máscara; depois precisa 'devolver'."
+    },
+    {
+      "id": "qualidade_fisica_equilibrio_perfeito",
+      "nome": "Equilíbrio Perfeito",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Testes de equilíbrio com dificuldade -2."
+    },
+    {
+      "id": "qualidade_fisica_sangue_amargo",
+      "nome": "Sangue Amargo",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Seu sangue tem gosto horrível para vampiros (você vira 'última opção')."
+    },
+    {
+      "id": "qualidade_fisica_brigao",
+      "nome": "Brigão",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Intimidação contra quem não mostrou superioridade física: dificuldade -1."
+    },
+    {
+      "id": "qualidade_fisica_fisionomia_amigavel",
+      "nome": "Fisionomia Amigável",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "No primeiro encontro, testes sociais 'amistosos' com estranhos: dificuldade -1."
+    },
+    {
+      "id": "qualidade_fisica_madrugador",
+      "nome": "Madrugador",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Acorda ~1 hora antes; mais alerta cedo."
+    },
+    {
+      "id": "qualidade_fisica_visao_noturna",
+      "nome": "Visão Noturna",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Enxerga no escuro (sem penalidade com luz mínima; adaptação pode levar 1-2 turnos)."
+    },
+    {
+      "id": "qualidade_fisica_rubor_saude",
+      "nome": "Rubor de Saúde",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Aparência mais 'viva', facilita misturar-se a mortais."
+    },
+    {
+      "id": "qualidade_fisica_voz_encantadora",
+      "nome": "Voz Encantadora",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Testes sociais baseados na voz com dificuldade -2."
+    },
+    {
+      "id": "qualidade_fisica_tolerancia_dor_tzimisce",
+      "nome": "Tolerância à Dor",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "gold": false,
+      "descricao": "Ignora 1 dado de penalidade por ferimentos (requisitos de Virtude/Coragem)."
+    },
+    {
+      "id": "qualidade_fisica_temerario",
+      "nome": "Temerário",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Em ações muito arriscadas: +3 dados e ignora 1 falha crítica do pool (situações Dif. 8+ e dano relevante)."
+    },
+    {
+      "id": "qualidade_fisica_digestao_eficiente",
+      "nome": "Digestão Eficiente",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Ao se alimentar, ganha +1 sangue a cada 2 consumidos (sem passar do máximo)."
+    },
+    {
+      "id": "qualidade_fisica_corpo_grande",
+      "nome": "Corpo Grande",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "+1 nível de vitalidade (Machucado) e bônus situacionais de força; muito chamativo."
+    },
+    {
+      "id": "qualidade_fisica_vigoroso",
+      "nome": "Vigoroso",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Humanos"],
+      "clan": null,
+      "gold": true,
+      "descricao": "Não precisa dormir (descanso curto), podendo funcionar dia e noite."
+    },
+    {
+      "id": "qualidade_fisica_nervos_amortecidos_malkaviano",
+      "nome": "Nervos Amortecidos",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Malkaviano"],
+      "clan": "Malkaviano",
+      "gold": false,
+      "descricao": "Metade das penalidades por ferimento; +3 dificuldade em percepção por tato; Narrador pode ocultar vitalidade."
+    },
+    {
+      "id": "qualidade_fisica_membros_lagarto_nosferatu",
+      "nome": "Membros de Lagarto",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Soltar membro (1 sangue + FV Dif. 8) para escapar; depois regenera com sangue; penalidade por falta do membro."
+    },
+    {
+      "id": "qualidade_fisica_dedos_longos_nosferatu",
+      "nome": "Dedos Longos",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "+1 dado em coordenação digital/segurar."
+    },
+    {
+      "id": "qualidade_fisica_presas_exageradas_nosferatu",
+      "nome": "Presas Exageradas",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "+1 dano em mordida e +1 dado em Intimidação; não retráteis."
+    },
+    {
+      "id": "qualidade_fisica_pisceo_nosferatu",
+      "nome": "Písceo",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Movimento subaquático com dificuldade -1."
+    },
+    {
+      "id": "qualidade_fisica_gosmento_nosferatu",
+      "nome": "Gosmento",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "+1 contra agarrões (exige sucessos extras); melhor absorção vs fogo (dif. -1)."
+    },
+    {
+      "id": "qualidade_fisica_temerario",
+      "nome": "Temerário",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Em ações arriscadas (Dif. 8+): +3 dados e ignora 1 falha crítica."
+    },
+    {
+      "id": "qualidade_fisica_tolerancia_dor_tzimisce",
+      "nome": "Tolerância à Dor",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "gold": false,
+      "descricao": "Ignora 1 dado de penalidade por ferimentos (requer Virtude/Coragem adequadas)."
+    },
+    {
+      "id": "qualidade_fisica_boca_exagerada_nosferatu",
+      "nome": "Boca Exagerada",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Pode sugar 4 sangue/turno (em vez de 3), se conseguir prender bem."
+    },
+    {
+      "id": "qualidade_fisica_vomito_ejetavel_nosferatu",
+      "nome": "Vômito Ejetável",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Armazena comida e vomita como projétil (Vigor+Esportes Dif. 8); sem dano, mas atrapalha."
+    },
+    {
+      "id": "qualidade_fisica_couro_duro_nosferatu",
+      "nome": "Couro Duro",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "+1 dado de absorção (exceto fogo/sol)."
+    },
+    {
+      "id": "qualidade_fisica_sangue_repugnante_nosferatu",
+      "nome": "Sangue Repugnante",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Quem se alimenta de você pode perder turno (FV Dif. 6); diablerie exige 3 testes FV Dif. 9."
+    },
+    {
+      "id": "qualidade_fisica_patagios_nosferatu",
+      "nome": "Patágios",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Planar (velocidade de caminhada) com vento/corrente ascendente."
+    },
+    {
+      "id": "qualidade_fisica_cara_mau_nosferatu",
+      "nome": "Cara de Mau",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "'Passável' como humano muito feio (com precauções), reduz risco imediato de quebrar a Máscara."
+    },
+    {
+      "id": "qualidade_fisica_gosto_apurado_tremere",
+      "nome": "Gosto Apurado",
+      "tipo": "qualidade",
+      "categoria": "fisico",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tremere"],
+      "clan": "Tremere",
+      "gold": false,
+      "descricao": "Ao provar sangue, recebe info como 'Trilha do Sangue 1' sem teste."
     },
     {
       "id": "qualidade_mental_memoria_fotografica",
@@ -227,7 +1035,728 @@
       },
       "restricoes": [],
       "clan": null,
+      "gold": false,
       "descricao": "Segue um código moral rígido que inspira respeito."
+    },
+    {
+      "id": "qualidade_social_prole",
+      "nome": "Prole",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Permite outro jogador como cria (exige condições de XP/antecedentes; depende da administração)."
+    },
+    {
+      "id": "qualidade_social_senhor_prestigio",
+      "nome": "Senhor de Prestígio",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Linhagem dá peso social (e também inveja)."
+    },
+    {
+      "id": "qualidade_social_lider_nato",
+      "nome": "Líder Nato",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Carisma 3+"],
+      "clan": null,
+      "gold": false,
+      "descricao": "+2 dados em Liderança (Carisma 3+)."
+    },
+    {
+      "id": "qualidade_social_divida_gratidao",
+      "nome": "Dívida de Gratidão",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": 1,
+        "maximo": 3,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Um ancião te deve favor (escala de 'favor' até 'deve a não-vida')."
+    },
+    {
+      "id": "qualidade_social_frequentador_elisio",
+      "nome": "Frequentador do Elísio",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Todos os influentes ao menos sabem quem você é."
+    },
+    {
+      "id": "qualidade_social_primogeno",
+      "nome": "Primógeno",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 7,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Ancillae"],
+      "clan": null,
+      "gold": true,
+      "descricao": "Membro do círculo governante (muito poder, muita intriga)."
+    },
+    {
+      "id": "qualidade_social_ex_carnical",
+      "nome": "Ex-Carniçal",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Dificuldade -1 em testes sociais com neófitos e cultura da Família."
+    },
+    {
+      "id": "qualidade_social_inofensivo",
+      "nome": "Inofensivo",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Ninguém te considera ameaça (ótimo para sobreviver até você 'mudar de postura')."
+    },
+    {
+      "id": "qualidade_social_protegido",
+      "nome": "Protegido",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Recomendação do senhor: dificuldade -1 com quem já ouviu bem de você."
+    },
+    {
+      "id": "qualidade_social_reputacao",
+      "nome": "Reputação",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Seu nome é conhecido além do círculo íntimo (boa ou má fama)."
+    },
+    {
+      "id": "qualidade_social_veterano",
+      "nome": "Veterano",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Dificuldade -1 para perceber/antecipar ações do Sabá."
+    },
+    {
+      "id": "qualidade_social_favor",
+      "nome": "Favor",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": 1,
+        "maximo": 6,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Alguém te deve um único favor (quanto maior o custo, mais alto o status do devedor)."
+    },
+    {
+      "id": "qualidade_social_valentao",
+      "nome": "Valentão",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "'Homem do xerife' para serviço pesado; tolerância variável a infrações."
+    },
+    {
+      "id": "qualidade_social_velho_companheiro",
+      "nome": "Velho Companheiro",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Aliado extremamente fiel do passado mortal."
+    },
+    {
+      "id": "qualidade_social_peregrino",
+      "nome": "Peregrino",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sabe viajar e achar refúgios/rotas seguras."
+    },
+    {
+      "id": "qualidade_social_amigo_xerife",
+      "nome": "Amigo do Xerife",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Canal de informação/tolerância a pequenas transgressões (se abusar, vira inimigo)."
+    },
+    {
+      "id": "qualidade_social_dominio",
+      "nome": "Domínio",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": 2,
+        "maximo": 4,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Território concedido pelo príncipe (com responsabilidades)."
+    },
+    {
+      "id": "qualidade_social_santidade",
+      "nome": "Santidade",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "'Efeito auréola'; costuma receber julgamentos/punições mais brandas (Narrador)."
+    },
+    {
+      "id": "qualidade_social_senhor_prestigio",
+      "nome": "Senhor de Prestígio",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Linhagem dá peso social (e também inveja)."
+    },
+    {
+      "id": "qualidade_social_lider_nato",
+      "nome": "Líder Nato",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "+2 dados em Liderança (Carisma 3+)."
+    },
+    {
+      "id": "qualidade_social_divida_gratidao",
+      "nome": "Dívida de Gratidão",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": 1,
+        "maximo": 3,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Um ancilão te deve favor (escala de 'favor' até 'deve a não-vida')."
+    },
+    {
+      "id": "qualidade_social_frequentador_elisio",
+      "nome": "Frequentador do Elísio",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Todos os influentes ao menos sabem quem você é."
+    },
+    {
+      "id": "qualidade_social_dominio",
+      "nome": "Domínio",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": 2,
+        "maximo": 4,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Território concedido pelo príncipe (com responsabilidades)."
+    },
+    {
+      "id": "qualidade_social_conhecedor_subterraneo",
+      "nome": "Conhecedor Subterrâneo",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Navega esgotos/túneis; bônus em ações no subterrâneo (Nosferatu não pode comprar)."
+    },
+    {
+      "id": "qualidade_social_amigo_primigenie",
+      "nome": "Amigo da Primigênie",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Consultado informalmente; influência real."
+    },
+    {
+      "id": "qualidade_social_harpia",
+      "nome": "Hárpia",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": true,
+      "descricao": "Dificuldade -1 em sociais quando 'agindo oficialmente' (ancillae)."
+    },
+    {
+      "id": "qualidade_social_personalidade_dinamica_brujah",
+      "nome": "Personalidade Dinâmica",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Brujah"],
+      "clan": "Brujah",
+      "gold": true,
+      "descricao": "Permite comprar certos Antecedentes com XP de forma favorecida."
+    },
+    {
+      "id": "qualidade_social_companheiro_reptil_nosferatu",
+      "nome": "Companheiro Réptil",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "'Pet' reptiliano muito perigoso e treinado."
+    },
+    {
+      "id": "qualidade_social_identidade_alternativa",
+      "nome": "Identidade Alternativa",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Segunda identidade 'crível' em outro grupo/seita."
+    },
+    {
+      "id": "qualidade_social_conhecedor_subterraneo",
+      "nome": "Conhecedor Subterrâneo",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Não-Nosferatu"],
+      "clan": null,
+      "gold": false,
+      "descricao": "Navega esgotos/túneis; bônus em ações no subterrâneo (Nosferatu não pode comprar)."
+    },
+    {
+      "id": "qualidade_social_informante",
+      "nome": "Informante",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Informante infiltrado na outra seita."
+    },
+    {
+      "id": "qualidade_social_estrela_ascendente",
+      "nome": "Estrela Ascendente",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Dificuldade -1 em sociais com Camarilla que não te oponha."
+    },
+    {
+      "id": "qualidade_social_posto_camarilla",
+      "nome": "Posto na Camarilla",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": 3,
+        "maximo": 5,
+        "opcoes": null
+      },
+      "restricoes": ["Ancillae"],
+      "clan": null,
+      "gold": false,
+      "descricao": "Cargo oficial."
+    },
+    {
+      "id": "qualidade_social_amigo_cla",
+      "nome": "Amigo de um Clã",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Dificuldade -2 em sociais com um clã específico (não o seu)."
+    },
+    {
+      "id": "qualidade_social_lacos_quebrados",
+      "nome": "Laços Quebrados",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Rompeu laço de sangue em segredo."
+    },
+    {
+      "id": "qualidade_social_amigo_primigenie",
+      "nome": "Amigo da Primigênie",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Consultado informalmente; influência real."
+    },
+    {
+      "id": "qualidade_social_harpia",
+      "nome": "Hárpia",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Ancillae"],
+      "clan": null,
+      "gold": false,
+      "descricao": "Dificuldade -1 em sociais quando 'agindo oficialmente'."
+    },
+    {
+      "id": "qualidade_social_personalidade_dinamica_brujah",
+      "nome": "Personalidade Dinâmica",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Brujah"],
+      "clan": "Brujah",
+      "gold": true,
+      "descricao": "Permite comprar certos Antecedentes com XP de forma favorecida (conforme regra descrita)."
+    },
+    {
+      "id": "qualidade_social_companheiro_reptil_nosferatu",
+      "nome": "Companheiro Réptil",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "'Pet' reptiliano muito perigoso e treinado."
+    },
+    {
+      "id": "qualidade_social_abracado_sem_taca_tremere",
+      "nome": "Abraçado sem a Taça",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tremere"],
+      "clan": "Tremere",
+      "gold": false,
+      "descricao": "Sem laço com o Conselho; se descoberto, pode dar problema interno."
+    },
+    {
+      "id": "qualidade_social_luminar_ventrue",
+      "nome": "Luminar",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 6,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Ventrue"],
+      "clan": "Ventrue",
+      "gold": true,
+      "descricao": "Um Antecedente pode exceder o limite de geração em +1 (1 único Antecedente)."
+    },
+    {
+      "id": "qualidade_social_contato_sobrenatural",
+      "nome": "Contato Sobrenatural",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Contato com outra criatura sobrenatural (relação 'não-agressão', favores têm preço)."
+    },
+    {
+      "id": "qualidade_social_informacoes_inimigo",
+      "nome": "Informações Sobre o Inimigo",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Dificuldade -2 contra um grupo específico; +1 contra outros (hiperespecialização)."
+    },
+    {
+      "id": "qualidade_social_informacoes_alheias",
+      "nome": "Informações Alheias",
+      "tipo": "qualidade",
+      "categoria": "social",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Igual ao anterior, mas não precisa ser inimigo."
+    },
+    {
+      "id": "qualidade_sobrenatural_incongruencia_sanguinea_giovanni",
+      "nome": "Incongruência Sanguínea",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Giovanni"],
+      "clan": "Giovanni",
+      "gold": false,
+      "descricao": "Beijo não causa dano extra, mas aparência cadavérica permanente."
     },
     {
       "id": "qualidade_sobrenatural_medium",
@@ -303,6 +1832,454 @@
       "restricoes": [],
       "clan": null,
       "descricao": "Resistência contra poderes sobrenaturais."
+    },
+    {
+      "id": "qualidade_sobrenatural_aura_enganosa",
+      "nome": "Aura Enganosa",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Leitura de aura te confunde com humano."
+    },
+    {
+      "id": "qualidade_sobrenatural_habilidade_oracular",
+      "nome": "Habilidade Oracular",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Presságios (Percepção+Ocultismo; depois Inteligência+Ocultismo para interpretar)."
+    },
+    {
+      "id": "qualidade_sobrenatural_mentor_espiritual",
+      "nome": "Mentor Espiritual",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Guia espiritual (definido pelo Narrador)."
+    },
+    {
+      "id": "qualidade_sobrenatural_amor_verdadeiro",
+      "nome": "Amor Verdadeiro",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "1 sucesso automático em testes de FV (salvo falha crítica) quando motivado pelo amor."
+    },
+    {
+      "id": "qualidade_sobrenatural_disciplina_adicional",
+      "nome": "Disciplina Adicional",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": true,
+      "descricao": "Uma disciplina não-exclusiva conta como 'de clã' (só 1 vez)."
+    },
+    {
+      "id": "qualidade_sobrenatural_nove_vidas",
+      "nome": "Nove Vidas",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 6,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": true,
+      "descricao": "'Segunda chance' em testes que resultariam em morte; consome uma vida."
+    },
+    {
+      "id": "qualidade_sobrenatural_fe_verdadeira",
+      "nome": "Fé Verdadeira",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 7,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Humanidade 9+"],
+      "clan": null,
+      "gold": true,
+      "descricao": "1 ponto de Fé Verdadeira inicial; exige Humanidade 9+ e pode perder tudo se cair."
+    },
+    {
+      "id": "qualidade_sobrenatural_toque_cura",
+      "nome": "Toque de Cura",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Toque fecha ferimentos como a 'lambida'."
+    },
+    {
+      "id": "qualidade_sobrenatural_inofensivo_animais",
+      "nome": "Inofensivo aos Animais",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Animais não fogem automaticamente de você."
+    },
+    {
+      "id": "qualidade_sobrenatural_diablerie_oculta",
+      "nome": "Diablerie Oculta",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Aura não mostra as marcas negras."
+    },
+    {
+      "id": "qualidade_sobrenatural_reconhecimento_vampirico",
+      "nome": "Reconhecimento Vampírico",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Reconhece vampiro a 10 passos (casos especiais podem exigir teste)."
+    },
+    {
+      "id": "qualidade_sobrenatural_resistencia_consanguinea_giovanni",
+      "nome": "Resistência Consanguínea",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Giovanni"],
+      "clan": "Giovanni",
+      "gold": false,
+      "descricao": "Não sofre laço de sangue de membros da própria linhagem mortal."
+    },
+    {
+      "id": "qualidade_sobrenatural_beijo_procuracao_giovanni",
+      "nome": "Beijo de Procuração",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [4, 8]
+      },
+      "restricoes": ["Giovanni"],
+      "clan": "Giovanni",
+      "gold": false,
+      "descricao": "Ganha Potência (e possivelmente Fortitude se comprado duas vezes), mas vem com laços parciais perigosos."
+    },
+    {
+      "id": "qualidade_sobrenatural_incongruencia_sanguinea_giovanni",
+      "nome": "Inconguência Sanguínea",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Giovanni"],
+      "clan": "Giovanni",
+      "gold": false,
+      "descricao": "Beijo não causa dano extra, mas aparência cadavérica permanente."
+    },
+    {
+      "id": "qualidade_sobrenatural_visao_tenebrosa_controlavel_lasombra",
+      "nome": "Visão Tenebrosa Controlável",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Lasombra"],
+      "clan": "Lasombra",
+      "gold": false,
+      "descricao": "Alterna percepção luz/sombra (efeito invertido)."
+    },
+    {
+      "id": "qualidade_sobrenatural_aura_imaculada_malkaviano",
+      "nome": "Aura Imaculada",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Malkaviano"],
+      "clan": "Malkaviano",
+      "gold": false,
+      "descricao": "Aura não revela insanidade."
+    },
+    {
+      "id": "qualidade_sobrenatural_sangue_benevolente_malkaviano",
+      "nome": "Sangue Benevolente",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Malkaviano"],
+      "clan": "Malkaviano",
+      "gold": false,
+      "descricao": "Carniçais não sofrem penalidades típicas do sangue malkaviano."
+    },
+    {
+      "id": "qualidade_sobrenatural_mentor_incorpreo_malkaviano",
+      "nome": "Mentor Incorpóreo",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Malkaviano"],
+      "clan": "Malkaviano",
+      "gold": true,
+      "descricao": "'Mentor na cabeça' (Rede Malkaviana)."
+    },
+    {
+      "id": "qualidade_sobrenatural_ligacao_reciproca",
+      "nome": "Ligação Recíproca",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": true,
+      "descricao": "Laço de sangue com alguém vira laço 'duplo' (recíproco)."
+    },
+    {
+      "id": "qualidade_sobrenatural_dormir_invisivel_nosferatu",
+      "nome": "Dormir Invisível",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Usa Ofuscação para ficar oculto dormindo (custa 1 sangue extra/dia)."
+    },
+    {
+      "id": "qualidade_sobrenatural_reflexo_falso_nosferatu",
+      "nome": "Reflexo Falso",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Máscara das Mil Faces funciona em gravações/fotos."
+    },
+    {
+      "id": "qualidade_sobrenatural_disciplinas_revenantes_tzimisce",
+      "nome": "Disciplinas Revenantes",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "gold": false,
+      "descricao": "Mantém disciplinas de família revenante como 'disciplinas de clã'."
+    },
+    {
+      "id": "qualidade_sobrenatural_medium",
+      "nome": "Médium",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Percebe/ouve espíritos e pode negociar ajuda (sempre 'com preço')."
+    },
+    {
+      "id": "qualidade_sobrenatural_resistencia_magia",
+      "nome": "Resistência a Magia",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Mágicas/rituais contra você com dificuldade +2; não pode aprender Taumaturgia."
+    },
+    {
+      "id": "qualidade_sobrenatural_imunidade_laco_sangue",
+      "nome": "Imunidade ao Laço de Sangue",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Não pode ser laçado (Tremere não pode)."
+    },
+    {
+      "id": "qualidade_sobrenatural_sorte",
+      "nome": "Sorte",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Repetir 3 testes falhos por crônica (cada teste só 1 repetição)."
+    },
+    {
+      "id": "qualidade_sobrenatural_fe_verdadeira",
+      "nome": "Fé Verdadeira",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 7,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": true,
+      "descricao": "1 ponto de Fé Verdadeira inicial; exige Humanidade 9+ e pode perder tudo se cair."
+    },
+    {
+      "id": "qualidade_sobrenatural_reconhecimento_vampirico",
+      "nome": "Reconhecimento Vampírico",
+      "tipo": "qualidade",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": 3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Reconhece vampiro a 10 passos (casos especiais podem exigir teste)."
     },
     {
       "id": "defeito_mental_sono_pesado",
@@ -500,6 +2477,1286 @@
       "descricao": "Aparência horripilante assusta as pessoas."
     },
     {
+      "id": "defeito_fisica_cheiro_tumulo",
+      "nome": "Cheiro do Túmulo",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Mortais desconfortáveis; sociais com mortais dificuldade +1."
+    },
+    {
+      "id": "defeito_fisica_deficiencia_auditiva",
+      "nome": "Deficiência Auditiva",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Testes por audição dificuldade +2."
+    },
+    {
+      "id": "defeito_fisica_geracao_14",
+      "nome": "14ª Geração",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "10 sangue, mas só 8 'utilizáveis'; sem Geração/Status inicial (tende a Caitiff/sangue fraco)."
+    },
+    {
+      "id": "defeito_fisica_mordida_infecciosa",
+      "nome": "Mordida Infecciosa",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Mordida pode infeccionar (chance 1 em 5)."
+    },
+    {
+      "id": "defeito_fisica_crianca",
+      "nome": "Criança",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Estatura Baixa"],
+      "clan": null,
+      "gold": false,
+      "descricao": "Força/Vigor máx. 2; controlar adultos mortais +2; exige Estatura Baixa."
+    },
+    {
+      "id": "defeito_fisica_sangue_fraco",
+      "nome": "Sangue Fraco",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Custos de sangue dobrados; não cria laço; criar cria é difícil."
+    },
+    {
+      "id": "defeito_fisica_pele_cadaverica",
+      "nome": "Pele Cadavérica",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Feridas não somem visualmente; dificulta muito a Máscara."
+    },
+    {
+      "id": "defeito_fisica_vitae_infertil",
+      "nome": "Vitae Infértil",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Não consegue Abraçar; vitae não serve para vaulderie/carniçais."
+    },
+    {
+      "id": "defeito_fisica_tique_nervoso",
+      "nome": "Tique Nervoso",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Mania denuncia; pode suprimir com 1 FV."
+    },
+    {
+      "id": "defeito_fisica_deficiencia_visual",
+      "nome": "Deficiência Visual",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -3]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Visão ruim (corrigível ou não); testes visuais dificuldade +2."
+    },
+    {
+      "id": "defeito_fisica_caolho",
+      "nome": "Caolho",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Percepção visual +2; profundidade +1 (inclui combate à distância)."
+    },
+    {
+      "id": "defeito_fisica_desfigurado",
+      "nome": "Desfigurado",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sociais +2; Aparência máx. 2."
+    },
+    {
+      "id": "defeito_fisica_mordida_entorpecida",
+      "nome": "Mordida Entorpecida",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Presas ruins; alimentar exige mais sucesso/alternativa."
+    },
+    {
+      "id": "defeito_fisica_ferimento_exposto",
+      "nome": "Ferimento Exposto",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-2, -4]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sangra; custo extra de sangue; sociais +1 se visível (versão -4 é pior e inclui Ferimento Permanente)."
+    },
+    {
+      "id": "defeito_fisica_vulnerabilidade_prata",
+      "nome": "Vulnerabilidade a Prata",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Prata causa dano agravado e contato incomoda."
+    },
+    {
+      "id": "defeito_fisica_insonia",
+      "nome": "Insônia",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Percepção dificuldade +2 (cansaço constante)."
+    },
+    {
+      "id": "defeito_fisica_baixa_tolerancia_dor",
+      "nome": "Baixa Tolerância a Dor",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Penalidade de ferimentos fica pior (penalidade adicional)."
+    },
+    {
+      "id": "defeito_fisica_sem_presas",
+      "nome": "Sem Presas",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Precisa ferramenta para obter sangue; perde meio natural de dano agravado."
+    },
+    {
+      "id": "defeito_fisica_deformidade",
+      "nome": "Deformidade",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Efeito físico/social definido com Narrador."
+    },
+    {
+      "id": "defeito_fisica_aleijado",
+      "nome": "Aleijado",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sem correr; anda a 1/4; precisa apoio."
+    },
+    {
+      "id": "defeito_fisica_monstruoso",
+      "nome": "Monstruoso",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Aparência 0; socialmente inviável."
+    },
+    {
+      "id": "defeito_fisica_ferimento_permanente",
+      "nome": "Ferimento Permanente",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Acorda 'Ferido' toda noite (cura com sangue)."
+    },
+    {
+      "id": "defeito_fisica_cura_demorada",
+      "nome": "Cura Demorada",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Cura normal custa 2 sangue por nível; agravado muito lento."
+    },
+    {
+      "id": "defeito_fisica_vicio",
+      "nome": "Vício",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Precisa de substância no sangue."
+    },
+    {
+      "id": "defeito_fisica_presas_permanentes",
+      "nome": "Presas Permanentes",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Não retrai; ameaça constante à Máscara; Aparência máx. 3."
+    },
+    {
+      "id": "defeito_fisica_olhos_incandescentes",
+      "nome": "Olhos Incandescentes",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Intimidação melhor, mas visão pior e furtividade pior; difícil esconder."
+    },
+    {
+      "id": "defeito_fisica_preguicoso",
+      "nome": "Preguiçoso",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Ações físicas improvisadas dificuldade +1."
+    },
+    {
+      "id": "defeito_fisica_portador_doenca_contagiosa",
+      "nome": "Portador de Doença Contagiosa",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sangue contaminado; risco de transmissão; custo extra ao acordar."
+    },
+    {
+      "id": "defeito_fisica_surdez",
+      "nome": "Surdez",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Não ouve; prontidão e afins bem piores."
+    },
+    {
+      "id": "defeito_fisica_geracao_15",
+      "nome": "15ª Geração",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sangue ainda mais fraco; limites severos em Disciplinas e laços/crias."
+    },
+    {
+      "id": "defeito_fisica_congenito_giovanni",
+      "nome": "Congênito",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": null,
+        "minimo": -5,
+        "maximo": -1,
+        "opcoes": null
+      },
+      "restricoes": ["Giovanni"],
+      "clan": "Giovanni",
+      "gold": false,
+      "descricao": "Defeito congênito (leve a grotesco), acordado com Narrador."
+    },
+    {
+      "id": "defeito_fisica_dentes_rombudos_nosferatu",
+      "nome": "Dentes Rombudos",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Precisa 1 sucesso extra para dano de mordida."
+    },
+    {
+      "id": "defeito_fisica_fedor_nosferatu",
+      "nome": "Fedor",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "-2 dados em furtividade contra criaturas com olfato."
+    },
+    {
+      "id": "defeito_fisica_anosmia_nosferatu",
+      "nome": "Anosmia",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Sem olfato/paladar; imune a ataques por odor/gosto."
+    },
+    {
+      "id": "defeito_fisica_infestacao_parasitaria_nosferatu",
+      "nome": "Infestação Parasitária",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Perde sangue toda noite; autocontrole +1 dificuldade."
+    },
+    {
+      "id": "defeito_fisica_perna_atrofiada_nosferatu",
+      "nome": "Perna Atrofiada",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "-3 dados em ações de movimento; velocidade pela metade."
+    },
+    {
+      "id": "defeito_fisica_putrescencia_nosferatu",
+      "nome": "Putrescência",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Absorção -1 dado; risco de 'partes caírem' sob impacto."
+    },
+    {
+      "id": "defeito_fisica_incoerente_nosferatu",
+      "nome": "Incoerente",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Nosferatu"],
+      "clan": "Nosferatu",
+      "gold": false,
+      "descricao": "Não fala como humano (só gestos/grunhidos)."
+    },
+    {
+      "id": "defeito_fisica_escarificado_tzimisce",
+      "nome": "Escarificado",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-2, -4]
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "gold": false,
+      "descricao": "Dano curado vira cicatriz; penalidades sociais/destreza e limite de aparência."
+    },
+    {
+      "id": "defeito_fisica_consumo_tzimisce",
+      "nome": "Consumo",
+      "tipo": "defeito",
+      "categoria": "fisico",
+      "custo": {
+        "valor": -5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "gold": false,
+      "descricao": "Sofre dano por noite; precisa consumir grande quantidade de carne humana."
+    },
+    {
+      "id": "defeito_mental_amnesia",
+      "nome": "Amnésia",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Perda parcial (-1) ou total (-2) da memória anterior; pode recuperar gradualmente."
+    },
+    {
+      "id": "defeito_mental_compulsao",
+      "nome": "Compulsão",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Compulsão por atividade específica; intensidade varia conforme pontos."
+    },
+    {
+      "id": "defeito_mental_depressao",
+      "nome": "Depressão",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Estados depressivos que afetam interações sociais e motivação."
+    },
+    {
+      "id": "defeito_mental_distraido",
+      "nome": "Distraído",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Alheio aos arredores; penalidades em percepção/prontidão."
+    },
+    {
+      "id": "defeito_mental_fobia",
+      "nome": "Fobia",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Medo irracional de algo; teste Coragem + dificuldade conforme intensidade."
+    },
+    {
+      "id": "defeito_mental_impaciente",
+      "nome": "Impaciente",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Não tolera esperas; pode arriscar-se desnecessariamente por pressa."
+    },
+    {
+      "id": "defeito_mental_pesadelos",
+      "nome": "Pesadelos",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sono perturbado; pode acordar sem recuperar Força de Vontade."
+    },
+    {
+      "id": "defeito_mental_pacifista",
+      "nome": "Pacifista",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -3, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Evita violência; gradual: repugna (-1), evita ativa (-3), total (-5)."
+    },
+    {
+      "id": "defeito_mental_flashbacks",
+      "nome": "Flashbacks",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -6]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Revive traumas passados; pode ficar incapacitado temporariamente."
+    },
+    {
+      "id": "defeito_mental_fragil",
+      "nome": "Frágil",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "+1 dificuldade em jogadas de estresse; Força de Vontade máx 5."
+    },
+    {
+      "id": "defeito_mental_ganancioso",
+      "nome": "Ganancioso",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Obcecado por acumular; arrisca-se por ganhos materiais."
+    },
+    {
+      "id": "defeito_mental_codigo_honra",
+      "nome": "Código de Honra",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Segue código rígido de conduta; valor varia com rigidez."
+    },
+    {
+      "id": "defeito_mental_curiosidade",
+      "nome": "Curiosidade",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Não resiste investigar mistérios; pode entrar em apuros."
+    },
+    {
+      "id": "defeito_mental_mania",
+      "nome": "Mania",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Hábito/fixação obsessiva; intensidade varia com pontos."
+    },
+    {
+      "id": "defeito_mental_reacao_viciosa",
+      "nome": "Reação Viciosa",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Reage violentamente a símbolos/situações específicas."
+    },
+    {
+      "id": "defeito_mental_timidez",
+      "nome": "Timidez",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "+1 dificuldade em interações sociais com estranhos."
+    },
+    {
+      "id": "defeito_mental_vingativo",
+      "nome": "Vingativo",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Busca vingança obsessivamente; pode ignorar prioridades."
+    },
+    {
+      "id": "defeito_social_pecado_original",
+      "nome": "Pecado Original",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Culpado de crime grave no passado; intensidade afeta perseguição."
+    },
+    {
+      "id": "defeito_social_crianca",
+      "nome": "Criança",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Abraçado jovem; limites físicos/sociais; dificuldades legais."
+    },
+    {
+      "id": "defeito_social_excomunhao",
+      "nome": "Excomungão",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Banido de seita/clã; intensidade afeta punições por interação."
+    },
+    {
+      "id": "defeito_social_infamia",
+      "nome": "Infâmia",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Reputação terrível; penalidades sociais e possível perse-guição."
+    },
+    {
+      "id": "defeito_social_inimigo",
+      "nome": "Inimigo",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Inimigo mortal ativo; poder/recursos determinam valor."
+    },
+    {
+      "id": "defeito_social_perseguido",
+      "nome": "Perseguido",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Caçado por agente da Inquisitor ou similar; sem locais seguros."
+    },
+    {
+      "id": "defeito_social_peao",
+      "nome": "Peão",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Manipulado por vampiros poderosos; usado em jogos políticos."
+    },
+    {
+      "id": "defeito_social_refugiado",
+      "nome": "Refugiado",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Fugitivo de cidade destruida; recursos limitados e paranoia."
+    },
+    {
+      "id": "defeito_social_repulsivo",
+      "nome": "Repulsivo",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Repelente socialmente; penalidades em primeira impressão."
+    },
+    {
+      "id": "defeito_social_seita_rival",
+      "nome": "Seita Rival",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Membro de seita oposta (ex-Sabá na Camarilla); desconfiado."
+    },
+    {
+      "id": "defeito_sobrenatural_amaldicado",
+      "nome": "Amaldiçoado",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Maldição supernatural ativa; efeito varia com intensidade."
+    },
+    {
+      "id": "defeito_sobrenatural_besta_proeminente",
+      "nome": "Besta Proeminente",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-2, -4]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Besta mais forte; penalidades em auto-controle e humanidade."
+    },
+    {
+      "id": "defeito_sobrenatural_sede_sangue",
+      "nome": "Sede de Sangue",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -4]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Necessita mais sangue que normal; gastos e fome aumentados."
+    },
+    {
+      "id": "defeito_sobrenatural_doenca_sangue",
+      "nome": "Doença do Sangue",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-2, -4, -6]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Doença supernatural no sangue; penalidades conforme gravidade."
+    },
+    {
+      "id": "defeito_sobrenatural_vulnerabilidade",
+      "nome": "Vulnerabilidade",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -5, -7]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Vulnerabilidade especial a substância/situação sobrenatural."
+    },
+    {
+      "id": "defeito_sobrenatural_repulsao_simbolos_sagrados",
+      "nome": "Repulsão por Símbolos Sagrados",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-1, -2, -3, -5]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Afetado por símbolos sagrados mesmo sem fé; intensidade varia."
+    },
+    {
+      "id": "defeito_sobrenatural_presa_facil_espiritos",
+      "nome": "Presa Fácil para Espíritos",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Atrai espíritos malignos; poder reduzido contra possessão."
+    },
+    {
+      "id": "defeito_sobrenatural_touch_mortal",
+      "nome": "Toque Mortal",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Plantas morrem ao toque; animais fogem; aura de morte."
+    },
+    {
+      "id": "defeito_sobrenatural_marca_predador",
+      "nome": "Marca do Predador",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Aura amedrontadora; animais/crianças detectam natureza predadora."
+    },
+    {
+      "id": "defeito_sobrenatural_viciado_magia_assamita",
+      "nome": "Viciado em Magia",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-3, -5]
+      },
+      "restricoes": ["Assamita"],
+      "clan": "Assamita",
+      "gold": false,
+      "descricao": "Sem drogas alquímicas, magia do sangue fica muito pior (ou impossível)."
+    },
+    {
+      "id": "defeito_sobrenatural_andarilho_sombra_giovanni",
+      "nome": "Andarilho da Sombra",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -6,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Giovanni"],
+      "clan": "Giovanni",
+      "gold": false,
+      "descricao": "Ligação constante às Terras das Sombras (fantasmas podem te afetar direto)."
+    },
+    {
+      "id": "defeito_sobrenatural_taumaturgicamente_inapto_tremere",
+      "nome": "Taumaturgicamente Inapto",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tremere"],
+      "clan": "Tremere",
+      "gold": false,
+      "descricao": "Usar trilhas/rituais fica muito mais difícil (até Dif. 10)."
+    },
+    {
+      "id": "defeito_sobrenatural_dependencia_solo_ancestral_tzimisce",
+      "nome": "Dependência do Solo Ancestral",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Tzimisce"],
+      "clan": "Tzimisce",
+      "gold": false,
+      "descricao": "Precisa de solo ancestral específico (Europa Oriental) para descansar/funcionar."
+    },
+    {
       "id": "defeito_social_segredo_sombrio",
       "nome": "Segredo Sombrio",
       "tipo": "defeito",
@@ -536,8 +3793,8 @@
       "categoria": "social",
       "custo": {
         "valor": null,
-        "minimo": 1,
-        "maximo": 5,
+        "minimo": -5,
+        "maximo": -1,
         "opcoes": null
       },
       "restricoes": [],
@@ -588,6 +3845,150 @@
       "restricoes": [],
       "clan": null,
       "descricao": "Não sabe ler nem escrever."
+    },
+    {
+      "id": "defeito_social_senhor_indigno",
+      "nome": "Senhor Indigno",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Reputação do senhor te prejudica."
+    },
+    {
+      "id": "defeito_social_identidade_trocada",
+      "nome": "Identidade Trocada",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Confundem você com outro Membro."
+    },
+    {
+      "id": "defeito_social_unido_sangue",
+      "nome": "Unido ao Sangue",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Laço de sangue ativo com outro vampiro."
+    },
+    {
+      "id": "defeito_social_ex_principe",
+      "nome": "Ex-Príncipe",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Príncipe atual te vê como ameaça."
+    },
+    {
+      "id": "defeito_social_cacado_cao",
+      "nome": "Caçado como um Cão",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Seita/grupo te marcou para eliminar."
+    },
+    {
+      "id": "defeito_social_inimigo_cla",
+      "nome": "Inimigo de um Clã",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Um clã quer sua morte; sociais +2 com eles."
+    },
+    {
+      "id": "defeito_social_vitima_cacada_sangue",
+      "nome": "Vítima de Caçada de Sangue",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": null,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": [-4, -6]
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Proibido voltar (cidade ou toda Camarilla)."
+    },
+    {
+      "id": "defeito_social_alvo_risos",
+      "nome": "Alvo de Risos",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Hárpias te ridicularizam; sociais muito piores."
+    },
+    {
+      "id": "defeito_social_lista_vermelha",
+      "nome": "Lista Vermelha",
+      "tipo": "defeito",
+      "categoria": "social",
+      "custo": {
+        "valor": -7,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Camarilla quer te destruir oficialmente."
     },
     {
       "id": "defeito_sobrenatural_amaldicoado",
@@ -678,6 +4079,150 @@
       "restricoes": [],
       "clan": null,
       "descricao": "Dificuldade extra para resistir a emoções."
+    },
+    {
+      "id": "defeito_sobrenatural_toque_congelamento",
+      "nome": "Toque de Congelamento",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Plantas murcham; toque drena calor."
+    },
+    {
+      "id": "defeito_sobrenatural_repulsa_alho",
+      "nome": "Repulsa ao Alho",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Cheiro força recuo (FV para resistir)."
+    },
+    {
+      "id": "defeito_sobrenatural_imagem_sem_reflexo",
+      "nome": "Imagem sem Reflexo",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Não-Lasombra"],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sem reflexo (Lasombra já tem)."
+    },
+    {
+      "id": "defeito_sobrenatural_presenca_sinistra",
+      "nome": "Presença Sinistra",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Mortais ficam inquietos; sociais com mortais +2."
+    },
+    {
+      "id": "defeito_sobrenatural_repulsa_cruzes",
+      "nome": "Repulsa a Cruzes",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Medo/aversão; falha crítica pode causar dano agravado ao toque."
+    },
+    {
+      "id": "defeito_sobrenatural_incapacidade_agua_corrente",
+      "nome": "Incapacidade de Atravessar Água Corrente",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Não cruza água corrente (salvo muito acima)."
+    },
+    {
+      "id": "defeito_sobrenatural_aperto_amaldicoados",
+      "nome": "Aperto dos Amaldicoados",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Mortais gritam/lutam durante o Beijo; ameaça Máscara/Humanidade."
+    },
+    {
+      "id": "defeito_sobrenatural_futuro_negro",
+      "nome": "Futuro Negro",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Destino de morte final/agonia; visões podem penalizar (Narrador)."
+    },
+    {
+      "id": "defeito_sobrenatural_sensibilidade_luz",
+      "nome": "Sensibilidade à Luz",
+      "tipo": "defeito",
+      "categoria": "sobrenatural",
+      "custo": {
+        "valor": -5,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Sol causa dano dobrado; luar pode ferir; luz forte incomoda."
     },
     {
       "id": "qualidade_brujah_paixao_ardente",
@@ -1037,7 +4582,120 @@
       },
       "restricoes": ["Ravnos"],
       "clan": "Ravnos",
+      "gold": false,
       "descricao": "Compulsão para cometer um tipo específico de crime."
+    },
+    {
+      "id": "defeito_mental_exclusao_presa",
+      "nome": "Exclusão de Presa",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Recusa certo tipo de presa; alimentar-se disso pode causar frenesi."
+    },
+    {
+      "id": "defeito_mental_coracao_mole",
+      "nome": "Coração Mole",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -1,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Humanidade 7+"],
+      "clan": null,
+      "gold": false,
+      "descricao": "Para causar sofrimento, exige FV Dif. 8 (Humanidade 7+)."
+    },
+    {
+      "id": "defeito_mental_bairrismo",
+      "nome": "Bairrismo",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -2,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Frenesia se invadirem território; reluta em sair."
+    },
+    {
+      "id": "defeito_mental_vontade_fraca",
+      "nome": "Vontade Fraca",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -3,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Muito suscetível a controle mental; FV máx. 4."
+    },
+    {
+      "id": "defeito_mental_consumo_conspicuo",
+      "nome": "Consumo Conspícuo",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": ["Ingerir Comida"],
+      "clan": null,
+      "gold": false,
+      "descricao": "Precisa consumir órgãos/tecido; tende a matar vítimas (exige 'Ingerir Comida')."
+    },
+    {
+      "id": "defeito_mental_culpa_destruidora",
+      "nome": "Culpa Destruidora",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -4,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "Culpa ao se alimentar; risco de frenesi; vive com pouco sangue."
+    },
+    {
+      "id": "defeito_mental_flashbacks",
+      "nome": "Flashbacks",
+      "tipo": "defeito",
+      "categoria": "mental",
+      "custo": {
+        "valor": -6,
+        "minimo": null,
+        "maximo": null,
+        "opcoes": null
+      },
+      "restricoes": [],
+      "clan": null,
+      "gold": false,
+      "descricao": "FV pode cair para 1 no ciclo (teste de FV define)."
     }
   ]
 }
