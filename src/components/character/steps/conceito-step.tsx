@@ -1,13 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { Search } from 'lucide-react'
 import { Arquetipo, CharacterDraft } from '@/types/character-creation'
 import { Character, Chronicle } from '@/types'
 import { CharacterDataService } from '@/services/character-data'
-import FieldSelector from '@/components/ui/field-selector'
-import ModalSelector from '@/components/ui/modal-selector'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { AccordionItem } from '@/components/ui/accordion-item'
 
 interface ConceitoStepProps {
   character: Partial<Character>
@@ -20,14 +20,31 @@ export default function ConceitoStep({ character, chronicle, onChange }: Conceit
   const [comportamentos, setComportamentos] = useState<Arquetipo[]>([])
   const [filteredNaturezas, setFilteredNaturezas] = useState<Arquetipo[]>([])
   const [filteredComportamentos, setFilteredComportamentos] = useState<Arquetipo[]>([])
-  
-  const [showNaturezaModal, setShowNaturezaModal] = useState(false)
-  const [showComportamentoModal, setShowComportamentoModal] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     loadArquetipos()
   }, [])
+
+  useEffect(() => {
+    if (searchTerm.trim() === '') {
+      setFilteredNaturezas(naturezas)
+      setFilteredComportamentos(comportamentos)
+    } else {
+      const filtered = naturezas.filter(item => 
+        item.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.descricao?.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      setFilteredNaturezas(filtered)
+
+      const filteredComp = comportamentos.filter(item => 
+        item.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.descricao?.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      setFilteredComportamentos(filteredComp)
+    }
+  }, [searchTerm, naturezas, comportamentos])
 
   const loadArquetipos = async () => {
     setLoading(true)
@@ -48,84 +65,52 @@ export default function ConceitoStep({ character, chronicle, onChange }: Conceit
     }
   }
 
-  const handleNaturezaSearch = async (term: string) => {
-    if (term.trim() === '') {
-      setFilteredNaturezas(naturezas)
-      return
-    }
-
-    try {
-      const results = await CharacterDataService.searchArquetipos(term, 'NATUREZA')
-      setFilteredNaturezas(results)
-    } catch (error) {
-      console.error('Erro na busca de naturezas:', error)
-    }
-  }
-
-  const handleComportamentoSearch = async (term: string) => {
-    if (term.trim() === '') {
-      setFilteredComportamentos(comportamentos)
-      return
-    }
-
-    try {
-      const results = await CharacterDataService.searchArquetipos(term, 'COMPORTAMENTO')
-      setFilteredComportamentos(results)
-    } catch (error) {
-      console.error('Erro na busca de comportamentos:', error)
-    }
-  }
-
   const handleInputChange = (field: string, value: string) => {
     onChange({ [field]: value })
   }
 
   const handleNaturezaSelect = (natureza: Arquetipo) => {
-    onChange({ 
-      nature: natureza.nome
-    })
+    onChange({ nature: natureza.nome })
   }
 
   const handleComportamentoSelect = (comportamento: Arquetipo) => {
-    onChange({ 
-      demeanor: comportamento.nome
-    })
+    onChange({ demeanor: comportamento.nome })
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div className="text-center mb-8">
         <h2 className="text-2xl font-bold text-white mb-2">Conceito</h2>
-        <p className="text-gray-300">
+        <p className="text-muted-foreground">
           Defina a identidade, personalidade e história básica do seu personagem
         </p>
       </div>
 
-      {/* Campos de texto */}
+      {/* Campos de texto básicos */}
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <Label htmlFor="name" className="text-white">
-            Nome <span className="text-red-400">*</span>
+            Nome <span className="text-destructive">*</span>
           </Label>
           <Input
             id="name"
             placeholder="Nome do personagem"
             value={character.name || ''}
             onChange={(e) => handleInputChange('name', e.target.value)}
-            className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+            className="bg-card/50 border-border text-white placeholder:text-muted-foreground"
           />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="concept" className="text-white">
-            Conceito <span className="text-red-400">*</span>
+            Conceito <span className="text-destructive">*</span>
           </Label>
           <Input
             id="concept"
             placeholder="Ex: Empresário corrupto, Artista rebelde"
             value={character.concept || ''}
             onChange={(e) => handleInputChange('concept', e.target.value)}
-            className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+            className="bg-card/50 border-border text-white placeholder:text-muted-foreground"
           />
         </div>
       </div>
@@ -137,71 +122,83 @@ export default function ConceitoStep({ character, chronicle, onChange }: Conceit
           placeholder="Nome do vampiro que o abraçou"
           value={character.sire || ''}
           onChange={(e) => handleInputChange('sire', e.target.value)}
-          className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+          className="bg-card/50 border-border text-white placeholder:text-muted-foreground"
         />
       </div>
 
-      {/* Seletores de arquétipos */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <FieldSelector
-          title="Natureza"
-          value={character.nature}
-          placeholder="Escolha sua natureza..."
-          onClick={() => setShowNaturezaModal(true)}
-          required
-          description=""
-        />
-
-        <FieldSelector
-          title="Comportamento"
-          value={character.demeanor}
-          placeholder="Escolha seu comportamento..."
-          onClick={() => setShowComportamentoModal(true)}
-          required
-          description=""
+      {/* Busca */}
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+        <Input
+          placeholder="Buscar natureza ou comportamento..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="pl-10 bg-card/50 border-border text-white placeholder:text-muted-foreground"
         />
       </div>
 
-      {/* Detalhes dos arquétipos selecionados */}
+      {/* Lista de naturezas */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold text-white">Naturezas</h3>
+        {loading ? (
+          <div className="text-muted-foreground">Carregando...</div>
+        ) : (
+          <div className="space-y-2">
+            {filteredNaturezas.map((natureza) => (
+              <AccordionItem
+                key={natureza.id}
+                title={natureza.nome}
+                description={natureza.descricao || ''}
+                tags={natureza.detalhes ? [natureza.detalhes] : []}
+                isSelected={character.nature === natureza.nome}
+                onSelect={() => handleNaturezaSelect(natureza)}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Lista de comportamentos */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold text-white">Comportamentos</h3>
+        {loading ? (
+          <div className="text-muted-foreground">Carregando...</div>
+        ) : (
+          <div className="space-y-2">
+            {filteredComportamentos.map((comportamento) => (
+              <AccordionItem
+                key={comportamento.id}
+                title={comportamento.nome}
+                description={comportamento.descricao || ''}
+                tags={comportamento.detalhes ? [comportamento.detalhes] : []}
+                isSelected={character.demeanor === comportamento.nome}
+                onSelect={() => handleComportamentoSelect(comportamento)}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Resumo das seleções */}
       {(character.nature || character.demeanor) && (
-        <div className="grid md:grid-cols-2 gap-4 mt-6">
-          {character.nature && (
-            <div className="p-4 bg-blue-900/20 border border-blue-800 rounded-lg">
-              <h3 className="text-blue-300 font-semibold mb-2">Natureza: {character.nature}</h3>
-            </div>
-          )}
-
-          {character.demeanor && (
-            <div className="p-4 bg-purple-900/20 border border-purple-800 rounded-lg">
-              <h3 className="text-purple-300 font-semibold mb-2">Comportamento: {character.demeanor}</h3>
-            </div>
-          )}
+        <div className="bg-card/30 p-6 rounded-lg border border-border">
+          <h3 className="text-white font-semibold mb-4">Seleções</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            {character.nature && (
+              <div className="space-y-1">
+                <span className="text-sm text-muted-foreground">Natureza:</span>
+                <div className="text-white font-medium">{character.nature}</div>
+              </div>
+            )}
+            {character.demeanor && (
+              <div className="space-y-1">
+                <span className="text-sm text-muted-foreground">Comportamento:</span>
+                <div className="text-white font-medium">{character.demeanor}</div>
+              </div>
+            )}
+          </div>
         </div>
       )}
-
-      {/* Modal de seleção de Natureza */}
-      <ModalSelector
-        isOpen={showNaturezaModal}
-        onClose={() => setShowNaturezaModal(false)}
-        title="Escolher Natureza"
-        items={filteredNaturezas}
-        onSelect={handleNaturezaSelect}
-        onSearch={handleNaturezaSearch}
-        searchPlaceholder="Buscar natureza..."
-        loading={loading}
-      />
-
-      {/* Modal de seleção de Comportamento */}
-      <ModalSelector
-        isOpen={showComportamentoModal}
-        onClose={() => setShowComportamentoModal(false)}
-        title="Escolher Comportamento"
-        items={filteredComportamentos}
-        onSelect={handleComportamentoSelect}
-        onSearch={handleComportamentoSearch}
-        searchPlaceholder="Buscar comportamento..."
-        loading={loading}
-      />
     </div>
   )
 }

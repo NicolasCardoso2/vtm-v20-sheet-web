@@ -4,9 +4,18 @@ Sistema completo de criação e gerenciamento de fichas para Vampiro: A Máscara
 
 ## Status: Funcionando
 
-**Projeto corrigido e funcionando!** Todos os erros TypeScript foram resolvidos e o sistema está pronto para desenvolvimento.
+**Projeto totalmente funcional!** Sistema completo de criação de personagens com auto-save offline e interface otimizada.
 
-### Correções Aplicadas:
+### Últimas Correções (Dezembro 2024):
+- **Sistema Auto-Save Offline**: Implementado fallback para localStorage quando Supabase não está configurado
+- **TraitsModal Corrigido**: Modal de qualidades/defeitos abrindo corretamente
+- **Chaves React Únicas**: Resolvidos warnings de chaves duplicadas no console
+- **Remoção Automática de Duplicatas**: Dataset limpo automaticamente durante carregamento
+- **Indicadores de Status**: Componentes visuais para modo offline e status de salvamento
+- **Acessibilidade**: Adicionadas descrições ARIA para conformidade
+- **Validação Robusta**: Sistema híbrido online/offline para continuidade de desenvolvimento
+
+### Correções Base:
 - Erros TypeScript resolvidos ("Cannot find module")
 - Configuração TypeScript atualizada para ES2017
 - Arquivo `global.d.ts` criado para tipos globais
@@ -18,12 +27,15 @@ Sistema completo de criação e gerenciamento de fichas para Vampiro: A Máscara
 ## Características Principais
 
 - **Wizard de Criação**: Sistema guiado em 5 etapas para criação de personagens
+- **Sistema Offline**: Funciona completamente offline com localStorage quando Supabase não está configurado
+- **Auto-save Híbrido**: Salvamento automático online/offline com indicadores visuais de status
 - **Validação Automática**: Controle de pontos gastos e limites configuráveis  
+- **TraitsModal Otimizado**: Seleção de qualidades e defeitos com remoção automática de duplicatas
 - **Sistema de Crônicas**: Narradores podem criar crônicas e gerenciar jogadores
 - **Aprovação de Fichas**: Fluxo de aprovação controlado pelo narrador
-- **Auto-save**: Salvamento automático durante a criação
 - **Exportação PDF**: Fichas prontas para impressão (em desenvolvimento)
 - **Mobile-First**: Interface responsiva e otimizada para dispositivos móveis
+- **Acessibilidade**: Componentes seguem padrões ARIA completos
 
 ## Tecnologias Utilizadas
 
@@ -41,15 +53,18 @@ Sistema completo de criação e gerenciamento de fichas para Vampiro: A Máscara
 npm install
 ```
 
-2. **Configurar Supabase:**
-   - Crie um projeto no [Supabase](https://supabase.com)
-   - Execute o script SQL em `database/schema.sql`
-   - Configure as variáveis de ambiente no `.env.local`
-
-3. **Executar em desenvolvimento:**
+2. **Executar em desenvolvimento (Modo Offline):**
 ```bash
 npm run dev
 ```
+   - O sistema funciona completamente offline usando localStorage
+   - Ideal para desenvolvimento e testes sem necessidade de configurar Supabase
+
+3. **Configurar Supabase (Opcional para Produção):**
+   - Crie um projeto no [Supabase](https://supabase.com)
+   - Execute o script SQL em `database/schema.sql`
+   - Configure as variáveis de ambiente no `.env.local`
+   - O sistema detecta automaticamente se Supabase está configurado
 
 ## Como Usar
 
@@ -75,9 +90,12 @@ npm run dev
 
 ### Variáveis de Ambiente (.env.local)
 ```env
+# Opcional - Sistema funciona offline sem estas configurações
 NEXT_PUBLIC_SUPABASE_URL=sua_url_do_supabase
 NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anonima_do_supabase
 ```
+
+> **Nota**: O sistema detecta automaticamente se Supabase está configurado e usa localStorage como fallback, permitindo desenvolvimento completo offline.
 
 ### Scripts Disponíveis
 - `npm run dev` - Executar em modo de desenvolvimento

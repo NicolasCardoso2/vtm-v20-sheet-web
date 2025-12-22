@@ -8,7 +8,7 @@ export async function loadTraitsDataset(): Promise<TraitItem[]> {
     const response = await fetch('/qualidades_defeitos_dataset.json')
     const data = await response.json()
     
-    return data.itens.map((item: any): TraitItem => ({
+    const processedItems = data.itens.map((item: any): TraitItem => ({
       id: item.id,
       nome: item.nome,
       tipo: item.tipo as 'qualidade' | 'defeito',
@@ -17,9 +17,27 @@ export async function loadTraitsDataset(): Promise<TraitItem[]> {
       restricoes: item.restricoes || [],
       clan: extractClan(item.restricoes),
       descricao: item.descricao || '',
-      goldQuality: item.goldQuality || false,
+      goldQuality: item.goldQuality || item.gold || false,
       ancillaeOnly: item.ancillaeOnly || false
     }))
+
+    // Remover duplicatas baseadas no ID
+    const uniqueItems = processedItems.reduce((acc: TraitItem[], current: TraitItem) => {
+      const exists = acc.find(item => item.id === current.id)
+      if (!exists) {
+        acc.push(current)
+      } else {
+        console.warn(`Item duplicado encontrado e removido: ${current.id}`)
+      }
+      return acc
+    }, [])
+
+    console.log(`Dataset original: ${processedItems.length} itens`)
+    console.log(`Dataset após remoção de duplicatas: ${uniqueItems.length} itens`)
+    console.log(`Qualidades: ${uniqueItems.filter(i => i.tipo === 'qualidade').length}`)
+    console.log(`Defeitos: ${uniqueItems.filter(i => i.tipo === 'defeito').length}`)
+    
+    return uniqueItems
   } catch (error) {
     console.error('Erro ao carregar dataset de traits:', error)
     throw new Error('Falha ao carregar qualidades e defeitos')

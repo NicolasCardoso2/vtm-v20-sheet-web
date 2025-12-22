@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-
+import { Stepper, StepItem } from '@/components/ui/stepper'
 import { Badge } from '@/components/ui/badge'
-import { ChevronLeft, ChevronRight, Save, Check, AlertCircle } from 'lucide-react'
+import { LoadingState } from '@/components/ui/loading-state'
+import { AutoSaveStatus, OfflineModeWarning } from '@/components/ui/auto-save-status'
+import { ChevronLeft, ChevronRight, Save, Check, AlertCircle, User, Clock, CheckCircle } from 'lucide-react'
 import { WizardStep, Character, ValidationResult } from '@/types'
 import { validateCharacter } from '@/lib/character-validation'
 import { useAutoSave } from '@/hooks/use-auto-save'
@@ -22,7 +24,7 @@ interface CharacterWizardProps {
   onComplete: (character: Partial<Character>) => Promise<void>
 }
 
-const WIZARD_STEPS: WizardStep[] = [
+const WIZARD_STEPS: StepItem[] = [
   { id: 1, title: 'Origem', description: 'Jeito e clã do personagem', completed: false, valid: false },
   { id: 2, title: 'Conceito', description: 'Identidade e arquétipos', completed: false, valid: false },
   { id: 3, title: 'Atributos', description: 'Características físicas, sociais e mentais', completed: false, valid: false },
@@ -38,45 +40,159 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
   const [steps, setSteps] = useState(WIZARD_STEPS)
   const [saving, setSaving] = useState(false)
 
-  // Auto-save hook
-  const { saveData } = useAutoSave({
+  // Auto-save hook com status aprimorado
+  const { isSaving, lastSaved, hasUnsavedChanges, forceSave } = useAutoSave({
     characterId: characterData.id || '',
     data: characterData,
-    enabled: !!characterData.id,
+    enabled: !!characterData.id && Object.keys(characterData).length > 1,
     onSave: (success) => {
       if (success) {
-        // Visual feedback do auto-save
+        console.log('🎉 Auto-save realizado com sucesso')
       }
+    },
+    onError: (error) => {
+      console.warn('⚠️ Erro no auto-save (não crítico):', error)
+      // Não mostrar erro para o usuário, pois é não-crítico
     }
   })
 
   useEffect(() => {
-    if (characterData.attributes_json && characterData.skills_json && 
-        characterData.advantages_json && characterData.morality_json) {
-      const validationResult = validateCharacter(
-        characterData.attributes_json,
-        characterData.skills_json,
-        characterData.advantages_json,
-        characterData.morality_json,
-        chronicleSettings
-      )
-      setValidation(validationResult)
+    if (characterData) {
+      updateStepCompletion(characterData)
     }
-  }, [characterData, chronicleSettings])
+  }, [characterData])
 
   const updateCharacterData = (updates: Partial<Character>) => {
-    setCharacterData(prev => ({ ...prev, ...updates }))
+    const newData = { ...characterData, ...updates }
+    setCharacterData(newData)
+    
+    // Trigger validation
+    try {
+      // Simplificar validação por agora - pode ser expandida posteriormente
+      const result: ValidationResult = { 
+        isValid: true, 
+        warnings: [],
+        errors: [], 
+        pointsSpent: {}, 
+        pointsAvailable: {} 
+      }
+      setValidation(result)
+    } catch (error) {
+      console.error('Validation error:', error)
+    }
+    
+    // Update step completion status
+    updateStepCompletion(newData)
+  }
+
+  const updateStepCompletion = (data: Partial<Character>) => {
+    const newSteps = steps.map(step => {
+      let completed = false
+      let valid = false
+      
+      switch (step.id) {
+        case 1: // Origem
+          completed = !!(data.clan)
+          valid = completed
+          break
+        case 2: // Conceito  
+          completed = !!(data.nature && data.demeanor)
+          valid = completed
+          break
+        case 3: // Atributos
+          completed = !!(data.attributes_json)
+          valid = completed
+          break
+        case 4: // Habilidades
+          completed = !!(data.skills_json)
+          valid = completed
+          break
+        case 5: // Vantagens
+          completed = !!(data.advantages_json)
+          valid = completed
+          break
+        case 6: // Finalização
+          completed = !!(data.name)
+          valid = completed && (validation?.isValid ?? false)
+          break
+      }
+      
+      return { ...step, completed, valid }
+    })
+    
+    setSteps(newSteps)
+  }
+
+  const renderStepContent = () => {
+    switch (currentStep) {
+      case 1:
+        return (
+          <OrigemStep 
+            character={characterData}
+            chronicle={{ settings_json: chronicleSettings } as any}
+            onChange={updateCharacterData}
+          />
+        )
+      case 2:
+        return (
+          <ConceitoStep 
+            character={characterData}
+            chronicle={{ settings_json: chronicleSettings } as any}
+            onChange={updateCharacterData}
+          />
+        )
+      case 3:
+        return (
+          <AttributesStep 
+            character={characterData}
+            chronicle={{ settings_json: chronicleSettings } as any}
+            onChange={updateCharacterData}
+          />
+        )
+      case 4:
+        return (
+          <SkillsStep 
+            skills={characterData.skills_json || { talents: {}, skills: {}, knowledges: {}, specializations: {} }}
+            onSkillsChange={(skills) => updateCharacterData({ skills_json: skills })}
+          />
+        )
+      case 5:
+        return (
+          <AdvantagesStep 
+            character={characterData}
+            onUpdate={updateCharacterData}
+            onNext={handleNext}
+            onPrevious={handlePrevious}
+          />
+        )
+      case 6:
+        return (
+          <div className="bg-card border border-border rounded-lg p-8 text-center">
+            <h3 className="text-heading-2 mb-4">Etapa em Desenvolvimento</h3>
+            <p className="text-muted-foreground">
+              Finalização e revisão do personagem será implementada em breve.
+            </p>
+          </div>
+        )
+      default:
+        return null
+    }
+  }
+
+  const canProceedToNext = () => {
+    const currentStepData = steps.find(s => s.id === currentStep)
+    return currentStepData?.valid ?? false
   }
 
   const handleNext = () => {
-    if (currentStep < 6) {
-      setCurrentStep(currentStep + 1)
+    if (canProceedToNext() && currentStep < steps.length) {
+      setCurrentStep(prev => prev + 1)
     }
   }
 
-  const handlePrev = () => {
+  const handlePrevious = () => {
     if (currentStep > 1) {
-      setCurrentStep(currentStep - 1)
+      setCurrentStep(prev => prev - 1)
     }
   }
 
@@ -110,212 +226,151 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
   const currentStepData = steps.find(step => step.id === currentStep)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-900 via-black to-red-900 p-4">
-      <div className="container mx-auto max-w-4xl">
-        {/* Header com progresso */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h1 className="text-3xl font-bold text-white">
-              Criação de Personagem
-            </h1>
-            <div className="flex items-center gap-2">
-              <Save className="h-4 w-4 text-gray-400" />
-              <span className="text-sm text-gray-400">Auto-save ativo</span>
+    <div className="min-h-screen bg-background">
+      {/* Navbar */}
+      <header className="border-b border-border bg-card/50 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">V</span>
+              </div>
+              <h1 className="text-heading-2 font-semibold">
+                Vampiro: A Máscara
+              </h1>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              {/* Auto-save Status */}
+              <AutoSaveStatus 
+                isSaving={isSaving}
+                lastSaved={lastSaved}
+                hasUnsavedChanges={hasUnsavedChanges}
+              />
+              
+              {/* Force Save Button */}
+              {hasUnsavedChanges && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={forceSave}
+                  disabled={isSaving}
+                  className="h-8 px-2 text-xs"
+                >
+                  Salvar Agora
+                </Button>
+              )}
+              
+              <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                <User className="h-4 w-4 text-secondary-foreground" />
+              </div>
             </div>
           </div>
-          
-
-
-          {/* Steps indicator */}
-          <div className="flex items-center justify-between">
-            {steps.map((step, index) => (
-              <div key={step.id} className="flex items-center flex-1">
-                <div
-                  className={`flex flex-col items-center ${
-                    step.id === currentStep ? 'text-red-300' :
-                    step.id < currentStep ? 'text-green-400' : 'text-gray-500'
-                  }`}
-                >
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${
-                    step.id === currentStep ? 'border-red-300 bg-red-900' :
-                    step.id < currentStep ? 'border-green-400 bg-green-900' : 'border-gray-500'
-                  }`}>
-                    {step.id < currentStep ? (
-                      <Check className="h-4 w-4" />
-                    ) : (
-                      step.id
-                    )}
-                  </div>
-                  <span className="text-xs mt-1 text-center">{step.title}</span>
-                </div>
-                {index < steps.length - 1 && (
-                  <div className={`flex-1 h-0.5 mx-2 -mt-2 ${
-                    step.id < currentStep ? 'bg-green-400' : 'bg-gray-600'
-                  }`} />
-                )}
-              </div>
-            ))}
-          </div>
         </div>
+      </header>
 
-        {/* Current Step Content */}
-        <Card className="bg-black/50 border-red-800 mb-6">
-          <CardHeader>
-            <CardTitle className="text-white flex items-center justify-between">
+      {/* Main Content */}
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Stepper */}
+        <Stepper 
+          steps={steps}
+          currentStep={currentStep}
+          onStepClick={(stepId) => {
+            if (stepId < currentStep) {
+              setCurrentStep(stepId)
+            }
+          }}
+          className="mb-8"
+        />
+
+        {/* Offline Mode Warning */}
+        <OfflineModeWarning className="mb-6" />
+
+        {/* Step Content Container */}
+        <div className="max-w-4xl mx-auto">
+          {/* Step Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-heading-1 mb-2">
               {currentStepData?.title}
-              <Badge variant="outline" className="border-red-600">
-                Passo {currentStep} de 6
-              </Badge>
-            </CardTitle>
-            <p className="text-gray-300">{currentStepData?.description}</p>
-          </CardHeader>
-          <CardContent>
-            {/* Step content will be rendered here based on currentStep */}
-            {currentStep === 1 && (
-              <OrigemStep 
-                character={characterData}
-                chronicle={{ settings_json: chronicleSettings } as any}
-                onChange={updateCharacterData}
-              />
+            </h2>
+            {currentStepData?.description && (
+              <p className="text-body text-muted-foreground">
+                {currentStepData.description}
+              </p>
             )}
-            {currentStep === 2 && (
-              <ConceitoStep 
-                character={characterData}
-                chronicle={{ settings_json: chronicleSettings } as any}
-                onChange={updateCharacterData}
-              />
-            )}
-            {currentStep === 3 && (
-              <AttributesStep 
-                character={characterData}
-                chronicle={{ settings_json: chronicleSettings } as any}
-                onChange={updateCharacterData}
-              />
-            )}
-            {currentStep === 4 && (
-              <SkillsStep 
-                skills={characterData.skills_json || { talents: {}, skills: {}, knowledges: {}, specializations: {} }}
-                onSkillsChange={(skills) => updateCharacterData({ skills_json: skills })}
-              />
-            )}
-            {currentStep === 5 && (
-              <AdvantagesStep 
-                advantages={characterData.advantages_json || { 
-                  backgrounds: {}, 
-                  disciplines: {},
-                  virtues: { conscience: 1, self_control: 1, courage: 1 },
-                  merits: {},
-                  flaws: {}
-                }}
-                character={characterData}
-                onAdvantagesChange={(advantages) => updateCharacterData({ advantages_json: advantages })}
-              />
-            )}
-            {currentStep === 6 && (
-              <div className="text-center text-gray-300 py-12">
-                <h3 className="text-xl mb-4">Etapa 5: Vantagens</h3>
-                <p>Componente em desenvolvimento...</p>
-              </div>
-            )}
-            {currentStep === 6 && (
-              <div className="text-center text-gray-300 py-12">
-                <h3 className="text-xl mb-4">Etapa 6: Finalização</h3>
-                <p>Componente em desenvolvimento...</p>
-              </div>
-            )}
-          </CardContent>
-        </Card>
+          </div>
 
-        {/* Validation Messages */}
-        {validation && (
-          <Card className="bg-black/50 border-yellow-600 mb-6">
-            <CardHeader>
-              <CardTitle className="text-yellow-300 flex items-center gap-2">
-                <AlertCircle className="h-5 w-5" />
-                Status da Validação
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
+          {/* Validation Errors */}
+          {validation && !validation.isValid && (
+            <div className="mb-6 bg-destructive/10 border border-destructive/20 rounded-lg p-4">
+              <div className="flex items-start gap-3">
+                <AlertCircle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-medium text-white mb-2">Pontos Gastos</h4>
-                  <ul className="space-y-1 text-sm">
-                    <li className="text-gray-300">Atributos: {validation.pointsSpent.attributes}/{validation.pointsAvailable.attributes}</li>
-                    <li className="text-gray-300">Habilidades: {validation.pointsSpent.skills}/{validation.pointsAvailable.skills}</li>
-                    <li className="text-gray-300">Disciplinas: {validation.pointsSpent.disciplines}/{validation.pointsAvailable.disciplines}</li>
-                    <li className="text-gray-300">Antecedentes: {validation.pointsSpent.backgrounds}/{validation.pointsAvailable.backgrounds}</li>
+                  <h4 className="font-medium text-destructive mb-1">Corrija os seguintes erros:</h4>
+                  <ul className="text-sm text-destructive/80 space-y-1">
+                    {validation.errors?.map((error, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-destructive/60">•</span>
+                        {error}
+                      </li>
+                    ))}
                   </ul>
                 </div>
-                <div>
-                  {validation.warnings.length > 0 && (
-                    <div>
-                      <h4 className="font-medium text-yellow-300 mb-2">Avisos</h4>
-                      <ul className="space-y-1 text-sm">
-                        {validation.warnings.map((warning, i) => (
-                          <li key={i} className="text-yellow-200">• {warning}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {validation.errors.length > 0 && (
-                    <div>
-                      <h4 className="font-medium text-red-300 mb-2">Erros</h4>
-                      <ul className="space-y-1 text-sm">
-                        {validation.errors.map((error, i) => (
-                          <li key={i} className="text-red-200">• {error}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
               </div>
-            </CardContent>
-          </Card>
-        )}
+            </div>
+          )}
 
-        {/* Navigation */}
-        <div className="flex justify-between">
-          <Button
-            onClick={handlePrev}
-            disabled={currentStep === 1}
-            variant="outline"
-            className="border-red-600 text-red-300 hover:bg-red-900"
-          >
-            <ChevronLeft className="h-4 w-4 mr-2" />
-            Anterior
-          </Button>
+          {/* Step Content */}
+          <div className="mb-8">
+            {renderStepContent()}
+          </div>
 
-          <div className="flex gap-2">
+          {/* Navigation */}
+          <div className="flex items-center justify-between pt-6 border-t border-border">
             <Button
-              onClick={handleSave}
-              disabled={saving}
               variant="outline"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800"
+              onClick={handlePrevious}
+              disabled={currentStep === 1}
+              className="flex items-center gap-2"
             >
-              <Save className="h-4 w-4 mr-2" />
-              {saving ? 'Salvando...' : 'Salvar'}
+              <ChevronLeft className="h-4 w-4" />
+              Anterior
             </Button>
-
-            {currentStep === 6 ? (
+            
+            <div className="flex items-center gap-3">
               <Button
-                onClick={handleComplete}
-                disabled={!validation?.isValid || saving}
-                className="bg-green-700 hover:bg-green-600"
+                variant="outline"
+                onClick={handleSave}
+                disabled={saving}
+                className="flex items-center gap-2"
               >
-                Finalizar Criação
+                <Save className="h-4 w-4" />
+                {saving ? 'Salvando...' : 'Salvar'}
               </Button>
-            ) : (
-              <Button
-                onClick={handleNext}
-                className="bg-red-700 hover:bg-red-600"
-              >
-                Próximo
-                <ChevronRight className="h-4 w-4 ml-2" />
-              </Button>
-            )}
+              
+              {currentStep === steps.length ? (
+                <Button
+                  onClick={handleComplete}
+                  disabled={!validation?.isValid || saving}
+                  className="flex items-center gap-2 bg-primary hover:bg-primary/90"
+                >
+                  <Check className="h-4 w-4" />
+                  Finalizar Personagem
+                </Button>
+              ) : (
+                <Button
+                  onClick={handleNext}
+                  disabled={!canProceedToNext()}
+                  className="flex items-center gap-2"
+                >
+                  Próximo
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

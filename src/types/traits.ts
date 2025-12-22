@@ -55,4 +55,7 @@ export interface ResolvedPoints {
 export interface TraitFilter {
   search?: string
   categoria?: TraitCategory | 'all'
+  clan?: string
+  goldOnly?: boolean
+  restricoesOnly?: boolean
 }

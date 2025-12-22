@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { supabase } from '@/lib/supabase/client'
+import { supabase, isSupabaseConfigured } from '@/lib/supabase/client'
+import { loadFromLocalStorage } from '@/hooks/use-auto-save'
 import CharacterWizard from '@/components/character/character-wizard'
 import { Character, Chronicle } from '@/types'
 import { DEFAULT_ATTRIBUTES, DEFAULT_SKILLS, DEFAULT_DISCIPLINES } from '@/lib/character-validation'
@@ -98,7 +99,11 @@ export default function NewCharacterPage() {
     // Criar personagem inicial - modo desenvolvimento
     console.log('Criando personagem para crônica:', chronicle.name)
 
-    const newCharacter: Partial<Character> = {
+    // Gerar um ID único para o personagem
+    const characterId = `mock-char-${Date.now()}`
+
+    const baseCharacter: Partial<Character> = {
+      id: characterId,
       chronicle_id: chronicle.id,
       owner_user_id: 'dev-user-123', // ID do usuário simulado
       name: '',
@@ -135,39 +140,59 @@ export default function NewCharacterPage() {
       status: 'draft'
     }
 
-    // Modo desenvolvimento - simular criação de personagem
-    const mockCharacterWithId = {
-      ...newCharacter,
-      id: `mock-char-${Date.now()}`,
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
+    // Verificar se há dados salvos localmente
+    const savedData = loadFromLocalStorage(characterId)
+    let finalCharacter: Partial<Character>
+
+    if (savedData && savedData.saved_offline) {
+      console.log('📂 Dados recuperados do armazenamento local:', savedData)
+      // Mesclar dados salvos com os padrões
+      finalCharacter = {
+        ...baseCharacter,
+        ...savedData,
+        id: characterId // Manter o ID gerado
+      }
+    } else {
+      // Modo desenvolvimento - simular criação de personagem
+      finalCharacter = {
+        ...baseCharacter,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      }
     }
     
-    console.log('Personagem simulado criado:', mockCharacterWithId)
-    setCharacter(mockCharacterWithId as Character)
+    console.log('Personagem criado/recuperado:', finalCharacter)
+    setCharacter(finalCharacter as Character)
   }
 
   const handleSaveCharacter = async (characterData: Partial<Character>) => {
     if (!character?.id) return
 
     try {
-      const { error } = await supabase
-        .from('characters')
-        .update(characterData)
-        .eq('id', character.id)
+      if (isSupabaseConfigured()) {
+        const { error } = await supabase
+          .from('characters')
+          .update(characterData)
+          .eq('id', character.id)
 
-      if (error) throw error
+        if (error) throw error
 
-      // Log da mudança
-      await supabase
-        .from('character_changelog')
-        .insert([{
-          character_id: character.id,
-          change_type: 'edit',
-          diff_json: characterData,
-          notes: 'Salvamento automático durante criação',
-          created_by: character.owner_user_id
-        }])
+        // Log da mudança
+        await supabase
+          .from('character_changelog')
+          .insert([{
+            character_id: character.id,
+            change_type: 'edit',
+            diff_json: characterData,
+            notes: 'Salvamento automático durante criação',
+            created_by: character.owner_user_id
+          }])
+        
+        console.log('✅ Personagem salvo no Supabase')
+      } else {
+        // Modo offline - dados serão salvos pelo hook de auto-save
+        console.log('💾 Salvamento offline via localStorage')
+      }
     } catch (error) {
       console.error('Erro ao salvar personagem:', error)
       throw error

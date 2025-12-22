@@ -11,8 +11,8 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 72.2% 50.6%;
-    --primary-foreground: 0 85.7% 97.3%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
@@ -23,31 +23,31 @@
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 0 72.2% 50.6%;
+    --ring: 262 83% 58%;
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Tema vampiresco escuro */
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 72.2% 50.6%;
-    --primary-foreground: 0 85.7% 97.3%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    /* Tema C.R.I.S.-inspired: dark minimalista com roxo */
+    --background: 240 10% 3.9%; /* #0b0b0d */
+    --foreground: 240 5% 91%; /* #e9e9f1 */
+    --card: 240 6% 8%; /* #15151a */
+    --card-foreground: 240 5% 91%;
+    --popover: 240 6% 8%;
+    --popover-foreground: 240 5% 91%;
+    --primary: 262 83% 58%; /* #8b5cf6 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 5% 11%; /* #1b1b22 */
+    --secondary-foreground: 240 5% 91%;
+    --muted: 240 5% 11%;
+    --muted-foreground: 240 4% 66%; /* #a7a7b5 */
+    --accent: 240 5% 11%;
+    --accent-foreground: 240 5% 91%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 72.2% 50.6%;
+    --border: 240 6% 17%; /* #2a2a33 */
+    --input: 240 6% 17%;
+    --ring: 262 83% 58%;
   }
 }
 
@@ -56,7 +56,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
 }
 
@@ -67,4 +67,18 @@
       box-shadow: none !important;
     }
   }
+  
+  /* Espaçamentos consistentes */
+  .spacing-xs { @apply p-2; }
+  .spacing-sm { @apply p-3; }
+  .spacing-md { @apply p-4; }
+  .spacing-lg { @apply p-6; }
+  .spacing-xl { @apply p-8; }
+
+  /* Typography hierarchy */
+  .text-heading-1 { @apply text-2xl font-semibold tracking-tight; }
+  .text-heading-2 { @apply text-xl font-medium; }
+  .text-heading-3 { @apply text-lg font-medium; }
+  .text-body { @apply text-sm leading-6; }
+  .text-caption { @apply text-xs text-muted-foreground; }
 }

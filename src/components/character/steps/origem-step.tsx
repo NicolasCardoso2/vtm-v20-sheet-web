@@ -1,11 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { Search } from 'lucide-react'
+import { Input } from '@/components/ui/input'
+import { AccordionItem } from '@/components/ui/accordion-item'
 import { Clan, Jeito, CharacterDraft } from '@/types/character-creation'
 import { Character, Chronicle } from '@/types'
 import { CharacterDataService } from '@/services/character-data'
-import FieldSelector from '@/components/ui/field-selector'
-import ModalSelector from '@/components/ui/modal-selector'
 
 interface OrigemStepProps {
   character: Partial<Character>
@@ -19,13 +20,33 @@ export default function OrigemStep({ character, chronicle, onChange }: OrigemSte
   const [filteredClans, setFilteredClans] = useState<Clan[]>([])
   const [filteredJeitos, setFilteredJeitos] = useState<Jeito[]>([])
   
-  const [showClanModal, setShowClanModal] = useState(false)
-  const [showJeitoModal, setShowJeitoModal] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [expandedClan, setExpandedClan] = useState<string | null>(null)
+  const [expandedJeito, setExpandedJeito] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     loadInitialData()
   }, [])
+
+  useEffect(() => {
+    if (searchTerm.trim() === '') {
+      setFilteredClans(clans)
+      setFilteredJeitos(jeitos)
+    } else {
+      const term = searchTerm.toLowerCase()
+      setFilteredClans(clans.filter(clan => 
+        clan.nome.toLowerCase().includes(term) ||
+        clan.resumo.toLowerCase().includes(term) ||
+        clan.descricao.toLowerCase().includes(term)
+      ))
+      setFilteredJeitos(jeitos.filter(jeito =>
+        jeito.nome.toLowerCase().includes(term) ||
+        jeito.resumo.toLowerCase().includes(term) ||
+        jeito.descricao.toLowerCase().includes(term)
+      ))
+    }
+  }, [searchTerm, clans, jeitos])
 
   const loadInitialData = async () => {
     setLoading(true)
@@ -46,107 +67,133 @@ export default function OrigemStep({ character, chronicle, onChange }: OrigemSte
     }
   }
 
-  const handleClanSearch = async (term: string) => {
-    if (term.trim() === '') {
-      setFilteredClans(clans)
-      return
-    }
-
-    try {
-      const results = await CharacterDataService.searchClans(term)
-      setFilteredClans(results)
-    } catch (error) {
-      console.error('Erro na busca de clãs:', error)
-    }
-  }
-
-  const handleJeitoSearch = async (term: string) => {
-    if (term.trim() === '') {
-      setFilteredJeitos(jeitos)
-      return
-    }
-
-    try {
-      const results = await CharacterDataService.searchJeitos(term)
-      setFilteredJeitos(results)
-    } catch (error) {
-      console.error('Erro na busca de jeitos:', error)
-    }
-  }
-
   const handleClanSelect = (clan: Clan) => {
-    onChange({ 
-      clan: clan.nome
-    })
+    onChange({ clan: clan.nome })
   }
 
   const handleJeitoSelect = (jeito: Jeito) => {
-    onChange({ 
-      // Por enquanto não há campo jeito em Character, pode ser adicionado depois
-      concept: character.concept || jeito.nome
-    })
+    onChange({ concept: jeito.nome })
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+        <span className="ml-3 text-muted-foreground">Carregando opções...</span>
+      </div>
+    )
   }
 
   return (
-    <div className="space-y-6">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-white mb-2">Origem</h2>
-        <p className="text-gray-300">
-          Defina o jeito e clã do seu personagem - sua origem no mundo das trevas
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        {/* Seletor de Jeito */}
-        <FieldSelector
-          title="Jeito"
-          value=""
-          placeholder="Escolha seu jeito de vampiro..."
-          onClick={() => setShowJeitoModal(true)}
-          description=""
-        />
-
-        {/* Seletor de Clã */}
-        <FieldSelector
-          title="Clã"
-          value={character.clan}
-          placeholder="Escolha seu clã..."
-          onClick={() => setShowClanModal(true)}
-          required
-          description=""
+    <div className="space-y-8">
+      {/* Search */}
+      <div className="relative max-w-md mx-auto">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Input
+          placeholder="Buscar clã ou jeito..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="pl-9"
         />
       </div>
 
-      {/* Detalhes do clã selecionado */}
-      {character.clan && (
-        <div className="mt-6 p-4 bg-red-900/20 border border-red-800 rounded-lg">
-          <h3 className="text-red-300 font-semibold mb-2">Clã {character.clan}</h3>
+      <div className="grid lg:grid-cols-2 gap-8">
+        {/* Clãs */}
+        <div className="space-y-4">
+          <div className="text-center">
+            <h3 className="text-heading-2 mb-2">Clã</h3>
+            <p className="text-caption">
+              A linhagem vampírica que define suas disciplinas e características
+            </p>
+          </div>
+          
+          <div className="space-y-3">
+            {filteredClans.map((clan) => (
+              <AccordionItem
+                key={clan.id}
+                id={clan.id}
+                title={clan.nome}
+                description={clan.resumo}
+                tags={clan.disciplinas}
+                expanded={expandedClan === clan.id}
+                selected={character.clan === clan.nome}
+                onToggle={() => setExpandedClan(expandedClan === clan.id ? null : clan.id)}
+                onSelect={() => handleClanSelect(clan)}
+              >
+                <div className="prose prose-sm prose-invert max-w-none">
+                  <p className="text-body leading-relaxed">
+                    {clan.descricao}
+                  </p>
+                  {clan.disciplinas && clan.disciplinas.length > 0 && (
+                    <div className="mt-4">
+                      <h4 className="text-sm font-medium mb-2">Disciplinas de Clã:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {clan.disciplinas.map(disc => (
+                          <span key={disc} className="bg-primary/20 text-primary px-2 py-1 rounded text-xs">
+                            {disc}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </AccordionItem>
+            ))}
+          </div>
+        </div>
+
+        {/* Jeitos */}
+        <div className="space-y-4">
+          <div className="text-center">
+            <h3 className="text-heading-2 mb-2">Jeito</h3>
+            <p className="text-caption">
+              O background e personalidade antes do Abraço
+            </p>
+          </div>
+          
+          <div className="space-y-3">
+            {filteredJeitos.map((jeito) => (
+              <AccordionItem
+                key={jeito.id}
+                id={jeito.id}
+                title={jeito.nome}
+                description={jeito.resumo}
+                expanded={expandedJeito === jeito.id}
+                selected={character.concept === jeito.nome}
+                onToggle={() => setExpandedJeito(expandedJeito === jeito.id ? null : jeito.id)}
+                onSelect={() => handleJeitoSelect(jeito)}
+              >
+                <div className="prose prose-sm prose-invert max-w-none">
+                  <p className="text-body leading-relaxed">
+                    {jeito.descricao}
+                  </p>
+                </div>
+              </AccordionItem>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Selected Summary */}
+      {(character.clan || character.concept) && (
+        <div className="bg-card/50 border border-border rounded-lg p-6 mt-8">
+          <h4 className="text-heading-3 mb-4 text-center">Seleção Atual</h4>
+          <div className="grid md:grid-cols-2 gap-4 text-center">
+            {character.clan && (
+              <div>
+                <span className="text-caption">Clã:</span>
+                <p className="font-medium text-primary">{character.clan}</p>
+              </div>
+            )}
+            {character.concept && (
+              <div>
+                <span className="text-caption">Jeito:</span>
+                <p className="font-medium text-primary">{character.concept}</p>
+              </div>
+            )}
+          </div>
         </div>
       )}
-
-      {/* Modal de seleção de Jeito */}
-      <ModalSelector
-        isOpen={showJeitoModal}
-        onClose={() => setShowJeitoModal(false)}
-        title="Escolher Jeito"
-        items={filteredJeitos}
-        onSelect={handleJeitoSelect}
-        onSearch={handleJeitoSearch}
-        searchPlaceholder="Buscar jeito..."
-        loading={loading}
-      />
-
-      {/* Modal de seleção de Clã */}
-      <ModalSelector
-        isOpen={showClanModal}
-        onClose={() => setShowClanModal(false)}
-        title="Escolher Clã"
-        items={filteredClans}
-        onSelect={handleClanSelect}
-        onSearch={handleClanSearch}
-        searchPlaceholder="Buscar clã..."
-        loading={loading}
-      />
     </div>
   )
 }

@@ -85,7 +85,10 @@ export interface CharacterDraft extends Partial<Character> {
   comportamento?: Arquetipo
   senhor?: string
   
-  // Qualidades e Defeitos
+  // Qualidades e Defeitos - novo sistema unificado
+  qualidadesEDefeitos?: SelectedTrait[]
+  
+  // Mantido para compatibilidade (deprecated)
   qualidades?: SelectedTrait[]
   defeitos?: SelectedTrait[]
 }

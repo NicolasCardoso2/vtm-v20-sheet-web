@@ -4,7 +4,133 @@ import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Character, Chronicle, CharacterAttributes } from '@/types'
-import { Minus, Plus, ChevronDown, ChevronUp } from 'lucide-react'
+import { Minus, Plus, Info } from 'lucide-react'
+import { AccordionItem } from '@/components/ui/accordion-item'
+
+// Componente para controle individual de atributo
+interface AttributeControlProps {
+  attrKey: string
+  category: 'physical' | 'social' | 'mental'
+  attrData: any
+  value: number
+  onChange: (category: string, attr: string, value: number) => void
+  disabled?: boolean
+  isExpanded?: boolean
+  onToggleExpanded?: () => void
+}
+
+function AttributeControl({ 
+  attrKey, 
+  category, 
+  attrData, 
+  value, 
+  onChange, 
+  disabled, 
+  isExpanded,
+  onToggleExpanded 
+}: AttributeControlProps) {
+  const getCategoryColors = () => {
+    switch (category) {
+      case 'physical':
+        return { name: 'text-red-300', dots: 'bg-red-500 border-red-400', buttons: 'border-red-600' }
+      case 'social':
+        return { name: 'text-blue-300', dots: 'bg-blue-500 border-blue-400', buttons: 'border-blue-600' }
+      case 'mental':
+        return { name: 'text-purple-300', dots: 'bg-purple-500 border-purple-400', buttons: 'border-purple-600' }
+      default:
+        return { name: 'text-red-300', dots: 'bg-red-500 border-red-400', buttons: 'border-red-600' }
+    }
+  }
+  
+  const colors = getCategoryColors()
+
+  const handleChange = (delta: number) => {
+    const newValue = value + delta
+    if (newValue >= 1 && newValue <= 5) {
+      onChange(category, attrKey, newValue)
+    }
+  }
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between p-3 bg-gray-800 rounded-lg">
+        {/* Nome à esquerda */}
+        <div className="flex-1">
+          <span className={`font-medium ${colors.name}`}>{attrData.name}</span>
+        </div>
+        
+        {/* Pontos no meio */}
+        <div className="flex items-center justify-center space-x-2 flex-1">
+          <div className="flex items-center space-x-1">
+            {[1, 2, 3, 4, 5].map((level) => (
+              <div
+                key={level}
+                className={`w-3 h-3 rounded-full border ${
+                  value >= level
+                    ? colors.dots
+                    : 'border-gray-600'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+        
+        {/* Controles à direita */}
+        <div className="flex items-center space-x-2 flex-1 justify-end">
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => handleChange(-1)}
+            disabled={disabled || value <= 1}
+            className={`w-8 h-8 p-0 text-red-400 ${colors.buttons} hover:bg-red-900/20`}
+          >
+            <Minus className="w-3 h-3" />
+          </Button>
+          
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => handleChange(1)}
+            disabled={disabled || value >= 5}
+            className={`w-8 h-8 p-0 text-green-400 ${colors.buttons} hover:bg-green-900/20`}
+          >
+            <Plus className="w-3 h-3" />
+          </Button>
+
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={onToggleExpanded}
+            className="w-8 h-8 p-0 text-white hover:bg-gray-700"
+          >
+            ?
+          </Button>
+        </div>
+      </div>
+
+      {isExpanded && (
+        <div className="bg-gray-900/50 p-4 rounded-lg space-y-3 text-sm">
+          <div>
+            <span className={`font-medium ${colors.name}`}>Descrição: </span>
+            <span className="text-gray-300">{attrData.description}</span>
+          </div>
+          
+          <div>
+            <span className={`font-medium ${colors.name}`}>Níveis:</span>
+            <div className="mt-1 space-y-1">
+              {Object.entries(attrData.levels).map(([level, desc]) => (
+                <div key={level} className="flex items-start space-x-2">
+                  <span className={`${colors.name.replace('300', '400')} font-mono`}>●</span>
+                  <span className="text-gray-300">{String(desc)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
 
 // Descrições dos atributos por nível
 const ATTRIBUTE_DESCRIPTIONS = {
@@ -116,7 +242,15 @@ interface AttributesStepProps {
 }
 
 export default function AttributesStep({ character, chronicle, onChange }: AttributesStepProps) {
+  const [expandedAttributes, setExpandedAttributes] = useState<{[key: string]: boolean}>({})
   const [expandedAttribute, setExpandedAttribute] = useState<string | null>(null)
+  
+  const toggleExpanded = (attrKey: string) => {
+    setExpandedAttributes(prev => ({
+      ...prev,
+      [attrKey]: !prev[attrKey]
+    }))
+  }
   
   const attributes = character.attributes_json || {
     physical: { strength: 1, dexterity: 1, stamina: 1 },
@@ -150,103 +284,20 @@ export default function AttributesStep({ character, chronicle, onChange }: Attri
     onChange({ attributes_json: newAttributes })
   }
 
-  const AttributeControl = ({ 
-    category, 
-    attr, 
-    label, 
-    value 
-  }: { 
-    category: keyof CharacterAttributes
-    attr: string
-    label: string
-    value: number 
-  }) => {
-    const remainingPoints = category === 'physical' ? physicalPointsRemaining : 
-                          category === 'social' ? socialPointsRemaining : 
-                          mentalPointsRemaining
-    
-    const isExpanded = expandedAttribute === attr
-    const attrData = ATTRIBUTE_DESCRIPTIONS[attr as keyof typeof ATTRIBUTE_DESCRIPTIONS]
-    
-    return (
-      <div className="space-y-2">
-        <div className="flex items-center justify-between p-3 bg-gray-800/50 rounded border border-gray-600">
-          <div className="flex items-center gap-2">
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={() => setExpandedAttribute(isExpanded ? null : attr)}
-              className="h-6 w-6 p-0 border-gray-600 text-white hover:text-red-300 hover:bg-gray-700"
-            >
-              ?
-            </Button>
-            <span className="text-white font-medium">{label}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={() => updateAttribute(category, attr, value - 1)}
-              disabled={value <= 1}
-              className="h-8 w-8 p-0 border-gray-600 text-gray-300 hover:bg-gray-700"
-            >
-              <Minus className="h-4 w-4" />
-            </Button>
-            <span className="text-white font-bold w-8 text-center">{value}</span>
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={() => updateAttribute(category, attr, value + 1)}
-              disabled={value >= maxLevel || remainingPoints <= 0}
-              className="h-8 w-8 p-0 border-gray-600 text-gray-300 hover:bg-gray-700"
-            >
-              <Plus className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-        
-        {isExpanded && attrData && (
-          <div className="bg-gray-900/50 rounded border border-gray-700 p-4 ml-4">
-            <h4 className="text-white font-medium mb-2">{attrData.name}</h4>
-            {attrData.description && (
-              <p className="text-gray-300 text-sm mb-4 leading-relaxed">{attrData.description}</p>
-            )}
-            <h5 className="text-white font-medium mb-3">Níveis:</h5>
-            <div className="space-y-2">
-              {Object.entries(attrData.levels).map(([level, description]) => (
-                <div key={level} className="flex items-start gap-3">
-                  <div className="flex gap-1 mt-1">
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <div
-                        key={i}
-                        className={`w-2 h-2 rounded-full ${
-                          i < parseInt(level) ? 'bg-red-400' : 'bg-gray-600'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <span className={`text-sm ${
-                    parseInt(level) === value ? 'text-white font-medium' : 'text-gray-300'
-                  }`}>
-                    {description}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    )
-  }
-
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold text-white mb-2">Atributos</h2>
+        <p className="text-gray-300">
+          Defina as características básicas do seu personagem. Todos começam no nível 1.
+        </p>
+      </div>
 
 
       {/* Atributos Físicos */}
-      <Card className="bg-red-900/20 border-red-600">
+      <Card className="bg-gray-800 border-red-900">
         <CardHeader>
-          <CardTitle className="text-red-300 flex justify-between items-center">
+          <CardTitle className="text-red-300 flex items-center justify-between">
             Atributos Físicos
             <span className="text-sm font-normal">
               Pontos: {physicalPointsRemaining} de {physicalPointsTotal}
@@ -255,30 +306,39 @@ export default function AttributesStep({ character, chronicle, onChange }: Attri
         </CardHeader>
         <CardContent className="space-y-3">
           <AttributeControl 
+            attrKey="strength"
             category="physical" 
-            attr="strength" 
-            label="Força" 
-            value={attributes.physical.strength} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.strength}
+            value={attributes.physical.strength}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.strength}
+            onToggleExpanded={() => toggleExpanded('strength')}
           />
           <AttributeControl 
+            attrKey="dexterity"
             category="physical" 
-            attr="dexterity" 
-            label="Destreza" 
-            value={attributes.physical.dexterity} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.dexterity}
+            value={attributes.physical.dexterity}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.dexterity}
+            onToggleExpanded={() => toggleExpanded('dexterity')}
           />
           <AttributeControl 
+            attrKey="stamina"
             category="physical" 
-            attr="stamina" 
-            label="Vigor" 
-            value={attributes.physical.stamina} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.stamina}
+            value={attributes.physical.stamina}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.stamina}
+            onToggleExpanded={() => toggleExpanded('stamina')}
           />
         </CardContent>
       </Card>
 
       {/* Atributos Sociais */}
-      <Card className="bg-blue-900/20 border-blue-600">
+      <Card className="bg-gray-800 border-blue-900">
         <CardHeader>
-          <CardTitle className="text-blue-300 flex justify-between items-center">
+          <CardTitle className="text-blue-300 flex items-center justify-between">
             Atributos Sociais
             <span className="text-sm font-normal">
               Pontos: {socialPointsRemaining} de {socialPointsTotal}
@@ -287,30 +347,39 @@ export default function AttributesStep({ character, chronicle, onChange }: Attri
         </CardHeader>
         <CardContent className="space-y-3">
           <AttributeControl 
+            attrKey="charisma"
             category="social" 
-            attr="charisma" 
-            label="Carisma" 
-            value={attributes.social.charisma} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.charisma}
+            value={attributes.social.charisma}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.charisma}
+            onToggleExpanded={() => toggleExpanded('charisma')}
           />
           <AttributeControl 
+            attrKey="manipulation"
             category="social" 
-            attr="manipulation" 
-            label="Manipulação" 
-            value={attributes.social.manipulation} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.manipulation}
+            value={attributes.social.manipulation}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.manipulation}
+            onToggleExpanded={() => toggleExpanded('manipulation')}
           />
           <AttributeControl 
+            attrKey="appearance"
             category="social" 
-            attr="appearance" 
-            label="Aparência" 
-            value={attributes.social.appearance} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.appearance}
+            value={attributes.social.appearance}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.appearance}
+            onToggleExpanded={() => toggleExpanded('appearance')}
           />
         </CardContent>
       </Card>
 
       {/* Atributos Mentais */}
-      <Card className="bg-purple-900/20 border-purple-600">
+      <Card className="bg-gray-800 border-purple-900">
         <CardHeader>
-          <CardTitle className="text-purple-300 flex justify-between items-center">
+          <CardTitle className="text-purple-300 flex items-center justify-between">
             Atributos Mentais
             <span className="text-sm font-normal">
               Pontos: {mentalPointsRemaining} de {mentalPointsTotal}
@@ -319,33 +388,42 @@ export default function AttributesStep({ character, chronicle, onChange }: Attri
         </CardHeader>
         <CardContent className="space-y-3">
           <AttributeControl 
+            attrKey="perception"
             category="mental" 
-            attr="perception" 
-            label="Percepção" 
-            value={attributes.mental.perception} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.perception}
+            value={attributes.mental.perception}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.perception}
+            onToggleExpanded={() => toggleExpanded('perception')}
           />
           <AttributeControl 
+            attrKey="intelligence"
             category="mental" 
-            attr="intelligence" 
-            label="Inteligência" 
-            value={attributes.mental.intelligence} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.intelligence}
+            value={attributes.mental.intelligence}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.intelligence}
+            onToggleExpanded={() => toggleExpanded('intelligence')}
           />
           <AttributeControl 
+            attrKey="wits"
             category="mental" 
-            attr="wits" 
-            label="Raciocínio" 
-            value={attributes.mental.wits} 
+            attrData={ATTRIBUTE_DESCRIPTIONS.wits}
+            value={attributes.mental.wits}
+            onChange={updateAttribute}
+            isExpanded={expandedAttributes.wits}
+            onToggleExpanded={() => toggleExpanded('wits')}
           />
         </CardContent>
       </Card>
 
       {/* Dica */}
-      <Card className="bg-yellow-900/20 border-yellow-600">
+      <Card className="bg-gray-800 border-yellow-600">
         <CardHeader>
-          <CardTitle className="text-yellow-300 text-sm">Dica</CardTitle>
+          <CardTitle className="text-yellow-300 text-sm">💡 Dica</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-yellow-200 text-sm">
+          <p className="text-gray-300 text-sm">
             Todos os atributos começam no nível 1. Distribua os pontos por categoria: {physicalPointsTotal} Físicos, {socialPointsTotal} Sociais e {mentalPointsTotal} Mentais. 
             Nenhum atributo pode exceder {maxLevel} durante a criação. Pense no conceito do seu personagem 
             ao distribuir os pontos - um hacker pode ter Inteligência alta, enquanto um lutador privilegia Força.

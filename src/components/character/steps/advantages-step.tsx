@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Plus, Edit3, Trash2 } from 'lucide-react'
-import { TraitsModal } from '@/components/traits/TraitsModal'
+import TraitsModal from '@/components/traits/TraitsModal'
 import { SelectedTrait } from '@/types/traits'
 import { CharacterDraft } from '@/types/character-creation'
 
@@ -28,18 +28,16 @@ export default function AdvantagesStep({
 
   const qualidades = character.qualidades || []
   const defeitos = character.defeitos || []
-  const allSelected = [...qualidades, ...defeitos]
+  const allSelected = character.qualidadesEDefeitos || [...qualidades, ...defeitos]
 
   const handleTraitsConfirm = (selectedTraits: SelectedTrait[]) => {
-    // Separar qualidades e defeitos com base no tipo do item
-    // Para isso precisaríamos carregar o dataset aqui ou passar o tipo na seleção
-    // Por simplicidade, vamos assumir que pontos negativos são defeitos
-    const newQualidades = selectedTraits.filter(t => t.chosenPoints > 0)
-    const newDefeitos = selectedTraits.filter(t => t.chosenPoints < 0)
-
+    // Como o sistema de traits já separa por tipo, precisamos processar isso
+    // O modalTraits retorna todos os traits selecionados, mas precisa ser separado
+    // baseado no tipo real do item, não no sinal dos pontos
+    
+    // Por enquanto, vamos armazenar tudo junto e separar na lógica de validação
     onUpdate({
-      qualidades: newQualidades,
-      defeitos: newDefeitos
+      qualidadesEDefeitos: selectedTraits
     })
   }
 
@@ -271,10 +269,16 @@ export default function AdvantagesStep({
 
       {/* Modal */}
       <TraitsModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        onConfirm={handleTraitsConfirm}
-        initialSelection={allSelected}
+        isOpen={modalOpen}
+        onClose={(selectedTraits) => {
+          if (selectedTraits) {
+            handleTraitsConfirm(selectedTraits)
+          }
+          setModalOpen(false)
+        }}
+        selectedTraits={allSelected}
+        type="qualidade" // Tipo padrão, mas mode controlará o que é mostrado
+        mode={editMode}
       />
     </div>
   )

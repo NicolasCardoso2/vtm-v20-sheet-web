@@ -126,8 +126,29 @@ export function validateSelection(
 
   const totals = calculateTotals(selectedTraits, allItems)
 
-  // Validar limites de pontos silenciosamente
-  // A validação visual já é feita na interface
+  // Validações específicas de pontos
+  if (totals.totalQualidades > 7) {
+    errors.push(`Muitos pontos em qualidades: ${totals.totalQualidades}/7 (máximo permitido)`)
+  }
+
+  if (totals.totalDefeitos > 7) {
+    errors.push(`Muitos pontos em defeitos: ${totals.totalDefeitos}/7 (exato)`)
+  }
+
+  if (totals.totalDefeitos < 7) {
+    const remaining = 7 - totals.totalDefeitos
+    errors.push(`Faltam ${remaining} pontos em defeitos para completar os 7 obrigatórios`)
+  }
+
+  // Validar qualidades Gold (máximo 1 por personagem)
+  const goldQualities = selectedTraits.filter(selected => {
+    const item = allItems.find(i => i.id === selected.itemId)
+    return item && item.goldQuality && item.tipo === 'qualidade'
+  })
+
+  if (goldQualities.length > 1) {
+    errors.push('Máximo de 1 qualidade especial (Gold) por personagem')
+  }
 
   const isValid = errors.length === 0 && totals.totalQualidades <= 7 && totals.totalDefeitos === 7
 

@@ -29,8 +29,14 @@ export function useTraitsSelection(options: UseTraitsSelectionOptions = {}) {
 
   // Salvar no localStorage quando houver mudanças
   useEffect(() => {
-    if (storageKey && typeof window !== 'undefined') {
-      localStorage.setItem(storageKey, JSON.stringify(selectedTraits))
+    if (storageKey && typeof window !== 'undefined' && selectedTraits.length >= 0) {
+      const current = JSON.stringify(selectedTraits)
+      const stored = localStorage.getItem(storageKey)
+      
+      // Só salva se realmente há mudança
+      if (stored !== current) {
+        localStorage.setItem(storageKey, current)
+      }
     }
   }, [selectedTraits, storageKey])
 
@@ -83,7 +89,13 @@ export function useTraitsSelection(options: UseTraitsSelectionOptions = {}) {
   }, [selectedTraits])
 
   const setInitialSelection = useCallback((traits: SelectedTrait[]) => {
-    setSelectedTraits(traits)
+    setSelectedTraits(prev => {
+      // Só atualiza se realmente há mudança
+      if (JSON.stringify(prev) !== JSON.stringify(traits)) {
+        return traits
+      }
+      return prev
+    })
   }, [])
 
   return {
