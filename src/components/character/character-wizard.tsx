@@ -47,11 +47,11 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
     enabled: !!characterData.id && Object.keys(characterData).length > 1,
     onSave: (success) => {
       if (success) {
-        console.log('🎉 Auto-save realizado com sucesso')
+        // Auto-save realizado com sucesso
       }
     },
     onError: (error) => {
-      console.warn('⚠️ Erro no auto-save (não crítico):', error)
+      // Erro no auto-save (não crítico)
       // Não mostrar erro para o usuário, pois é não-crítico
     }
   })
@@ -78,7 +78,7 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
       }
       setValidation(result)
     } catch (error) {
-      console.error('Validation error:', error)
+      // Erro na validação
     }
     
     // Update step completion status
@@ -201,7 +201,7 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
     try {
       await onSave(characterData)
     } catch (error) {
-      console.error('Erro ao salvar:', error)
+      // Erro ao salvar
     } finally {
       setSaving(false)
     }
@@ -216,7 +216,7 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
           status: 'pending_approval'
         })
       } catch (error) {
-        console.error('Erro ao finalizar:', error)
+        // Erro ao finalizar
       } finally {
         setSaving(false)
       }
@@ -226,9 +226,9 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
   const currentStepData = steps.find(step => step.id === currentStep)
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-red-950 via-black to-red-950 text-white">
       {/* Navbar */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm">
+      <header className="border-b border-red-800/30 bg-black/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
@@ -275,11 +275,6 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
         <Stepper 
           steps={steps}
           currentStep={currentStep}
-          onStepClick={(stepId) => {
-            if (stepId < currentStep) {
-              setCurrentStep(stepId)
-            }
-          }}
           className="mb-8"
         />
 
@@ -290,11 +285,11 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
         <div className="max-w-4xl mx-auto">
           {/* Step Header */}
           <div className="text-center mb-8">
-            <h2 className="text-heading-1 mb-2">
+            <h2 className="text-3xl font-bold text-white mb-2">
               {currentStepData?.title}
             </h2>
             {currentStepData?.description && (
-              <p className="text-body text-muted-foreground">
+              <p className="text-red-200/80 text-lg">
                 {currentStepData.description}
               </p>
             )}
@@ -321,17 +316,17 @@ export default function CharacterWizard({ character, chronicleSettings, onSave, 
           )}
 
           {/* Step Content */}
-          <div className="mb-8">
+          <div className="mb-8 bg-black/40 border border-red-800/30 rounded-lg p-6 backdrop-blur-sm">
             {renderStepContent()}
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-between pt-6 border-t border-border">
+          <div className="flex items-center justify-between pt-6 border-t border-red-800/30">
             <Button
               variant="outline"
               onClick={handlePrevious}
               disabled={currentStep === 1}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 border-red-800/50 text-white hover:bg-red-900/20"
             >
               <ChevronLeft className="h-4 w-4" />
               Anterior

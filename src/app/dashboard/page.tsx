@@ -16,10 +16,7 @@ export default function DashboardPage() {
   const router = useRouter()
 
   useEffect(() => {
-    const getUser = async () => {
-      // SEMPRE usar modo de desenvolvimento por enquanto
-      console.log('Dashboard: Carregando em modo de desenvolvimento')
-      
+    const loadDashboard = async () => {
       // Modo de desenvolvimento - usuário simulado
       const mockUser = {
         id: 'dev-user-123',
@@ -29,32 +26,10 @@ export default function DashboardPage() {
       setUser(mockUser)
       await loadMockData()
       setLoading(false)
-      
-      // Código original comentado para debug:
-      /*
-      const isSupabaseConfigured = process.env.NEXT_PUBLIC_SUPABASE_URL && 
-        process.env.NEXT_PUBLIC_SUPABASE_URL !== 'https://placeholder.supabase.co'
-
-      if (!isSupabaseConfigured) {
-        const mockUser = { id: 'dev-user-123', email: 'dev@vampiro.com' } as User
-        setUser(mockUser)
-        await loadMockData()
-        setLoading(false)
-        return
-      }
-
-      const { data: { user }, error } = await supabase.auth.getUser()
-      if (error || !user) {
-        router.push('/auth')
-        return
-      }
-      setUser(user)
-      await loadUserData(user.id)
-      */
     }
-    
-    getUser()
-  }, [router])
+
+    loadDashboard()
+  }, [])
 
   const loadMockData = async () => {
     // Dados simulados para modo de desenvolvimento
@@ -99,7 +74,7 @@ export default function DashboardPage() {
       setChronicles(chroniclesData || [])
       setCharacters(charactersData || [])
     } catch (error) {
-      console.error('Erro ao carregar dados:', error)
+      // Erro ao carregar dados
     } finally {
       setLoading(false)
     }
@@ -107,78 +82,108 @@ export default function DashboardPage() {
 
   const handleSignOut = async () => {
     // Modo de desenvolvimento - logout simples
-    console.log('Fazendo logout...')
     router.push('/')
   }
 
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-red-900 via-black to-red-900 flex items-center justify-center">
-        <div className="text-white">Carregando...</div>
+        <div className="text-white flex flex-col items-center gap-4">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red-400"></div>
+          <p>Carregando seu universo vampíresco...</p>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-900 via-black to-red-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Aviso de modo de desenvolvimento */}
+    <div className="min-h-screen bg-gradient-to-br from-red-950 via-black to-red-950 relative overflow-hidden">
+      {/* Efeitos de fundo */}
+      <div className="absolute inset-0 bg-gradient-to-r from-red-900/10 via-transparent to-red-900/10" />
+      <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-red-900/5 rounded-full blur-3xl" />
+      
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Aviso de modo offline melhorado */}
         {(!process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL === 'https://placeholder.supabase.co') && (
-          <div className="mb-6 p-4 bg-yellow-900/50 border border-yellow-600 rounded-lg">
-            <p className="text-yellow-200 text-sm">
-              <strong>Modo de Desenvolvimento:</strong> Configure o Supabase em .env.local para usar todas as funcionalidades.
+          <div className="mb-8 p-6 bg-gradient-to-r from-amber-900/20 to-orange-900/20 border border-amber-600/30 rounded-xl backdrop-blur-sm">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+              <p className="text-amber-200 font-semibold">
+                Modo de Desenvolvimento Offline
+              </p>
+            </div>
+            <p className="text-amber-100/80 text-sm leading-relaxed">
+              Os dados estão sendo salvos localmente. Configure o Supabase em 
+              <code className="bg-amber-900/30 px-1 py-0.5 rounded text-amber-200 mx-1">.env.local</code> 
+              para sincronização na nuvem.
             </p>
           </div>
         )}
         
-        {/* Header */}
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-3xl font-bold text-white">Dashboard</h1>
-            <p className="text-gray-300">Bem-vindo, {user?.email}</p>
+        {/* Header melhorado */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
+          <div className="space-y-2">
+            <h1 className="text-4xl font-bold text-white bg-gradient-to-r from-white to-red-200 bg-clip-text text-transparent">
+              Dashboard Vampiríco
+            </h1>
+            <p className="text-red-200/80 text-lg">
+              Bem-vindo às sombras, <span className="text-red-300 font-medium">{user?.email}</span>
+            </p>
+            <div className="w-20 h-px bg-gradient-to-r from-red-600 to-transparent"></div>
           </div>
           <Button 
             onClick={handleSignOut}
             variant="outline"
-            className="border-red-600 text-red-300 hover:bg-red-900"
+            className="border-red-600/50 bg-black/30 text-red-300 hover:bg-red-900/50 hover:border-red-500 transition-all duration-200 backdrop-blur-sm px-6"
           >
             Sair
           </Button>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Crônicas */}
-          <Card className="bg-black/50 border-red-800">
-            <CardHeader className="flex flex-row items-center justify-between">
-              <div>
-                <CardTitle className="text-white">Minhas Crônicas</CardTitle>
-                <CardDescription className="text-gray-300">
+          <Card className="bg-gradient-to-br from-black/60 to-red-950/30 border-2 border-red-800/50 backdrop-blur-sm hover:border-red-600/80 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/20">
+            <CardHeader className="flex flex-row items-center justify-between pb-4">
+              <div className="space-y-2">
+                <CardTitle className="text-white text-xl flex items-center gap-2">
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                  Minhas Crônicas
+                </CardTitle>
+                <CardDescription className="text-red-200/70">
                   Crônicas que você narra
                 </CardDescription>
               </div>
-              <Button asChild className="bg-red-700 hover:bg-red-600">
-                <Link href="/dashboard/chronicles/new">Nova Crônica</Link>
+              <Button asChild className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 border border-red-600/50 hover:border-red-500 shadow-lg hover:shadow-xl transition-all duration-200">
+                <Link href="/dashboard/chronicles/new" className="flex items-center gap-2">
+                  <span>+</span> Nova Crônica
+                </Link>
               </Button>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pt-0">
               {chronicles.length === 0 ? (
-                <p className="text-gray-400">Nenhuma crônica criada ainda</p>
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🧡</span>
+                  </div>
+                  <p className="text-red-200/60 mb-2">Nenhuma crônica criada ainda</p>
+                  <p className="text-red-300/50 text-sm">Crie sua primeira crônica para começar</p>
+                </div>
               ) : (
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {chronicles.map((chronicle) => (
                     <div
                       key={chronicle.id}
-                      className="p-3 bg-gray-800/50 rounded border border-gray-700 hover:border-red-600 transition-colors"
+                      className="p-4 bg-gradient-to-r from-red-950/40 to-black/40 rounded-lg border border-red-800/30 hover:border-red-600/50 transition-all duration-200 hover:shadow-lg hover:shadow-red-900/20"
                     >
-                      <h3 className="font-medium text-white">{chronicle.name}</h3>
-                      <p className="text-sm text-gray-400">
+                      <h3 className="font-semibold text-white mb-1">{chronicle.name}</h3>
+                      <p className="text-sm text-red-200/60 mb-3">
                         Criada em {new Date(chronicle.created_at).toLocaleDateString('pt-BR')}
                       </p>
-                      <div className="flex gap-2 mt-2">
+                      <div className="flex gap-2">
                         <Button 
                           asChild 
                           size="sm"
-                          className="bg-red-700 hover:bg-red-600"
+                          className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white shadow-md hover:shadow-lg transition-all duration-200"
                         >
                           <Link href={`/dashboard/chronicles/${chronicle.id}`}>
                             Gerenciar
@@ -193,21 +198,32 @@ export default function DashboardPage() {
           </Card>
 
           {/* Personagens */}
-          <Card className="bg-black/50 border-red-800">
-            <CardHeader className="flex flex-row items-center justify-between">
-              <div>
-                <CardTitle className="text-white">Meus Personagens</CardTitle>
-                <CardDescription className="text-gray-300">
+          <Card className="bg-gradient-to-br from-black/60 to-red-950/30 border-2 border-red-800/50 backdrop-blur-sm hover:border-red-600/80 transition-all duration-300 hover:shadow-xl hover:shadow-red-900/20">
+            <CardHeader className="flex flex-row items-center justify-between pb-4">
+              <div className="space-y-2">
+                <CardTitle className="text-white text-xl flex items-center gap-2">
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                  Meus Personagens
+                </CardTitle>
+                <CardDescription className="text-red-200/70">
                   Personagens que você criou
                 </CardDescription>
               </div>
-              <Button asChild className="bg-red-700 hover:bg-red-600">
-                <Link href="/dashboard/characters/new">Novo Personagem</Link>
+              <Button asChild className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 border border-red-600/50 hover:border-red-500 shadow-lg hover:shadow-xl transition-all duration-200">
+                <Link href="/dashboard/characters/new" className="flex items-center gap-2">
+                  <span>+</span> Novo Personagem
+                </Link>
               </Button>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pt-0">
               {characters.length === 0 ? (
-                <p className="text-gray-400">Nenhum personagem criado ainda</p>
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🧛</span>
+                  </div>
+                  <p className="text-red-200/60 mb-2">Nenhum personagem criado ainda</p>
+                  <p className="text-red-300/50 text-sm">Crie seu primeiro vampiro para começar</p>
+                </div>
               ) : (
                 <div className="space-y-3">
                   {characters.map((character) => (

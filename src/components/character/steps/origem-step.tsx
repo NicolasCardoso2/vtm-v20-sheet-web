@@ -176,19 +176,23 @@ export default function OrigemStep({ character, chronicle, onChange }: OrigemSte
 
       {/* Selected Summary */}
       {(character.clan || character.concept) && (
-        <div className="bg-card/50 border border-border rounded-lg p-6 mt-8">
-          <h4 className="text-heading-3 mb-4 text-center">Seleção Atual</h4>
-          <div className="grid md:grid-cols-2 gap-4 text-center">
+        <div className="bg-gradient-to-r from-red-950/40 to-black/40 border-2 border-red-800/50 rounded-xl p-6 mt-8 backdrop-blur-sm">
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+            <h4 className="text-xl font-semibold text-white">Seleção Atual</h4>
+            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
             {character.clan && (
-              <div>
-                <span className="text-caption">Clã:</span>
-                <p className="font-medium text-primary">{character.clan}</p>
+              <div className="text-center p-4 bg-black/30 rounded-lg border border-red-800/30">
+                <div className="text-red-300/70 text-sm font-medium mb-2">Clã</div>
+                <p className="text-red-200 font-bold text-lg">{character.clan}</p>
               </div>
             )}
             {character.concept && (
-              <div>
-                <span className="text-caption">Jeito:</span>
-                <p className="font-medium text-primary">{character.concept}</p>
+              <div className="text-center p-4 bg-black/30 rounded-lg border border-red-800/30">
+                <div className="text-red-300/70 text-sm font-medium mb-2">Jeito</div>
+                <p className="text-red-200 font-bold text-lg">{character.concept}</p>
               </div>
             )}
           </div>

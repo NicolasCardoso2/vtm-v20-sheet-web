@@ -37,11 +37,11 @@ export function AccordionItem({
   return (
     <div 
       className={cn(
-        "bg-card border border-border rounded-lg transition-all duration-200",
-        "hover:border-border/80 focus-within:ring-2 focus-within:ring-primary/20",
-        selected && "border-primary bg-primary/5 shadow-sm",
+        "bg-black/50 border border-red-800/30 rounded-lg transition-all duration-200",
+        "hover:border-red-700/50 focus-within:ring-2 focus-within:ring-red-500/20",
+        selected && "border-red-500 bg-red-950/30 shadow-sm shadow-red-900/20",
         disabled && "opacity-50 cursor-not-allowed",
-        !disabled && "hover:shadow-sm",
+        !disabled && "hover:shadow-sm hover:shadow-red-900/10",
         className
       )}
     >
@@ -51,14 +51,14 @@ export function AccordionItem({
           <div className="flex items-start justify-between">
             <div className="flex-1 min-w-0">
               <h3 className={cn(
-                "font-medium text-foreground leading-tight transition-colors duration-150",
-                selected && "text-primary",
-                disabled && "text-muted-foreground"
+                "font-medium text-white leading-tight transition-colors duration-150",
+                selected && "text-red-300",
+                disabled && "text-gray-500"
               )}>
                 {title}
               </h3>
               {description && !expanded && (
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                <p className="text-sm text-red-200/70 mt-1 line-clamp-2">
                   {description}
                 </p>
               )}
@@ -67,7 +67,7 @@ export function AccordionItem({
                   {tags.map(tag => (
                     <span
                       key={tag}
-                      className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-secondary text-secondary-foreground"
+                      className="inline-flex items-center px-2 py-0.5 rounded text-xs bg-red-900/50 text-red-200 border border-red-800/30"
                     >
                       {tag}
                     </span>
@@ -87,8 +87,8 @@ export function AccordionItem({
               disabled={disabled}
               className={cn(
                 "p-1 h-8 w-8 transition-all duration-200",
-                "text-muted-foreground hover:text-foreground hover:bg-muted/50",
-                "focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                "text-red-300 hover:text-red-100 hover:bg-red-900/30",
+                "focus:ring-2 focus:ring-red-500/20 focus:outline-none"
               )}
               aria-label={expanded ? "Recolher" : "Expandir"}
             >
@@ -108,8 +108,9 @@ export function AccordionItem({
               disabled={disabled || loading}
               className={cn(
                 "text-sm font-medium min-w-[80px] transition-all duration-200",
-                "focus:ring-2 focus:ring-primary/20 focus:outline-none",
-                selected && "bg-primary/10 text-primary hover:bg-primary/20",
+                "focus:ring-2 focus:ring-red-500/20 focus:outline-none",
+                "border-red-800/50 text-white hover:bg-red-900/30",
+                selected && "bg-red-900/50 text-red-200 hover:bg-red-900/70 border-red-600",
                 loading && "cursor-wait"
               )}
             >
@@ -130,10 +131,10 @@ export function AccordionItem({
       
       {/* Expanded Content */}
       {expanded && (
-        <div className="border-t border-border animate-in slide-in-from-top-2 duration-200">
-          <div className="p-4 bg-muted/20">
+        <div className="border-t border-red-800/30 animate-in slide-in-from-top-2 duration-200">
+          <div className="p-4 bg-red-950/20">
             {description && (
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              <p className="text-sm text-red-200/80 leading-relaxed mb-4">
                 {description}
               </p>
             )}

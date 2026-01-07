@@ -23,7 +23,7 @@ const saveToLocalStorage = (characterId: string, data: any) => {
       updated_at: new Date().toISOString(),
       saved_offline: true
     }))
-    console.log(`📱 Dados salvos localmente para o personagem ${characterId}`)
+    // Dados salvos localmente
     return true
   } catch (error) {
     console.error('Erro ao salvar no localStorage:', error)
@@ -62,7 +62,7 @@ export function useAutoSave({
   const saveData = useCallback(async (dataToSave: any) => {
     // Validações mais rigorosas
     if (!enabled || !characterId || typeof characterId !== 'string' || isSaving) {
-      console.log('🔄 Auto-save ignorado:', { enabled, characterId, isSaving })
+      // Auto-save ignorado
       return
     }
 
@@ -85,9 +85,9 @@ export function useAutoSave({
 
           if (error) throw error
           success = true
-          console.log('✅ Dados salvos no Supabase')
+          // Dados salvos no Supabase
         } catch (supabaseError) {
-          console.warn('Erro ao conectar com Supabase, usando localStorage:', supabaseError)
+          // Fallback para localStorage em caso de erro
           // Fallback para localStorage se Supabase falhar
           success = saveToLocalStorage(characterId, dataToSave)
         }

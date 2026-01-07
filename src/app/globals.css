@@ -81,4 +81,31 @@
   .text-heading-3 { @apply text-lg font-medium; }
   .text-body { @apply text-sm leading-6; }
   .text-caption { @apply text-xs text-muted-foreground; }
+  
+  /* Animações personalizadas */
+  .animate-fade-in {
+    @apply animate-in fade-in duration-300;
+  }
+  
+  .animate-slide-up {
+    @apply animate-in slide-in-from-bottom-4 duration-300;
+  }
+  
+  /* Gradientes temáticos */
+  .gradient-vampire {
+    background: linear-gradient(135deg, #7f1d1d 0%, #1f2937 100%);
+  }
+  
+  .gradient-vampire-hover {
+    background: linear-gradient(135deg, #991b1b 0%, #374151 100%);
+  }
+  
+  /* Utility para truncar texto */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

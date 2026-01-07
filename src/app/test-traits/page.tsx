@@ -10,9 +10,11 @@ export default function TraitsTestPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedTraits, setSelectedTraits] = useState<SelectedTrait[]>([])
 
-  const handleConfirm = (traits: SelectedTrait[]) => {
-    setSelectedTraits(traits)
-    console.log('Qualidades e Defeitos selecionados:', traits)
+  const handleModalClose = (selection?: SelectedTrait[]) => {
+    setModalOpen(false)
+    if (selection) {
+      setSelectedTraits(selection)
+    }
   }
 
   return (
@@ -51,31 +53,40 @@ export default function TraitsTestPage() {
           </Card>
 
           {selectedTraits.length > 0 && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-red-200">Seleção Atual</CardTitle>
+            <Card className="bg-gradient-to-r from-red-950/40 to-black/40 border-2 border-red-800/50 backdrop-blur-sm">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-white flex items-center gap-2 justify-center">
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                  Seleção Atual
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {selectedTraits.map(trait => (
                     <div 
                       key={trait.itemId}
-                      className="flex justify-between items-center p-2 bg-red-950/20 rounded"
+                      className="flex justify-between items-center p-3 bg-black/40 border border-red-800/30 rounded-lg hover:border-red-700/50 transition-colors"
                     >
-                      <span className="text-sm font-medium">
+                      <span className="text-red-200 font-medium">
                         {trait.itemId.replace(/_/g, ' ')}
                       </span>
-                      <span className="text-sm text-red-300">
+                      <span className="text-red-300 font-semibold px-2 py-1 bg-red-900/30 rounded text-sm">
                         {Math.abs(trait.chosenPoints)} pt{Math.abs(trait.chosenPoints) !== 1 ? 's' : ''}
                       </span>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-red-800/50">
-                  <pre className="text-xs text-red-300/80 overflow-auto">
-                    {JSON.stringify(selectedTraits, null, 2)}
-                  </pre>
+                <div className="mt-6 pt-4 border-t border-red-800/30">
+                  <details className="text-red-300/60">
+                    <summary className="cursor-pointer text-sm hover:text-red-300 transition-colors">
+                      Dados técnicos (debug)
+                    </summary>
+                    <pre className="text-xs text-red-300/50 overflow-auto mt-2 p-2 bg-black/20 rounded border border-red-900/20">
+                      {JSON.stringify(selectedTraits, null, 2)}
+                    </pre>
+                  </details>
                 </div>
               </CardContent>
             </Card>
@@ -84,10 +95,9 @@ export default function TraitsTestPage() {
       </div>
 
       <TraitsModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        onConfirm={handleConfirm}
-        initialSelection={selectedTraits}
+        isOpen={modalOpen}
+        onClose={handleModalClose}
+        selectedTraits={selectedTraits}
       />
     </div>
   )

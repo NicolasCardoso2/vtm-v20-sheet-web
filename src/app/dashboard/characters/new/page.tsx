@@ -113,15 +113,10 @@ export default function NewCharacterPage() {
       demeanor: '',
       generation: chronicle.settings_json.defaultGeneration || 13,
       sire: '',
-      attributes_json: DEFAULT_ATTRIBUTES,
-      skills_json: DEFAULT_SKILLS,
-      advantages_json: {
-        disciplines: {},
-        backgrounds: {},
-        virtues: { conscience: 1, self_control: 1, courage: 1 },
-        merits: {},
-        flaws: {}
-      },
+      // Deixar vazios para não marcar steps como concluídos
+      attributes_json: null,
+      skills_json: null,
+      advantages_json: null,
       morality_json: {
         path: 'humanity',
         rating: 7,

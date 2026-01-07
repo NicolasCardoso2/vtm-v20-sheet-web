@@ -535,9 +535,16 @@ export default function SkillsStep({ skills, onSkillsChange }: SkillsStepProps) 
               variant="outline"
               onClick={() => updateSkill(category, skillKey, -1)}
               disabled={currentValue === 0}
-              className={`w-8 h-8 p-0 text-red-400 ${colors.buttons} hover:bg-red-900/20`}
+              className={`
+                group relative w-9 h-9 p-0 rounded-lg border-2 transition-all duration-300
+                ${currentValue === 0
+                  ? 'border-gray-700 text-gray-600 cursor-not-allowed opacity-50'
+                  : 'border-red-700/70 text-red-300 hover:border-red-500 hover:bg-red-950/50 hover:text-red-200 hover:scale-105 active:scale-95'
+                }
+                shadow-lg hover:shadow-red-900/30
+              `}
             >
-              <Minus className="w-3 h-3" />
+              <Minus className="w-4 h-4 group-hover:drop-shadow-md transition-all duration-200" />
             </Button>
             
             <Button
@@ -545,9 +552,16 @@ export default function SkillsStep({ skills, onSkillsChange }: SkillsStepProps) 
               variant="outline"
               onClick={() => updateSkill(category, skillKey, 1)}
               disabled={currentValue === 5 || getRemainingPoints(category) === 0}
-              className={`w-8 h-8 p-0 text-green-400 ${colors.buttons} hover:bg-green-900/20`}
+              className={`
+                group relative w-9 h-9 p-0 rounded-lg border-2 transition-all duration-300
+                ${currentValue === 5 || getRemainingPoints(category) === 0
+                  ? 'border-gray-700 text-gray-600 cursor-not-allowed opacity-50'
+                  : 'border-green-700/70 text-green-300 hover:border-green-500 hover:bg-green-950/50 hover:text-green-200 hover:scale-105 active:scale-95'
+                }
+                shadow-lg hover:shadow-green-900/30
+              `}
             >
-              <Plus className="w-3 h-3" />
+              <Plus className="w-4 h-4 group-hover:drop-shadow-md transition-all duration-200" />
             </Button>
 
             <Button

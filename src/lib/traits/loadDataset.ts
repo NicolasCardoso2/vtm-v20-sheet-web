@@ -27,19 +27,15 @@ export async function loadTraitsDataset(): Promise<TraitItem[]> {
       if (!exists) {
         acc.push(current)
       } else {
-        console.warn(`Item duplicado encontrado e removido: ${current.id}`)
+        // Item duplicado encontrado e removido
       }
       return acc
     }, [])
 
-    console.log(`Dataset original: ${processedItems.length} itens`)
-    console.log(`Dataset após remoção de duplicatas: ${uniqueItems.length} itens`)
-    console.log(`Qualidades: ${uniqueItems.filter(i => i.tipo === 'qualidade').length}`)
-    console.log(`Defeitos: ${uniqueItems.filter(i => i.tipo === 'defeito').length}`)
-    
+    // Dataset processado com sucesso
     return uniqueItems
   } catch (error) {
-    console.error('Erro ao carregar dataset de traits:', error)
+    // Erro ao carregar dataset
     throw new Error('Falha ao carregar qualidades e defeitos')
   }
 }
@@ -56,8 +52,7 @@ function mapCategoria(categoria: string): 'fisico' | 'mental' | 'social' | 'sobr
   if (normalized.includes('social') || normalized.includes('sociais') || normalized === 'social') return 'social'
   if (normalized.includes('sobrenatural') || normalized.includes('sobrenaturais') || normalized === 'sobrenatural') return 'sobrenatural'
   
-  // Log para debug se não conseguir mapear
-  console.warn('Categoria não mapeada:', categoria)
+  // Categoria não mapeada
   
   // Default para físico se não conseguir mapear
   return 'fisico'
