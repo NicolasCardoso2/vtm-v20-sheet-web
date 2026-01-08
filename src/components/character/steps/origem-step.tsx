@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { AccordionItem } from '@/components/ui/accordion-item'
 import { Clan, Jeito, CharacterDraft } from '@/types/character-creation'
 import { Character, Chronicle } from '@/types'
-import { CharacterDataService } from '@/services/character-data'
+import { CLANS_DATA, JEITOS_DATA } from '@/data/static-data'
 
 interface OrigemStepProps {
   character: Partial<Character>
@@ -48,18 +48,13 @@ export default function OrigemStep({ character, chronicle, onChange }: OrigemSte
     }
   }, [searchTerm, clans, jeitos])
 
-  const loadInitialData = async () => {
+  const loadInitialData = () => {
     setLoading(true)
     try {
-      const [clansData, jeitosData] = await Promise.all([
-        CharacterDataService.getClans(),
-        CharacterDataService.getJeitos()
-      ])
-      
-      setClans(clansData)
-      setJeitos(jeitosData)
-      setFilteredClans(clansData)
-      setFilteredJeitos(jeitosData)
+      setClans(CLANS_DATA)
+      setJeitos(JEITOS_DATA)
+      setFilteredClans(CLANS_DATA)
+      setFilteredJeitos(JEITOS_DATA)
     } catch (error) {
       console.error('Erro ao carregar dados:', error)
     } finally {

@@ -1,7 +1,17 @@
 'use client'
 
 import { useEffect, useCallback, useRef, useState } from 'react'
-import { supabase, isSupabaseConfigured } from '@/lib/supabase/client'
+import { supabase } from '@/lib/supabase/client'
+
+// Função local para verificar configuração
+const isSupabaseConfigured = (): boolean => {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  return url !== 'https://placeholder.supabase.co' && 
+         key !== 'placeholder-key' && 
+         !!url?.startsWith('https://') && 
+         (key?.length || 0) > 20
+}
 
 interface AutoSaveProps {
   characterId: string

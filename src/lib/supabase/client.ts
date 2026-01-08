@@ -1,47 +1,18 @@
 import { createClient } from '@supabase/supabase-js'
 
-// Verificação de variáveis de ambiente com valores padrão para desenvolvimento
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
 
 // Função para verificar se o Supabase está configurado
-export const isSupabaseConfigured = () => {
-  const isConfigured = supabaseUrl !== 'https://placeholder.supabase.co' && 
-                      supabaseAnonKey !== 'placeholder-key' &&
-                      !supabaseUrl.includes('your-project') &&
-                      !supabaseAnonKey.includes('your') &&
-                      supabaseUrl.startsWith('https://') &&
-                      supabaseAnonKey.length > 20
-  
-  if (!isConfigured) {
-    console.log('🔧 Supabase não configurado - usando modo offline')
-  }
-  
-  return isConfigured
+export function isSupabaseConfigured(): boolean {
+  return supabaseUrl !== 'https://placeholder.supabase.co' && 
+         supabaseAnonKey !== 'placeholder-key' && 
+         supabaseUrl.startsWith('https://') && 
+         supabaseAnonKey.length > 20
 }
 
-// Aviso se as variáveis não estão configuradas
-if (!isSupabaseConfigured()) {
-  console.warn('⚠️ Supabase não configurado. Usando modo de desenvolvimento offline. Configure .env.local com suas credenciais para usar o sistema completo.')
-}
-
-// Criar client Supabase apenas se configurado, caso contrário usar mock
-export const supabase = isSupabaseConfigured() 
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : {
-      from: (table: string) => ({
-        select: () => Promise.resolve({ data: [], error: null }),
-        insert: () => Promise.resolve({ data: null, error: null }),
-        update: () => Promise.resolve({ data: null, error: new Error('Supabase não configurado') }),
-        delete: () => Promise.resolve({ data: null, error: null }),
-        eq: () => ({ data: null, error: new Error('Supabase não configurado') })
-      }),
-      auth: {
-        getUser: () => Promise.resolve({ data: { user: null }, error: null })
-      }
-    } as any
-
-//
+// Cliente Supabase
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 // Tipos das tabelas do Supabase
 export type Database = {

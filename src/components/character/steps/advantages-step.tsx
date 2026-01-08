@@ -253,20 +253,6 @@ export default function AdvantagesStep({
         </Card>
       )}
 
-      {/* Botões de Navegação */}
-      <div className="flex justify-between pt-6">
-        <Button variant="outline" onClick={onPrevious}>
-          Voltar
-        </Button>
-
-        <Button
-          onClick={handleNext}
-          className="bg-red-600 hover:bg-red-700"
-        >
-          Próximo
-        </Button>
-      </div>
-
       {/* Modal */}
       <TraitsModal
         isOpen={modalOpen}

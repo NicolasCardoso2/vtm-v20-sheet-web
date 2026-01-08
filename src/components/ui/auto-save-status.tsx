@@ -3,13 +3,22 @@
 import { useState, useEffect } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { CheckCircle, Clock, WifiOff, AlertTriangle, Save } from 'lucide-react'
-import { isSupabaseConfigured } from '@/lib/supabase/client'
 
 interface AutoSaveStatusProps {
   isSaving?: boolean
   lastSaved?: Date | null
   hasUnsavedChanges?: boolean
   className?: string
+}
+
+// Helper para verificar configuração do Supabase
+const checkSupabaseConfig = (): boolean => {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  return url !== 'https://placeholder.supabase.co' && 
+         key !== 'placeholder-key' && 
+         !!url?.startsWith('https://') && 
+         (key?.length || 0) > 20
 }
 
 export function AutoSaveStatus({ 
@@ -23,7 +32,7 @@ export function AutoSaveStatus({
 
   useEffect(() => {
     setIsClient(true)
-    setIsOffline(!isSupabaseConfigured())
+    setIsOffline(!checkSupabaseConfig())
   }, [])
 
   // Não renderizar no servidor para evitar hidration mismatch
@@ -116,7 +125,7 @@ export function OfflineModeWarning({ className = '' }: OfflineModeWarningProps) 
 
   useEffect(() => {
     setIsClient(true)
-    setIsOffline(!isSupabaseConfigured())
+    setIsOffline(!checkSupabaseConfig())
   }, [])
 
   // Não renderizar no servidor

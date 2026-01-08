@@ -2,12 +2,22 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { supabase, isSupabaseConfigured } from '@/lib/supabase/client'
+import { supabase } from '@/lib/supabase/client'
 import { loadFromLocalStorage } from '@/hooks/use-auto-save'
 import CharacterWizard from '@/components/character/character-wizard'
 import { Character, Chronicle } from '@/types'
 import { DEFAULT_ATTRIBUTES, DEFAULT_SKILLS, DEFAULT_DISCIPLINES } from '@/lib/character-validation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+
+// Função local para verificar configuração
+const isSupabaseConfigured = (): boolean => {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  return url !== 'https://placeholder.supabase.co' && 
+         key !== 'placeholder-key' && 
+         !!url?.startsWith('https://') && 
+         (key?.length || 0) > 20
+}
 import { Button } from '@/components/ui/button'
 
 export default function NewCharacterPage() {

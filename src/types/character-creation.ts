@@ -1,37 +1,6 @@
 // Tipos para os dados do sistema
 import { Character } from './index'
-
-// Tipos para Qualidades e Defeitos
-export interface TraitItem {
-  id: string
-  name: string
-  type: 'qualidade' | 'defeito'
-  category: 'fisico' | 'mental' | 'social' | 'sobrenatural'
-  points: number | { min: number; max: number }
-  clan?: string
-  description: string
-  goldQuality?: boolean // Para qualidades Gold
-  ancillaeOnly?: boolean // Para cargos de ancillae
-}
-
-export interface SelectedTrait {
-  itemId: string
-  chosenPoints: number
-  notes?: string
-}
-
-export interface TraitTotals {
-  totalQualidades: number
-  totalDefeitos: number
-  remainingQualidades: number
-  remainingDefeitos: number
-}
-
-export interface TraitValidationResult {
-  isValid: boolean
-  errors: string[]
-  totals: TraitTotals
-}
+import { TraitItem, SelectedTrait, TraitTotals, TraitValidationResult } from './traits'
 
 export interface Clan {
   id: string
